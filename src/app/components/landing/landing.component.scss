@@ -1,0 +1,23 @@
+.container {
+  display: grid;
+  padding: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-gap: 2em;
+}
+
+h2 {
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+
+  .container {
+    display: grid;
+    padding-left: 20%;
+    padding-right: 20%;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-gap: 2em;
+
+  }
+
+}

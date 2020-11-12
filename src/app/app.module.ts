@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LandingComponent } from './components/landing/landing.component';
 import { BuyerStartComponent } from './components/buyer-start/buyer-start.component';
 import { BuyerLoginComponent } from './components/buyer-login/buyer-login.component';
 import { SellersListComponent } from './components/sellers-list/sellers-list.component';
@@ -22,11 +21,15 @@ import { SellerProfilEditorComponent } from './components/seller-profil-editor/s
 import { SellerProfileComponent } from './components/seller-profile/seller-profile.component';
 import { BuyerProfileComponent } from './components/buyer-profile/buyer-profile.component';
 import { BuyerProfilEditorComponent } from './components/buyer-profil-editor/buyer-profil-editor.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
+import { SellerStartComponent } from './components/seller-start/seller-start.component';
+import { MatButtonModule } from '@angular/material/button';
+import { LandingComponent } from './components/landing/landing.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingComponent,
     BuyerStartComponent,
     BuyerLoginComponent,
     SellersListComponent,
@@ -44,11 +47,16 @@ import { BuyerProfilEditorComponent } from './components/buyer-profil-editor/buy
     SellerProfilEditorComponent,
     SellerProfileComponent,
     BuyerProfileComponent,
-    BuyerProfilEditorComponent
+    BuyerProfilEditorComponent,
+    SellerStartComponent,
+    LandingComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

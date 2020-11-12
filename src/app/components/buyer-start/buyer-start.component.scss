@@ -1,0 +1,40 @@
+.bottom-nav-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 4em;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  cursor: default;
+  user-select: none;
+
+}
+
+.nav-icon {
+  height: 100%;
+  width: 100%;
+  color: #707070;
+  display: grid;
+  place-items: center;
+  font-size: 2em;
+  cursor: pointer;
+
+}
+
+
+.active {
+  color: #f57c00;
+}
+
+
+@media (min-width: 900px) {
+
+  .bottom-nav-bar {
+    width: 50%;
+    padding: 0 25% 0 25%;
+  }
+
+}
