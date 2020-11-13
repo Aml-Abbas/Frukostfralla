@@ -26,6 +26,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { SellerStartComponent } from './components/seller-start/seller-start.component';
 import { MatButtonModule } from '@angular/material/button';
 import { LandingComponent } from './components/landing/landing.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -57,6 +59,8 @@ import { LandingComponent } from './components/landing/landing.component';
     BrowserAnimationsModule,
     MatIconModule,
     MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
