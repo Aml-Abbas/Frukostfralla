@@ -35,7 +35,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatRippleModule} from '@angular/material/core';
 import {MatListModule} from '@angular/material/list';
 import {FormsModule} from '@angular/forms';
-import { SellerNotificationsComponent } from './components/seller-notifications/seller-notifications.component';
+import {SellerNotificationsComponent} from './components/seller-notifications/seller-notifications.component';
 
 @NgModule({
   declarations: [
