@@ -2,7 +2,8 @@
   <span class="spacer"></span>
   <span>{{ title }}</span>
   <span class="example-spacer"></span>
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+  <button (click)="navigateToProfileEditor()"
+    mat-icon-button >
     <mat-icon>edit</mat-icon>
   </button>
 </mat-toolbar>

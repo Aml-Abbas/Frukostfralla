@@ -6,7 +6,6 @@ import {BuyerStartComponent} from './components/buyer-start/buyer-start.componen
 import {BuyerLoginComponent} from './components/buyer-login/buyer-login.component';
 import {BuyerProfilEditorComponent} from './components/buyer-profil-editor/buyer-profil-editor.component';
 import {SellerProfileComponent} from './components/seller-profile/seller-profile.component';
-import {SellerProfilEditorComponent} from './components/seller-profil-editor/seller-profil-editor.component';
 import {SellerDetailsComponent} from './components/seller-details/seller-details.component';
 import {SellerMyProductsComponent} from './components/seller-my-products/seller-my-products.component';
 import {SellerOrderDetailsComponent} from './components/seller-order-details/seller-order-details.component';
@@ -23,6 +22,7 @@ import {SellerCreateProfileComponent} from './components/seller-create-profile/s
 import {SellerChooseBakeryComponent} from './components/seller-choose-bakery/seller-choose-bakery.component';
 import {SellerStartComponent} from './components/seller-start/seller-start.component';
 import {SellerNotificationsComponent} from './components/seller-notifications/seller-notifications.component';
+import {SellerProfileEditorComponent} from './components/seller-profile-editor/seller-profile-editor.component';
 
 const routes: Routes = [
   {path: 'buyer-login', component: BuyerLoginComponent},
@@ -38,7 +38,6 @@ const routes: Routes = [
   {path: 'seller-my-products', component: SellerMyProductsComponent},
   {path: 'seller-order-details', component: SellerOrderDetailsComponent},
   {path: 'seller-products', component: SellerProductsComponent},
-  {path: 'seller-profile-editor', component: SellerProfilEditorComponent},
   {path: 'seller-week-orders', component: SellerWeekOrdersComponent},
   {path: 'seller-profile', component: SellerProfileComponent},
   {path: 'sellers-list', component: SellersListComponent},
@@ -47,6 +46,7 @@ const routes: Routes = [
   {path: 'seller-choose-bakery', component: SellerChooseBakeryComponent},
   {path: 'seller-start', component: SellerStartComponent},
   {path: 'seller-notifications', component: SellerNotificationsComponent},
+  {path: 'seller-profile-editor', component: SellerProfileEditorComponent},
   {path: '', component: LandingComponent}
 
 ];

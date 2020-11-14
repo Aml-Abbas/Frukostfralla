@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-seller-profile',
@@ -8,11 +9,17 @@ import {Component, OnInit} from '@angular/core';
 
 export class SellerProfileComponent implements OnInit {
   title = 'Min profil';
+  router: Router;
 
-  constructor() {
+  constructor(router: Router) {
+    this.router = router;
   }
 
   ngOnInit(): void {
+  }
+
+  public navigateToProfileEditor(): void {
+    this.router.navigate(['/seller-profile-editor']);
   }
 
 }

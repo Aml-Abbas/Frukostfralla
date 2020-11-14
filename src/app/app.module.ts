@@ -16,7 +16,6 @@ import {SellerMyProductsComponent} from './components/seller-my-products/seller-
 import {ProductEditorComponent} from './components/product-editor/product-editor.component';
 import {SellerWeekOrdersComponent} from './components/seller-week-orders/seller-week-orders.component';
 import {SellerOrderDetailsComponent} from './components/seller-order-details/seller-order-details.component';
-import {SellerProfilEditorComponent} from './components/seller-profil-editor/seller-profil-editor.component';
 import {SellerProfileComponent} from './components/seller-profile/seller-profile.component';
 import {BuyerProfileComponent} from './components/buyer-profile/buyer-profile.component';
 import {BuyerProfilEditorComponent} from './components/buyer-profil-editor/buyer-profil-editor.component';
@@ -36,6 +35,7 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatListModule} from '@angular/material/list';
 import {FormsModule} from '@angular/forms';
 import {SellerNotificationsComponent} from './components/seller-notifications/seller-notifications.component';
+import { SellerProfileEditorComponent } from './components/seller-profile-editor/seller-profile-editor.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +54,6 @@ import {SellerNotificationsComponent} from './components/seller-notifications/se
     ProductEditorComponent,
     SellerWeekOrdersComponent,
     SellerOrderDetailsComponent,
-    SellerProfilEditorComponent,
     SellerProfileComponent,
     BuyerProfileComponent,
     BuyerProfilEditorComponent,
@@ -63,6 +62,7 @@ import {SellerNotificationsComponent} from './components/seller-notifications/se
     SellerCreateProfileComponent,
     SellerChooseBakeryComponent,
     SellerNotificationsComponent,
+    SellerProfileEditorComponent,
   ],
   imports: [
     BrowserModule,
