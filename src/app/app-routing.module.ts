@@ -21,6 +21,7 @@ import {ProductEditorComponent} from './components/product-editor/product-editor
 import {LandingComponent} from './components/landing/landing.component';
 import {SellerCreateProfileComponent} from './components/seller-create-profile/seller-create-profile.component';
 import {SellerChooseBakeryComponent} from './components/seller-choose-bakery/seller-choose-bakery.component';
+import {SellerStartComponent} from './components/seller-start/seller-start.component';
 
 const routes: Routes = [
   {path: 'buyer-login', component: BuyerLoginComponent},
@@ -43,6 +44,7 @@ const routes: Routes = [
   {path: 'shopping-cart', component: ShoppingCartComponent},
   {path: 'seller-create-profile', component: SellerCreateProfileComponent},
   {path: 'seller-choose-bakery', component: SellerChooseBakeryComponent},
+  {path: 'seller-start', component: SellerStartComponent},
   {path: '', component: LandingComponent}
 
 ];

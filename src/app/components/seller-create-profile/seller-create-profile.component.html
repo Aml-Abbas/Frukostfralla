@@ -1,9 +1,19 @@
+<mat-toolbar class="toolbar" color="primary">
+  <span class="spacer"></span>
+  <mat-icon mat-ripple
+            class="back-icon"
+            (click)="navigateToStart()">
+    arrow_back
+  </mat-icon>
+  <span>{{ title }}</span>
+</mat-toolbar>
+
 <div class="container">
   <div class="form-container">
 
     <mat-form-field appearance="fill">
       <mat-label>Epost</mat-label>
-      <input matInput placeholder="Placeholder">
+      <input matInput placeholder="Placeholder" value="{{email}}">
     </mat-form-field>
 
     <mat-form-field appearance="fill">
@@ -16,9 +26,12 @@
       <input matInput placeholder="Placeholder">
     </mat-form-field>
 
-    <button mat-button class="text-button" style="margin: 16px 0 16px 0" >
+    <button routerLinkActive="active"
+            routerLink="/seller-choose-bakery"
+            mat-button class="text-button" style="margin: 16px 0 16px 0" >
       VÄLJ BAGERI
     </button>
+
 
     <mat-form-field appearance="fill">
       <mat-label>Län</mat-label>
@@ -51,6 +64,8 @@
     <button mat-raised-button color="accent" style="margin-top: 16px">
       SKAPA
     </button>
+
+
 
   </div>
 

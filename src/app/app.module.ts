@@ -30,7 +30,10 @@ import {MatInputModule} from '@angular/material/input';
 import {SellerCreateProfileComponent} from './components/seller-create-profile/seller-create-profile.component';
 import {MatOptionModule} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
-import { SellerChooseBakeryComponent } from './components/seller-choose-bakery/seller-choose-bakery.component';
+import {SellerChooseBakeryComponent} from './components/seller-choose-bakery/seller-choose-bakery.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatRippleModule} from '@angular/material/core';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -67,7 +70,10 @@ import { SellerChooseBakeryComponent } from './components/seller-choose-bakery/s
     MatFormFieldModule,
     MatInputModule,
     MatOptionModule,
-    MatSelectModule
+    MatSelectModule,
+    MatToolbarModule,
+    MatRippleModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
