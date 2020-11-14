@@ -1,5 +1,6 @@
 .toolbar {
   cursor: default;
+  position: sticky;
 }
 .back-icon {
   margin-right: 16px;
@@ -7,6 +8,7 @@
 
 .container {
   padding: 16px 16px 0 16px;
+  margin-bottom: 20%;
 }
 
 .form-container {
