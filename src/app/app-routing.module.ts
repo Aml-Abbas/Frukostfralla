@@ -22,11 +22,12 @@ import {LandingComponent} from './components/landing/landing.component';
 import {SellerCreateProfileComponent} from './components/seller-create-profile/seller-create-profile.component';
 import {SellerChooseBakeryComponent} from './components/seller-choose-bakery/seller-choose-bakery.component';
 import {SellerStartComponent} from './components/seller-start/seller-start.component';
+import {SellerNotificationsComponent} from './components/seller-notifications/seller-notifications.component';
 
 const routes: Routes = [
   {path: 'buyer-login', component: BuyerLoginComponent},
-  {path: 'buyer-profil-editor', component: BuyerProfilEditorComponent},
-  {path: 'buyer-profil', component: BuyerProfileComponent},
+  {path: 'buyer-profile-editor', component: BuyerProfilEditorComponent},
+  {path: 'buyer-profile', component: BuyerProfileComponent},
   {path: 'buyer-signup', component: BuyerSignupComponent},
   {path: 'buyer-start', component: BuyerStartComponent},
   {path: 'confirmation', component: ConfirmationComponent},
@@ -37,14 +38,15 @@ const routes: Routes = [
   {path: 'seller-my-products', component: SellerMyProductsComponent},
   {path: 'seller-order-details', component: SellerOrderDetailsComponent},
   {path: 'seller-products', component: SellerProductsComponent},
-  {path: 'seller-profil-editor', component: SellerProfilEditorComponent},
+  {path: 'seller-profile-editor', component: SellerProfilEditorComponent},
   {path: 'seller-week-orders', component: SellerWeekOrdersComponent},
-  {path: 'seller-profil', component: SellerProfileComponent},
+  {path: 'seller-profile', component: SellerProfileComponent},
   {path: 'sellers-list', component: SellersListComponent},
   {path: 'shopping-cart', component: ShoppingCartComponent},
   {path: 'seller-create-profile', component: SellerCreateProfileComponent},
   {path: 'seller-choose-bakery', component: SellerChooseBakeryComponent},
   {path: 'seller-start', component: SellerStartComponent},
+  {path: 'seller-notifications', component: SellerNotificationsComponent},
   {path: '', component: LandingComponent}
 
 ];
