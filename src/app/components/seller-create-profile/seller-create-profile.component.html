@@ -53,13 +53,21 @@
 
     <mat-form-field appearance="fill">
       <mat-label>Lösenord</mat-label>
-      <input matInput placeholder="Placeholder">
+      <input [(ngModel)]='enteredPassword' matInput [type]="hide ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Bekräfta lösenord</mat-label>
-      <input matInput placeholder="Placeholder">
+      <input [(ngModel)]='enteredPassword2' matInput [type]="hide ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
     </mat-form-field>
+
+    <mat-error>{{enteredPassword === enteredPassword2 ? '' : 'Passwords do not match'}}</mat-error>
 
     <button mat-raised-button color="accent" style="margin-top: 16px">
       SKAPA

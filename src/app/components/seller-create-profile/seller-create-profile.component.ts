@@ -12,11 +12,13 @@ import {Router} from '@angular/router';
 export class SellerCreateProfileComponent implements OnInit {
   title = 'Skapa profil';
   router: Router;
+  hide = true;
 
   email = '';
   name = '';
   mobile = '';
-  password = '';
+  enteredPassword = '';
+  enteredPassword2 = '';
 
   constructor(router: Router) {
     this.router = router;

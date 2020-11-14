@@ -34,6 +34,7 @@ import {SellerChooseBakeryComponent} from './components/seller-choose-bakery/sel
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatRippleModule} from '@angular/material/core';
 import {MatListModule} from '@angular/material/list';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,8 @@ import {MatListModule} from '@angular/material/list';
     MatSelectModule,
     MatToolbarModule,
     MatRippleModule,
-    MatListModule
+    MatListModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
