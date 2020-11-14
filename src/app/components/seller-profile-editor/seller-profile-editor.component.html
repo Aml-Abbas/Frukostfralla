@@ -1,1 +1,73 @@
-<p>seller-profile-editor works!</p>
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon (click)="navigateBack()">arrow_back</mat-icon>
+  </button>
+  <span>{{title}}</span>
+</mat-toolbar>
+<div class="container">
+  <div class="form-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Epost</mat-label>
+      <input matInput placeholder="Placeholder">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Namn</mat-label>
+      <input matInput placeholder="Placeholder">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Mobilnummer</mat-label>
+      <input matInput placeholder="Placeholder">
+    </mat-form-field>
+
+    <button routerLinkActive="active"
+            routerLink="/seller-choose-bakery"
+            mat-button class="text-button" style="margin: 16px 0 16px 0" >
+      ÄNDRA BAGERI
+    </button>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Län</mat-label>
+      <mat-select>
+        <mat-option value="option">Skåne</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Stad</mat-label>
+      <mat-select>
+        <mat-option value="option">Höganäs</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-button class="text-button" style="margin: 16px 0 16px 0">
+      ÄNDRA OMRÅDE
+    </button>
+
+    <mat-form-field appearance="fill" style="margin-top: 16px">
+      <mat-label>Ditt befintliga lösenord</mat-label>
+      <input [(ngModel)]='enteredPassword' matInput [type]="hide ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+
+
+    <div class="buttons-container">
+
+      <button routerLinkActive="active"
+              mat-button class="text-button">
+        AVBRYT
+      </button>
+      <button
+        mat-raised-button color="accent">
+        BEKRÄFTA
+      </button>
+
+    </div>
+
+
+  </div>
+</div>
