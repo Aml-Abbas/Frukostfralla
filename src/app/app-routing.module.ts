@@ -19,6 +19,7 @@ import {ConfirmationNoLoginComponent} from './components/confirmation-no-login/c
 import {ShoppingCartComponent} from './components/shopping-cart/shopping-cart.component';
 import {ProductEditorComponent} from './components/product-editor/product-editor.component';
 import {LandingComponent} from './components/landing/landing.component';
+import {SellerCreateProfileComponent} from './components/seller-create-profile/seller-create-profile.component';
 
 const routes: Routes = [
   {path: 'buyer-login', component: BuyerLoginComponent},
@@ -39,6 +40,7 @@ const routes: Routes = [
   {path: 'seller-profil', component: SellerProfileComponent},
   {path: 'sellers-list', component: SellersListComponent},
   {path: 'shopping-cart', component: ShoppingCartComponent},
+  {path: 'seller-create-profile', component: SellerCreateProfileComponent},
   {path: '', component: LandingComponent}
 
 ];
