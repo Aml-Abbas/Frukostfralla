@@ -36,6 +36,8 @@ import {MatListModule} from '@angular/material/list';
 import {FormsModule} from '@angular/forms';
 import {SellerNotificationsComponent} from './components/seller-notifications/seller-notifications.component';
 import { SellerProfileEditorComponent } from './components/seller-profile-editor/seller-profile-editor.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -77,7 +79,9 @@ import { SellerProfileEditorComponent } from './components/seller-profile-editor
     MatToolbarModule,
     MatRippleModule,
     MatListModule,
-    FormsModule
+    FormsModule,
+    MatCardModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
