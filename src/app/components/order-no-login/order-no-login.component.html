@@ -1,1 +1,35 @@
-<p>order-no-login works!</p>
+<mat-toolbar class="toolbar" color="primary">
+  <span class="spacer"></span>
+  <span>{{ title }}</span>
+</mat-toolbar>
+
+<div class="container">
+  <div class="form-container">
+
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Placeholder" value="{{name}}">
+    </mat-form-field>
+
+    <p>Address</p>
+    <mat-form-field appearance="fill">
+      <mat-label>Gata</mat-label>
+      <input matInput placeholder="Placeholder" value="{{street}}">
+    </mat-form-field>    <mat-form-field appearance="fill">
+
+    <mat-label>Ort</mat-label>
+    <input matInput placeholder="Placeholder" value="{{city}}">
+  </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Mobile</mat-label>
+      <input matInput placeholder="Placeholder" value="{{number}}">
+    </mat-form-field>
+
+    <button mat-raised-button color="accent" class="order-button">
+      BEKRÄFTA
+    </button>
+  </div>
+
+</div>
+

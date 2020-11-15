@@ -1,0 +1,44 @@
+<mat-toolbar class="toolbar" color="primary">
+  <span class="spacer"></span>
+  <span>{{ title }}</span>
+</mat-toolbar>
+
+<div class="container">
+  <h1 class="header">Logga in</h1>
+
+  <div class="form-container">
+
+    <mat-form-field appearance="fill">
+      <mat-label>E-post</mat-label>
+      <input matInput placeholder="Placeholder" value="{{email}}">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Lösenord</mat-label>
+      <input [(ngModel)]='enteredPassword' matInput [type]="hide ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+
+      <button
+        (click)="login();"
+        mat-raised-button color="accent">
+        LOGGA IN OCH BEKRÄFTA
+      </button>
+
+
+      <button routerLink="/seller-create-profile" routerLinkActive="active"
+              mat-button class="text-button">
+        SKAPA PROFIL
+      </button>
+
+    <h1 class="header">Eller</h1>
+    <button mat-raised-button color="accent">
+      BEKRÄFTA UTAN INLOGGNING
+    </button>
+  </div>
+
+</div>
+

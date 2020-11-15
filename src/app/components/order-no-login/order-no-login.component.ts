@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-order-no-login',
@@ -7,7 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderNoLoginComponent implements OnInit {
 
-  constructor() { }
+
+  router: Router;
+
+  title = 'Bekräftelse';
+  name = '';
+  street = '';
+  city = '';
+  number = '';
+  hide = true;
+
+  constructor(router: Router) {
+    this.router = router;
+
+  }
 
   ngOnInit(): void {
   }
