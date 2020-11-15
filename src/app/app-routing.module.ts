@@ -24,6 +24,7 @@ import {SellerNotificationsComponent} from './components/seller-notifications/se
 import {SellerProfileEditorComponent} from './components/seller-profile-editor/seller-profile-editor.component';
 import {OrderLoginOrNotComponent} from './components/order-login-or-not/order-login-or-not.component';
 import {OrderNoLoginComponent} from './components/order-no-login/order-no-login.component';
+import {SellerOrderHistoryComponent} from './components/seller-order-history/seller-order-history.component';
 
 const routes: Routes = [
   {path: 'buyer-login', component: BuyerLoginComponent},
@@ -49,6 +50,8 @@ const routes: Routes = [
   {path: 'seller-profile-editor', component: SellerProfileEditorComponent},
   {path: 'order-login-or-not', component: OrderLoginOrNotComponent},
   {path: 'order-no-login', component: OrderNoLoginComponent},
+  {path: 'seller-order-history', component: SellerOrderHistoryComponent},
+
   {path: '', component: LandingComponent}
 
 ];
