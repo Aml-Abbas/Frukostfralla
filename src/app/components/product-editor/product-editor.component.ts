@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-editor.component.scss']
 })
 export class ProductEditorComponent implements OnInit {
+  title = 'Lägg en ny fralla';
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  public chooseImage(): void {
+
+  }
 }

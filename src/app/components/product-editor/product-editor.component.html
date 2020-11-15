@@ -1,29 +1,29 @@
+<mat-toolbar class="toolbar" color="primary">
+  <span class="spacer"></span>
+  <span>{{ title }}</span>
+</mat-toolbar>
+
 <div class="container">
 
   <div class="form-container">
-    <mat-form-field hintLabel="Max 10 characters" appearance="fill">
+
+    <mat-form-field hintLabel="Vad heter frallan?" appearance="fill">
       <mat-label>Namn</mat-label>
-      <input matInput #input maxlength="10" placeholder="Ex. Nougat">
-      <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+      <input matInput #input placeholder="Ex. Nougat">
     </mat-form-field>
 
-    <mat-form-field hintLabel="Max 10 characters" appearance="fill">
+    <mat-form-field hintLabel="Hur mycket vill du sälja den för?" appearance="fill">
       <mat-label>Pris</mat-label>
-      <input matInput #input maxlength="10" placeholder="Ex. Nougat">
-      <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+      <input matInput placeholder="Ex. Nougat">
     </mat-form-field>
+
+    <img alt="product-placeholder" src="assets/img/product-placeholder.png"
+    (click)="chooseImage()">
 
   </div>
 
- <div class="buttons-product-editor">
-   <button mat-raised-button color="accent"
-           routerLink="/seller-my-products" routerLinkActive="active">
-     Avbryt
-   </button>
-   <button mat-raised-button color="accent"
-           routerLink="/seller-my-products" routerLinkActive="active">
-     Lägg till
-   </button>
- </div>
-
+</div>
+<div class="buttons-container">
+  <button mat-stroked-button color="accent">AVBRYT</button>
+  <button mat-raised-button color="accent" style="color: white">SPARA</button>
 </div>
