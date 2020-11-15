@@ -1,1 +1,35 @@
-<p>buyer-profile works!</p>
+<mat-toolbar class="toolbar" color="primary">
+  <span class="spacer"></span>
+  <span>{{ title }}</span>
+  <span class="example-spacer"></span>
+  <button (click)="navigateToProfileEditor()"
+          mat-icon-button >
+    <mat-icon>edit</mat-icon>
+  </button>
+</mat-toolbar>
+<div class="container">
+  <div class="profile-photo-container">
+    <img class="profile-photo" src="assets/img/profile-photo-placeholder.png">
+    <h1 style="margin-top: 1em">Fredrik</h1>
+  </div>
+
+  <mat-list role="list">
+    <mat-list-item mat-ripple role="listitem">fredrik.p@domain.se</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item mat-ripple role="listitem">Mina beställningar</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item mat-ripple role="listitem">address</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item mat-ripple role="listitem">07293785</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item mat-ripple role="listitem">ändra min säljare</mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-list>
+
+  <button mat-button class="text-button">ÄNDRA LÖSENORD</button>
+  <button routerLink="/seller-start" routerLinkActive="active"
+          mat-button color="warn" id="logout-button">
+    LOGGA UT
+  </button>
+
+</div>

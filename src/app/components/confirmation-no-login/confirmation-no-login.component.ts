@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-confirmation-no-login',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfirmationNoLoginComponent implements OnInit {
 
-  constructor() { }
+  router: Router;
+
+  title = 'Bekräftelse';
+  email = '';
+  enteredPassword = '';
+  hide = true;
+
+  constructor(router: Router) {
+    this.router = router;
+
+  }
 
   ngOnInit(): void {
   }
-
 }

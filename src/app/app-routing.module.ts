@@ -12,7 +12,6 @@ import {SellerOrderDetailsComponent} from './components/seller-order-details/sel
 import {SellerProductsComponent} from './components/seller-products/seller-products.component';
 import {SellersListComponent} from './components/sellers-list/sellers-list.component';
 import {SellerWeekOrdersComponent} from './components/seller-week-orders/seller-week-orders.component';
-import {ConfirmationComponent} from './components/confirmation/confirmation.component';
 import {ConfirmationLoginComponent} from './components/confirmation-login/confirmation-login.component';
 import {ConfirmationNoLoginComponent} from './components/confirmation-no-login/confirmation-no-login.component';
 import {ShoppingCartComponent} from './components/shopping-cart/shopping-cart.component';
@@ -23,6 +22,8 @@ import {SellerChooseBakeryComponent} from './components/seller-choose-bakery/sel
 import {SellerStartComponent} from './components/seller-start/seller-start.component';
 import {SellerNotificationsComponent} from './components/seller-notifications/seller-notifications.component';
 import {SellerProfileEditorComponent} from './components/seller-profile-editor/seller-profile-editor.component';
+import {OrderLoginOrNotComponent} from './components/order-login-or-not/order-login-or-not.component';
+import {OrderNoLoginComponent} from './components/order-no-login/order-no-login.component';
 
 const routes: Routes = [
   {path: 'buyer-login', component: BuyerLoginComponent},
@@ -30,7 +31,6 @@ const routes: Routes = [
   {path: 'buyer-profile', component: BuyerProfileComponent},
   {path: 'buyer-signup', component: BuyerSignupComponent},
   {path: 'buyer-start', component: BuyerStartComponent},
-  {path: 'confirmation', component: ConfirmationComponent},
   {path: 'confirmation-login', component: ConfirmationLoginComponent},
   {path: 'confirmation-no-login', component: ConfirmationNoLoginComponent},
   {path: 'product-editor', component: ProductEditorComponent},
@@ -47,6 +47,8 @@ const routes: Routes = [
   {path: 'seller-start', component: SellerStartComponent},
   {path: 'seller-notifications', component: SellerNotificationsComponent},
   {path: 'seller-profile-editor', component: SellerProfileEditorComponent},
+  {path: 'order-login-or-not', component: OrderLoginOrNotComponent},
+  {path: 'order-no-login', component: OrderNoLoginComponent},
   {path: '', component: LandingComponent}
 
 ];
