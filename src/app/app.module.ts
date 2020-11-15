@@ -10,7 +10,6 @@ import {SellerProductsComponent} from './components/seller-products/seller-produ
 import {ShoppingCartComponent} from './components/shopping-cart/shopping-cart.component';
 import {ConfirmationLoginComponent} from './components/confirmation-login/confirmation-login.component';
 import {ConfirmationNoLoginComponent} from './components/confirmation-no-login/confirmation-no-login.component';
-import {ConfirmationComponent} from './components/confirmation/confirmation.component';
 import {BuyerSignupComponent} from './components/buyer-signup/buyer-signup.component';
 import {SellerMyProductsComponent} from './components/seller-my-products/seller-my-products.component';
 import {ProductEditorComponent} from './components/product-editor/product-editor.component';
@@ -38,6 +37,8 @@ import {SellerNotificationsComponent} from './components/seller-notifications/se
 import { SellerProfileEditorComponent } from './components/seller-profile-editor/seller-profile-editor.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { OrderNoLoginComponent } from './components/order-no-login/order-no-login.component';
+import { OrderLoginOrNotComponent } from './components/order-login-or-not/order-login-or-not.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,6 @@ import {MatGridListModule} from '@angular/material/grid-list';
     ShoppingCartComponent,
     ConfirmationLoginComponent,
     ConfirmationNoLoginComponent,
-    ConfirmationComponent,
     BuyerSignupComponent,
     SellerMyProductsComponent,
     ProductEditorComponent,
@@ -65,6 +65,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     SellerChooseBakeryComponent,
     SellerNotificationsComponent,
     SellerProfileEditorComponent,
+    OrderNoLoginComponent,
+    OrderLoginOrNotComponent,
   ],
   imports: [
     BrowserModule,

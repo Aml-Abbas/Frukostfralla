@@ -9,9 +9,9 @@ import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common'
 
 })
 export class SellerProfileEditorComponent implements OnInit {
-  title = 'Redigera profil'
+  title = 'Redigera profil';
 
-  location: Location
+  location: Location;
   enteredPassword = '';
   hide = true;
 
