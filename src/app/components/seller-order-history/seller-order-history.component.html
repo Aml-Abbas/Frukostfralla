@@ -1,1 +1,47 @@
-<p>seller-order-history works!</p>
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon (click)="navigateBack()">arrow_back</mat-icon>
+  </button>
+  <span>{{title}}</span>
+
+</mat-toolbar>
+
+<div class="container">
+  <mat-card>
+    <mat-card-content class="statistic-content">
+      <h3>Denna veckas total</h3>
+      <h3>50</h3>
+      <h3>Gemfört med förra veckan</h3>
+      <h3>+10</h3>
+      <h3>Denna månads total</h3>
+      <h3>100</h3>
+      <h3>Gemfört med förra månad</h3>
+      <h3>+20</h3>
+
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card style="margin-top: 1em">
+    <mat-card-title>Vecka 32</mat-card-title>
+    <mat-card-content>
+      <mat-list-item>
+        <h3 matLine> Köparnamn </h3>
+        <p matLine> Frallor... </p>
+        <p matLine class="demo-2"> Total </p>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item mat-ripple>
+        <h3 matLine> Köparnamn </h3>
+        <p matLine> Frallor... </p>
+        <p matLine class="demo-2"> Total </p>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item mat-ripple>
+        <h3 matLine> Köparnamn </h3>
+        <p matLine> Frallor... </p>
+        <p matLine class="demo-2"> Total </p>
+      </mat-list-item>
+
+    </mat-card-content>
+  </mat-card>
+</div>

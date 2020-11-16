@@ -1,1 +1,88 @@
-<p>seller-week-orders works!</p>
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon (click)="navigateBack()">arrow_back</mat-icon>
+  </button>
+  <span>{{title}}</span>
+  <span class="toolbar-spacer"></span>
+  <button routerLink="/seller-order-history"
+          mat-icon-button >
+    <mat-icon>history</mat-icon>
+  </button>
+
+</mat-toolbar>
+
+<div class="container">
+
+  <h3>Denna veckas beställningar</h3>
+
+<!--  &lt;!&ndash; three line list &ndash;&gt;
+  <mat-list>
+    <mat-list-item *ngFor="let message of messages">
+      <h3 matLine> {{message.from}} </h3>
+      <p matLine> {{message.subject}} </p>
+      <p matLine class="demo-2"> {{message.content}} </p>
+    </mat-list-item>
+  </mat-list>-->
+
+  <!-- three line list -->
+  <mat-list>
+    <mat-list-item mat-ripple>
+      <h3 matLine> Köparnamn </h3>
+      <p matLine> Frallor... </p>
+      <p matLine class="demo-2"> Total </p>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item mat-ripple>
+      <h3 matLine> Köparnamn </h3>
+      <p matLine> Frallor... </p>
+      <p matLine class="demo-2"> Total </p>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item mat-ripple>
+      <h3 matLine> Köparnamn </h3>
+      <p matLine> Frallor... </p>
+      <p matLine class="demo-2"> Total </p>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item mat-ripple>
+      <h3 matLine> Köparnamn </h3>
+      <p matLine> Frallor... </p>
+      <p matLine class="demo-2"> Total </p>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item mat-ripple>
+      <h3 matLine> Köparnamn </h3>
+      <p matLine> Frallor... </p>
+      <p matLine class="demo-2"> Total </p>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item mat-ripple>
+      <h3 matLine> Köparnamn </h3>
+      <p matLine> Frallor... </p>
+      <p matLine class="demo-2"> Total </p>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item mat-ripple>
+      <h3 matLine> Köparnamn </h3>
+      <p matLine> Frallor... </p>
+      <p matLine class="demo-2"> Total </p>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item mat-ripple>
+      <h3 matLine> Köparnamn </h3>
+      <p matLine> Frallor... </p>
+      <p matLine class="demo-2"> Total </p>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item mat-ripple>
+      <h3 matLine> Köparnamn </h3>
+      <p matLine> Frallor... </p>
+      <p matLine class="demo-2"> Total </p>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+
+  </mat-list>
+
+
+
+</div>

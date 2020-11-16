@@ -24,6 +24,11 @@
 
 </div>
 <div class="buttons-container">
-  <button mat-stroked-button color="accent">AVBRYT</button>
-  <button mat-raised-button color="accent" style="color: white">SPARA</button>
+  <button mat-stroked-button color="accent" (click)="navigateBack()">
+    AVBRYT
+  </button>
+  <button mat-raised-button color="accent" style="color: white"
+  (click)="saveProduct()">
+    SPARA
+  </button>
 </div>

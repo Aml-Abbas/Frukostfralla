@@ -16,6 +16,24 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+mat-list-item {
+  cursor: pointer;
+}
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+
+}
+
+.back-icon {
+  margin-right: 16px;
+}
+
+.container {
+  padding: 16px 16px 0 16px;
+  margin-bottom: 20%;
+}
+
 
 @media (min-width: 1150px) {
 

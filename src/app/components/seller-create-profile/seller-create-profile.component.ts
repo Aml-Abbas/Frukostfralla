@@ -32,4 +32,8 @@ export class SellerCreateProfileComponent implements OnInit {
     this.router.navigate(['/seller-start'], {replaceUrl: true});
   }
 
+  public createProfile(): void {
+
+    this.router.navigate(['/seller-profile'], {replaceUrl: true})
+  }
 }
