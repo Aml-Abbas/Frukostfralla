@@ -40,6 +40,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { OrderNoLoginComponent } from './components/order-no-login/order-no-login.component';
 import { OrderLoginOrNotComponent } from './components/order-login-or-not/order-login-or-not.component';
 import { SellerOrderHistoryComponent } from './components/seller-order-history/seller-order-history.component';
+import { SellerDaysSellectionComponent } from './components/seller-days-sellection/seller-days-sellection.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { SellerOrderHistoryComponent } from './components/seller-order-history/s
     OrderNoLoginComponent,
     OrderLoginOrNotComponent,
     SellerOrderHistoryComponent,
+    SellerDaysSellectionComponent,
   ],
   imports: [
     BrowserModule,
