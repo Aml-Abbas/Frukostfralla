@@ -3,6 +3,14 @@
   position: sticky;
 }
 
+.form-container {
+  display: grid;
+
+  button {
+    margin-top: 2em;
+  }
+}
+
 h3 {
   color: black;
 }
