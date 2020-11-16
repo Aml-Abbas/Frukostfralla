@@ -25,7 +25,7 @@ import {SellerProfileEditorComponent} from './components/seller-profile-editor/s
 import {OrderLoginOrNotComponent} from './components/order-login-or-not/order-login-or-not.component';
 import {OrderNoLoginComponent} from './components/order-no-login/order-no-login.component';
 import {SellerOrderHistoryComponent} from './components/seller-order-history/seller-order-history.component';
-import {SellerDaysSellectionComponent} from './components/seller-days-sellection/seller-days-sellection.component';
+import {SellerDaysSelectionComponent} from './components/seller-days-selection/seller-days-selection.component';
 
 const routes: Routes = [
   {path: 'buyer-login', component: BuyerLoginComponent},
@@ -52,7 +52,7 @@ const routes: Routes = [
   {path: 'order-login-or-not', component: OrderLoginOrNotComponent},
   {path: 'order-no-login', component: OrderNoLoginComponent},
   {path: 'seller-order-history', component: SellerOrderHistoryComponent},
-  {path: 'seller-days-selection', component: SellerDaysSellectionComponent},
+  {path: 'seller-days-selection', component: SellerDaysSelectionComponent},
 
   {path: '', component: LandingComponent}
 
