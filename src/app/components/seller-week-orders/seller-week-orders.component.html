@@ -15,56 +15,14 @@
 
 <div class="container">
 
-
-  <!--  &lt;!&ndash; three line list &ndash;&gt;
-    <mat-list>
-      <mat-list-item *ngFor="let message of messages">
-        <h3 matLine> {{message.from}} </h3>
-        <p matLine> {{message.subject}} </p>
-        <p matLine class="demo-2"> {{message.content}} </p>
-      </mat-list-item>
-    </mat-list>-->
-
-  <!-- three line list -->
   <mat-list>
     <h3 matSubheader>Aktuell denna vecka</h3>
-    <mat-list-item mat-ripple>
-      <h3 matLine> Köparnamn </h3>
-      <p matLine> Frallor... </p>
-      <p matLine class="demo-2"> Total </p>
+    <mat-list-item mat-ripple *ngFor="let order of orders">
+      <h3 matLine> {{order.buyer}} </h3>
+      <p matLine> {{order.firstProduct}}... </p>
+      <h3> {{order.total}}:- </h3>
+      <mat-divider></mat-divider>
     </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item mat-ripple>
-      <h3 matLine> Köparnamn </h3>
-      <p matLine> Frallor... </p>
-      <p matLine class="demo-2"> Total </p>
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item mat-ripple>
-      <h3 matLine> Köparnamn </h3>
-      <p matLine> Frallor... </p>
-      <p matLine class="demo-2"> Total </p>
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item mat-ripple>
-      <h3 matLine> Köparnamn </h3>
-      <p matLine> Frallor... </p>
-      <p matLine class="demo-2"> Total </p>
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item mat-ripple>
-      <h3 matLine> Köparnamn </h3>
-      <p matLine> Frallor... </p>
-      <p matLine class="demo-2"> Total </p>
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item mat-ripple>
-      <h3 matLine> Köparnamn </h3>
-      <p matLine> Frallor... </p>
-      <p matLine class="demo-2"> Total </p>
-    </mat-list-item>
-    <mat-divider></mat-divider>
-
   </mat-list>
 
   <div class="form-container">
