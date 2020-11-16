@@ -43,6 +43,9 @@ import { SellerOrderHistoryComponent } from './components/seller-order-history/s
 import { SellerDaysSelectionComponent } from './components/seller-days-selection/seller-days-selection.component';
 import { SellerSendToBakeryComponent } from './components/seller-send-to-bakery/seller-send-to-bakery.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { BuyerProductsComponent } from './components/buyer-products/buyer-products.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -74,6 +77,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     SellerOrderHistoryComponent,
     SellerDaysSelectionComponent,
     SellerSendToBakeryComponent,
+    BuyerProductsComponent,
   ],
   imports: [
     BrowserModule,
@@ -91,7 +95,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     FormsModule,
     MatCardModule,
     MatGridListModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
