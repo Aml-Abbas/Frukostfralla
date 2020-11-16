@@ -1,1 +1,30 @@
-<p>seller-days-selection works!</p>
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon (click)="navigateBack()">arrow_back</mat-icon>
+  </button>
+  <span>{{title}}</span>
+</mat-toolbar>
+<div class="container">
+
+  <mat-selection-list #daysList [(ngModel)]="selectedWeekDays"
+  (ngModelChange)="onGroupsChange($event)">
+    <mat-list-option *ngFor="let day of weekDays" [value]="day">
+      {{day}}
+    </mat-list-option>
+  </mat-selection-list>
+
+
+  <div class="buttons-container">
+
+    <button (click)="onCancel()"
+            mat-button class="text-button">
+      AVBRYT
+    </button>
+    <button (click)="onSave()"
+      mat-raised-button color="accent">
+      SPARA
+    </button>
+
+  </div>
+
+</div>

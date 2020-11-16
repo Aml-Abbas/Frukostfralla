@@ -33,6 +33,12 @@ mat-list-item {
   padding: 16px 16px 0 16px;
   margin-bottom: 20%;
 }
+.buttons-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  margin-top: 5em;
+}
 
 
 @media (min-width: 1150px) {
