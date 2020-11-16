@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import {Router} from '@angular/router';
 import {SellerWeekOrdersItem} from '../../model/SellerWeekOrdersItem';
+import {OrderDetailsService} from '../../../services/order-details.service';
 
 @Component({
   selector: 'app-seller-week-orders',
@@ -16,7 +17,9 @@ export class SellerWeekOrdersComponent implements OnInit {
   router: Router;
   orders: SellerWeekOrdersItem[];
 
-  constructor(location: Location, router: Router) {
+  orderId: string;
+
+  constructor(location: Location, router: Router, private orderDetails: OrderDetailsService) {
     this.location = location;
     this.router = router;
     this.orders = [];
@@ -24,6 +27,7 @@ export class SellerWeekOrdersComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.orderDetails.currentOrderId$.subscribe(orderId => this.orderId = orderId);
   }
 
   public navigateBack(): void {
@@ -33,7 +37,7 @@ export class SellerWeekOrdersComponent implements OnInit {
   fetchSellerWeekOrders(): void {
     for (let i = 0; i < 10; i++) {
       this.orders.push(
-        new SellerWeekOrdersItem('Köpare ' + (i + 1), (i + 9).toString(), 30, "Fralla")
+        new SellerWeekOrdersItem('Köpare ' + (i + 1), (i + 9).toString(), 30, 'Fralla')
       );
     }
   }
@@ -42,5 +46,9 @@ export class SellerWeekOrdersComponent implements OnInit {
 
   }
 
+  navigateToDetails(orderId: string): void {
+    this.orderDetails.setOrderId(orderId);
+    this.router.navigate(['/seller-order-details'])
+  }
 
 }

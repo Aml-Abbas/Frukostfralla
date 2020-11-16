@@ -17,7 +17,7 @@
 
   <mat-list>
     <h3 matSubheader>Aktuell denna vecka</h3>
-    <mat-list-item mat-ripple *ngFor="let order of orders">
+    <mat-list-item mat-ripple *ngFor="let order of orders" (click)="navigateToDetails(order.orderId)">
       <h3 matLine> {{order.buyer}} </h3>
       <p matLine> {{order.firstProduct}}... </p>
       <h3> {{order.total}}:- </h3>

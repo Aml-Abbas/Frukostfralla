@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {OrderDetailsService} from '../../../services/order-details.service';
 
 @Component({
   selector: 'app-seller-order-details',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SellerOrderDetailsComponent implements OnInit {
 
-  constructor() { }
+  orderId: string;
+
+  constructor(private orderDetails: OrderDetailsService) { }
 
   ngOnInit(): void {
+    this.orderDetails.currentOrderId$.subscribe(orderId => this.orderId = orderId);
+    console.log("order id = " + this.orderId);
   }
 
 }
