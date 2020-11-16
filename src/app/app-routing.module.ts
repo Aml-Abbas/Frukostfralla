@@ -26,6 +26,7 @@ import {OrderLoginOrNotComponent} from './components/order-login-or-not/order-lo
 import {OrderNoLoginComponent} from './components/order-no-login/order-no-login.component';
 import {SellerOrderHistoryComponent} from './components/seller-order-history/seller-order-history.component';
 import {SellerDaysSelectionComponent} from './components/seller-days-selection/seller-days-selection.component';
+import {SellerSendToBakeryComponent} from './components/seller-send-to-bakery/seller-send-to-bakery.component';
 
 const routes: Routes = [
   {path: 'buyer-login', component: BuyerLoginComponent},
@@ -53,6 +54,7 @@ const routes: Routes = [
   {path: 'order-no-login', component: OrderNoLoginComponent},
   {path: 'seller-order-history', component: SellerOrderHistoryComponent},
   {path: 'seller-days-selection', component: SellerDaysSelectionComponent},
+  {path: 'seller-send-to-bakery', component: SellerSendToBakeryComponent},
 
   {path: '', component: LandingComponent}
 

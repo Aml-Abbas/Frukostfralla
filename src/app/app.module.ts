@@ -41,6 +41,8 @@ import { OrderNoLoginComponent } from './components/order-no-login/order-no-logi
 import { OrderLoginOrNotComponent } from './components/order-login-or-not/order-login-or-not.component';
 import { SellerOrderHistoryComponent } from './components/seller-order-history/seller-order-history.component';
 import { SellerDaysSelectionComponent } from './components/seller-days-selection/seller-days-selection.component';
+import { SellerSendToBakeryComponent } from './components/seller-send-to-bakery/seller-send-to-bakery.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -71,6 +73,7 @@ import { SellerDaysSelectionComponent } from './components/seller-days-selection
     OrderLoginOrNotComponent,
     SellerOrderHistoryComponent,
     SellerDaysSelectionComponent,
+    SellerSendToBakeryComponent,
   ],
   imports: [
     BrowserModule,
@@ -87,7 +90,8 @@ import { SellerDaysSelectionComponent } from './components/seller-days-selection
     MatListModule,
     FormsModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
