@@ -5,11 +5,47 @@
 
 <div class="container">
 
-  <div class="form-container">
+  <div class="grid-container">
+    <mat-card mat-ripple>
+      <mat-card-header>
+          <img mat-card-avatar class="header-image"  src="assets/img/profile-photo-placeholder.png">
 
-    <button mat-raised-button color="accent">
-      BEKRÄFTA BESTÄLLNINGEN
-    </button>
+        <mat-card-title>En god fralla<br> 10:-</mat-card-title>
+        <button mat-button><i class="glyphicon glyphicon-remove"></i></button>
+        <mat-card-subtitle>
+          <mat-card-actions>
+          <button mat-button><i class="glyphicon glyphicon-plus"></i></button>
+            antal
+          <button mat-button><i class="glyphicon glyphicon-minus"></i></button>
+          </mat-card-actions>
+
+        </mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+
+      <mat-card mat-ripple>
+        <mat-card-header>
+          <img mat-card-avatar class="header-image"  src="assets/img/profile-photo-placeholder.png">
+          <mat-card-title>En god fralla<br> 10:-</mat-card-title>
+          <button mat-button><i class="glyphicon glyphicon-remove"></i></button>
+          <mat-card-subtitle>
+            <mat-card-actions>
+              <button mat-button><i class="glyphicon glyphicon-plus"></i></button>
+              antal
+              <button mat-button><i class="glyphicon glyphicon-minus"></i></button>
+            </mat-card-actions>
+          </mat-card-subtitle>
+        </mat-card-header>
+
+
+      </mat-card>
+
 
   </div>
+  <div class="form-container">
+  <button mat-raised-button color="accent">
+    BEKRÄFTA BESTÄLLNINGEN
+  </button>
+  </div>
+
   </div>
