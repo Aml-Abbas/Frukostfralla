@@ -2,4 +2,12 @@
   h1 {
     font-weight: 500;
   }
+  .form-container {
+    display: grid;
+
+    button {
+      margin-top: 2em;
+    }
+  }
+
 }
