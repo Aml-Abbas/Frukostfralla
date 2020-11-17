@@ -5,7 +5,8 @@ export class SellerOrderDetailsProduct {
   price: number;
   total: number;
 
-  constructor(name: string, amount: number, price: number) {
+  constructor(orderId: string, name: string, amount: number, price: number) {
+    this.orderId = orderId;
     this.name = name;
     this.amount = amount;
     this.price = price;

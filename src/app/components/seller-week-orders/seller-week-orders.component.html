@@ -18,6 +18,7 @@
   <mat-list>
     <h3 matSubheader>Aktuell denna vecka</h3>
     <mat-list-item mat-ripple *ngFor="let order of orders" (click)="navigateToDetails(order.orderId)">
+      <img mat-list-avatar src="assets/img/product-placeholder.png">
       <h3 matLine> {{order.buyer}} </h3>
       <p matLine> {{order.firstProduct}}... </p>
       <h3> {{order.total}}:- </h3>

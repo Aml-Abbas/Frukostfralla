@@ -3,6 +3,7 @@ import {OrderDetailsService} from '../../../services/order-details.service';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import {Router} from '@angular/router';
 import {SellerOrderDetailsProduct} from '../../model/SellerOrderDetailsProduct';
+import {SellerWeekOrdersItemDetails} from '../../model/SellerWeekOrdersItemDetails';
 
 
 @Component({
@@ -17,27 +18,22 @@ export class SellerOrderDetailsComponent implements OnInit {
   orderId: string;
   title = '';
 
-  buyer: string;
-  address: string;
-  mobileNumber: string;
-  total: number;
-  products: SellerOrderDetailsProduct[] = [];
+  itemDetails: SellerWeekOrdersItemDetails;
 
-  constructor(location: Location, router: Router, private orderDetails: OrderDetailsService) { }
+  constructor(location: Location, router: Router, private orderDetailsService: OrderDetailsService) {
+    this.location = location;
+    this.router = router;
+  }
 
   ngOnInit(): void {
-    this.orderDetails.currentOrderId$.subscribe(orderId => this.orderId = orderId);
-    console.log("order id = " + this.orderId);
+    this.orderDetailsService.currentOrderId$.subscribe(orderId => this.orderId = orderId);
+    console.log('order id = ' + this.orderId);
     this.title = 'Beställning #' + this.orderId;
+    this.itemDetails = this.orderDetailsService.fetchOrdersItemDetails();
   }
 
   navigateBack(): void {
     this.location.back();
   }
-
-  fetchOrderDetails(orderId: string) {
-
-  }
-
 
 }
