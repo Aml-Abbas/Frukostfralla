@@ -26,10 +26,9 @@
       <input matInput placeholder="Placeholder">
     </mat-form-field>
 
-    <button routerLinkActive="active"
-            routerLink="/seller-choose-bakery"
+    <button (click)="onChooseBakery()"
             mat-button class="text-button" style="margin: 16px 0 16px 0">
-      VÄLJ BAGERI
+      {{chosenBakery == undefined ? 'VÄLJ BAGERI' : chosenBakery.name}}
     </button>
 
 
@@ -72,7 +71,7 @@
     <mat-error>{{enteredPassword === enteredPassword2 ? '' : 'Passwords do not match'}}</mat-error>
 
     <button mat-raised-button color="accent" style="margin-top: 16px"
-            (click)="createProfile()">
+            (click)="onCreate()">
       SKAPA
     </button>
 

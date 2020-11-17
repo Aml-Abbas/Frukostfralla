@@ -47,7 +47,7 @@ const routes: Routes = [
   {path: 'sellers-list', component: SellersListComponent},
   {path: 'shopping-cart', component: ShoppingCartComponent},
   {path: 'seller-create-profile', component: SellerCreateProfileComponent},
-  {path: 'seller-choose-bakery', component: SellerChooseBakeryComponent},
+  {path: 'choose-bakery', component: SellerChooseBakeryComponent},
   {path: 'seller-start', component: SellerStartComponent},
   {path: 'seller-notifications', component: SellerNotificationsComponent},
   {path: 'seller-profile-editor', component: SellerProfileEditorComponent},

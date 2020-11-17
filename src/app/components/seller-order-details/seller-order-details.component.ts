@@ -20,7 +20,8 @@ export class SellerOrderDetailsComponent implements OnInit {
 
   itemDetails: SellerWeekOrdersItemDetails;
 
-  constructor(location: Location, router: Router, private orderDetailsService: OrderDetailsService) {
+  constructor(location: Location, router: Router,
+              private orderDetailsService: OrderDetailsService) {
     this.location = location;
     this.router = router;
   }

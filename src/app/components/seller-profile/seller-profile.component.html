@@ -33,7 +33,11 @@
 
     <mat-list-item mat-ripple role="listitem">Mitt område</mat-list-item>
     <mat-divider></mat-divider>
-    <mat-list-item mat-ripple role="listitem">Mitt bageri</mat-list-item>
+
+    <mat-list-item mat-ripple role="listitem" (click)="onChooseBakery()">
+      Mitt bageri - {{chosenBakery.name}}
+    </mat-list-item>
+
     <mat-divider></mat-divider>
     <mat-list-item mat-ripple role="listitem">07293785</mat-list-item>
     <mat-divider></mat-divider>
