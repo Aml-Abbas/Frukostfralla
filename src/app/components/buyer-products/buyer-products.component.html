@@ -1,1 +1,37 @@
-<p>buyer-products works!</p>
+<mat-toolbar class="toolbar" color="primary">
+  <span class="spacer"></span>
+  <span>{{ title }}</span>
+</mat-toolbar>
+
+<div class="container">
+  <div>
+    <div class="grid-container">
+      <mat-card mat-ripple>
+        <div class="img-container">
+          <img mat-card-image class="grid-img"
+               src="assets/img/profile-photo-placeholder.png"
+               alt="product-image-placeholder">
+        </div>
+        <mat-card-content>
+          En god fralla<br>
+          10:-
+        </mat-card-content>
+        <button mat-button>LÄGGA TILL</button>
+      </mat-card>
+      <mat-card mat-ripple>
+        <div class="img-container">
+          <img mat-card-image class="grid-img"
+               src="assets/img/profile-photo-placeholder.png"
+               alt="product-image-placeholder">
+        </div>
+        <mat-card-content>
+          God fralla<br>
+          10:-
+        </mat-card-content>
+        <button mat-button>LÄGGA TILL</button>
+      </mat-card>
+    </div>
+
+  </div>
+
+</div>

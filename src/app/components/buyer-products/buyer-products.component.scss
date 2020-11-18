@@ -1,0 +1,74 @@
+.toolbar {
+  cursor: default;
+  position: sticky;
+}
+
+.container {
+  height: 100%;
+  padding: 0 0 3em 0;
+  margin-bottom: 20%;
+  display: grid;
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+    grid-gap: 1em;
+    padding: 1em 1em 0 1em;
+
+    mat-card {
+      display: grid;
+      padding: 0;
+
+      .img-container {
+        display: grid;
+        width: 100%;
+        height: 100%;
+        align-content: center;
+        align-items: center;
+        justify-items: center;
+        justify-content: center;
+
+        .grid-img {
+          object-fit: cover;
+          width: 100%;
+          padding: 0;
+          margin: 0;
+        }
+
+      }
+      mat-card-content {
+        padding: 1em;
+      }
+
+
+    }
+
+  }
+
+}
+.mat-button{
+  background-color: #ffc107;
+}
+
+
+
+@media (min-width: 1150px) {
+
+  .container {
+    padding: 16px 25% 0 25%;
+    margin-bottom: 20%;
+  }
+
+
+  .toolbar {
+    padding: 0 25% 0 25%;
+  }
+
+  .form-container {
+    width: 50%;
+    padding: 0 25% 0 25%;
+    margin: 1em 0 0 0;
+  }
+
+}
+
