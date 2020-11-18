@@ -8,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class BuyerProductsComponent implements OnInit {
 
   constructor() { }
-
+  title = 'Säljarens frallor';
+  item = 'hello';
+  itemId = '1';
   ngOnInit(): void {
   }
 
+  addToCard(itemId: string): void {
+
+  }
 }
