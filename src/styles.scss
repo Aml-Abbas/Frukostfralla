@@ -1,3 +1,11 @@
+@import '../node_modules/@syncfusion/ej2-base/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-buttons/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-inputs/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-popups/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-lists/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-calendars/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-angular-calendars/styles/material.css';
 /* You can add global styles to this file, and also import other style files */
 $P-Dark: #c79100;
 $P-Light: #fff350;
@@ -32,6 +40,7 @@ mat-list-item {
 .container {
   padding: 16px 16px 0 16px;
   margin-bottom: 20%;
+  display: grid;
 }
 .buttons-container {
   display: grid;

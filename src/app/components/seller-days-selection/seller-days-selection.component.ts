@@ -18,6 +18,9 @@ export class SellerDaysSelectionComponent implements OnInit {
   weekDays: string[] = ['Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lördag', 'Söndag']
   selectedWeekDays: string[];
 
+  public dateValues: Date[] = [];
+  public multiSelect: Boolean = true;
+
   constructor(location: Location, router: Router) {
     this.location = location;
     this.router = router;

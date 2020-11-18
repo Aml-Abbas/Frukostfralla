@@ -6,12 +6,20 @@
 </mat-toolbar>
 <div class="container">
 
+<!--
   <mat-selection-list #daysList [(ngModel)]="selectedWeekDays"
   (ngModelChange)="onGroupsChange($event)">
     <mat-list-option *ngFor="let day of weekDays" [value]="day">
       {{day}}
     </mat-list-option>
   </mat-selection-list>
+-->
+
+  <h2>Välj dagar du kan leverera i</h2>
+  <ejs-calendar weekNumber='true'
+   [values]='dateValues' [isMultiSelection]='multiSelect'>
+
+  </ejs-calendar>
 
 
   <div class="buttons-container">

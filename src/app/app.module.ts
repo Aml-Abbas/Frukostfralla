@@ -45,7 +45,7 @@ import { SellerSendToBakeryComponent } from './components/seller-send-to-bakery/
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { BuyerProductsComponent } from './components/buyer-products/buyer-products.component';
 import {MatDialogModule} from '@angular/material/dialog';
-import {CalendarModule} from '@syncfusion/ej2-angular-calendars';
+import {CalendarModule} from "@syncfusion/ej2-angular-calendars";
 
 @NgModule({
   declarations: [
