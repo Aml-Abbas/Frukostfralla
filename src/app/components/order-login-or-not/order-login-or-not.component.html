@@ -1,4 +1,4 @@
-<mat-toolbar class="toolbar" color="primary">
+<mat-toolbar class="toolbar">
   <span class="spacer"></span>
   <span>{{ title }}</span>
 </mat-toolbar>
@@ -22,14 +22,12 @@
       </button>
     </mat-form-field>
 
-      <button
-        (click)="login();"
+      <button (click)="login();"
         mat-raised-button color="accent">
         LOGGA IN OCH BEKRÄFTA
       </button>
 
-
-      <button routerLink="/seller-create-profile" routerLinkActive="active"
+      <button routerLink="/buyer-signup" routerLinkActive="active"
               mat-button class="text-button">
         SKAPA PROFIL
       </button>

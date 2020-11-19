@@ -1,18 +1,19 @@
-<mat-toolbar class="toolbar" color="primary">
+<mat-toolbar class="toolbar">
   <span class="spacer"></span>
   <span>{{ title }}</span>
 </mat-toolbar>
+
 <div class="container">
   <h1 class="header">Tack för din beställning</h1>
   <h1 class="under-header">Skapa konto för lättare beställning</h1>
 
   <div class="form-container">
 
-    <button mat-raised-button color="accent">
+    <button mat-raised-button routerLink="/buyer-signup" color="accent">
       SKAPA KONTO
     </button>
 
-    <button routerLink="/seller-create-profile" routerLinkActive="active"
+    <button routerLink="/buyer-start" routerLinkActive="active"
             mat-button class="text-button">
       KÖP FLER
     </button>

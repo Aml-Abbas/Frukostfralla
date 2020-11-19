@@ -1,21 +1,24 @@
 .container {
+  padding: 16px 16px 0 16px;
+  margin-bottom: 20%;
+}
+
+.form-container {
+margin: 30px;
   display: grid;
-  padding: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   grid-gap: 2em;
+
 }
+.header {
+   margin: 2em 0 2em 0;
+   text-align: center;
+ }
 
-h2 {
-  width: 100%;
-}
+@media (min-width: 1150px) {
 
-@media (min-width: 900px) {
-
-  .container {
+  .form-container {
+    margin: 50px;
     display: grid;
-    padding-left: 20%;
-    padding-right: 20%;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     grid-gap: 2em;
 
   }

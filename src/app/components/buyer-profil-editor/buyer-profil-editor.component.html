@@ -1,9 +1,10 @@
-<mat-toolbar color="primary">
+<mat-toolbar class="toolbar">
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
     <mat-icon (click)="navigateBack()">arrow_back</mat-icon>
   </button>
   <span>{{title}}</span>
 </mat-toolbar>
+
 <div class="container">
   <div class="form-container">
     <mat-form-field appearance="fill">
@@ -43,17 +44,14 @@
 
     <div class="buttons-container">
 
-      <button routerLinkActive="active"
-              mat-button class="text-button">
+      <button routerLinkActive="active" mat-button class="text-button">
         AVBRYT
       </button>
-      <button
-        mat-raised-button color="accent">
+      <button mat-raised-button color="accent">
         BEKRÄFTA
       </button>
 
     </div>
-
 
   </div>
 </div>

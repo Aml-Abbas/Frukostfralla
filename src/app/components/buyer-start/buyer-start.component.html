@@ -1,4 +1,4 @@
-<mat-toolbar class="toolbar" color="primary">
+<mat-toolbar class="toolbar" >
   <span class="spacer"></span>
   <span>{{ title }}</span>
 </mat-toolbar>
@@ -11,11 +11,9 @@
       <mat-label>Stad</mat-label>
       <input matInput placeholder="Helsigborg" [(ngModel)]='city'>
     </mat-form-field>
-      <button
-        (click)="findCity();"
+      <button (click)="findCity();"
         mat-raised-button color="accent">
-        SÖK
-      </button>
+        SÖK</button>
 
   </div>
 
@@ -43,8 +41,7 @@
               mat-button class="text-button">
         SKAPA KONTO
       </button>
-      <button
-        (click)="login();"
+      <button (click)="login();"
         mat-raised-button color="accent">
         LOGGA IN
       </button>

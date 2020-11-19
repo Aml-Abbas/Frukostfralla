@@ -1,7 +1,8 @@
-<mat-toolbar class="toolbar" color="primary">
+<mat-toolbar class="toolbar">
   <span class="spacer"></span>
   <span>{{ title }}</span>
 </mat-toolbar>
+
 <div class="container">
   <h1 class="header">Logga in</h1>
 
@@ -9,7 +10,7 @@
 
     <mat-form-field appearance="fill">
       <mat-label>E-post</mat-label>
-      <input matInput placeholder="Placeholder" value="{{email}}">
+      <input matInput placeholder="Placeholder"  value="{{email}}">
     </mat-form-field>
 
     <mat-form-field appearance="fill">
@@ -23,12 +24,11 @@
 
     <div class="buttons-container">
 
-      <button routerLink="/seller-create-profile" routerLinkActive="active"
+      <button routerLink="/buyer-signup" routerLinkActive="active"
               mat-button class="text-button">
         SKAPA PROFIL
       </button>
-      <button
-        (click)="login();"
+      <button (click)="login();"
         mat-raised-button color="accent">
         LOGGA IN
       </button>
