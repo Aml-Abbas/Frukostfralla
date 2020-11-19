@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar class="toolbar">
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
     <mat-icon (click)="navigateBack()">arrow_back</mat-icon>
   </button>
@@ -15,7 +15,7 @@
   </mat-selection-list>
 -->
 
-  <h2>Välj dagar du kan leverera i</h2>
+  <h2 class="header">Välj dagar du kan leverera i</h2>
   <ejs-calendar weekNumber='true'
    [values]='dateValues' [isMultiSelection]='multiSelect'>
 
