@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
 export class BuyerStartComponent implements OnInit {
 router: Router;
 
-  title = 'Välkommen';
+  title = 'Välkommen - Välj stad';
   email = '';
   enteredPassword = '';
   hide = true;

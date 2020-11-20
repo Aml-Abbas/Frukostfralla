@@ -1,35 +1,6 @@
-.toolbar {
-  cursor: default;
-  position: sticky;
-  background-color: #ffc107;
-
-}
-.text-button {
-  color: #c79100;
-}
-
-.container {
-  padding: 16px 16px 0 16px;
-
-  .form-container {
-    margin: 16px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-    grid-gap: 2em;
-    img {
-      margin-top: 3em;
-      align-self: center;
-      justify-self: center;
-    }
-  }
-
-}
-
-.buttons-container {
-  position: sticky;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-items: center;
-  bottom: 5em;
+img {
+  margin: 3em 0 3em 0;
+  align-self: center;
+  justify-self: center;
 }
 

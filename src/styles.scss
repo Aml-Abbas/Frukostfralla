@@ -21,7 +21,10 @@ html, body {
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-toolbar.mat-primary {
+  background-color: $P-Primary;
 }
 
 mat-list-item {
@@ -30,23 +33,46 @@ mat-list-item {
 
 .toolbar-spacer {
   flex: 1 1 auto;
-
 }
 
 .back-icon {
   margin-right: 16px;
 }
 
+mat-icon {
+  cursor: pointer;
+}
 .container {
   padding: 16px 16px 0 16px;
   margin-bottom: 20%;
   display: grid;
 }
+
+.form-container {
+  display: grid;
+  grid-gap: 2em;
+}
+.header {
+  text-align: center;
+}
+
+.form-field {
+  width: 100%;
+}
+
+.text-button {
+  color: $P_Dark;
+}
+#logout-button {
+  width: 100%;
+  text-align: center;
+  margin: 8px 0 8px 0;
+}
+
 .buttons-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
-  margin-top: 5em;
 }
 
 
@@ -57,20 +83,23 @@ mat-list-item {
     margin-bottom: 20%;
   }
 
-
-  .toolbar {
-    padding: 0 25% 0 25%;
+  .mat-toolbar-row, .mat-toolbar-single-row {
+    padding: 0 25% 0 25% !important;
   }
-
   .form-container {
-    width: 50%;
-    padding: 0 25% 0 25%;
-    margin: 1em 0 0 0;
+    padding: 0 5em 0 5em;
   }
 
-  .buttons-container {
-    width: 50%;
-    padding: 0 25% 0 25%;
+
+}
+
+/*
+
+@media (min-width: 850px) {
+  .mat-list-base .mat-list-item .mat-list-item-content, .mat-list-base .mat-list-option .mat-list-item-content {
+    display: grid !important;
+    justify-items: center;
   }
 }
+*/
 

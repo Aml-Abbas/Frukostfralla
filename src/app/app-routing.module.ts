@@ -57,6 +57,7 @@ const routes: Routes = [
   {path: 'seller-days-selection', component: SellerDaysSelectionComponent},
   {path: 'seller-send-to-bakery', component: SellerSendToBakeryComponent},
   {path: 'buyer-products', component: BuyerProductsComponent},
+  {path:  'order-login-or-not', component: OrderLoginOrNotComponent},
 
   {path: '', component: LandingComponent}
 

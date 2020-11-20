@@ -27,7 +27,7 @@ export class ChooseBakeryService {
 
   setChosenBakery(bakery: Bakery) {
     this.chosenBakerySource.next(bakery);
-    console.log("setChosenBakery: " + bakery);6
+    console.log("setChosenBakery: " + bakery);
   }
 
   getBakeries(): Bakery[] {

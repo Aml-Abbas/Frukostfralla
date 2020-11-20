@@ -1,4 +1,4 @@
-<mat-toolbar class="toolbar">
+<mat-toolbar class="toolbar" color="primary">
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
     <mat-icon (click)="navigateBack()">arrow_back</mat-icon>
   </button>
@@ -6,21 +6,10 @@
 </mat-toolbar>
 <div class="container">
 
-<!--
-  <mat-selection-list #daysList [(ngModel)]="selectedWeekDays"
-  (ngModelChange)="onGroupsChange($event)">
-    <mat-list-option *ngFor="let day of weekDays" [value]="day">
-      {{day}}
-    </mat-list-option>
-  </mat-selection-list>
--->
-
   <h2 class="header">Välj dagar du kan leverera i</h2>
   <ejs-calendar weekNumber='true'
-   [values]='dateValues' [isMultiSelection]='multiSelect'>
-
+                [values]='dateValues' [isMultiSelection]='multiSelect'>
   </ejs-calendar>
-
 
   <div class="buttons-container">
 
@@ -29,7 +18,7 @@
       AVBRYT
     </button>
     <button (click)="onSave()"
-      mat-raised-button color="accent">
+            mat-raised-button color="accent">
       SPARA
     </button>
 

@@ -23,7 +23,8 @@ export class SellerChooseBakeryComponent implements OnInit {
 
   bakeries: Bakery[];
 
-  constructor(location: Location, router: Router, private bakeryService: ChooseBakeryService) {
+  constructor(location: Location, router: Router,
+              private bakeryService: ChooseBakeryService) {
     this.location = location;
     this.router = router;
   }

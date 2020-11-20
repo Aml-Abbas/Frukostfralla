@@ -1,4 +1,4 @@
-<mat-toolbar class="toolbar">
+<mat-toolbar class="toolbar" color="primary">
   <span class="spacer"></span>
   <span>{{ title }}</span>
 </mat-toolbar>
@@ -18,19 +18,19 @@
     </mat-form-field>
 
     <img alt="product-placeholder" src="assets/img/product-placeholder.png"
-    (click)="chooseImage()">
+         (click)="chooseImage()">
 
   </div>
 
-</div>
-<div class="buttons-container">
+  <div class="buttons-container">
 
-  <button routerLinkActive="active" mat-button class="text-button"
-          (click)="navigateBack()">
-    AVBRYT
-  </button>
-  <button mat-raised-button color="accent"
-          (click)="saveProduct()">
-    SPARA
-  </button>
+    <button routerLinkActive="active" mat-button class="text-button"
+            (click)="navigateBack()">
+      AVBRYT
+    </button>
+    <button mat-raised-button color="accent"
+            (click)="saveProduct()">
+      SPARA
+    </button>
+  </div>
 </div>

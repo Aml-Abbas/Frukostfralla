@@ -1,6 +1,5 @@
 export class Bakery {
   name: string;
-
   area: string;
   street: string;
   house: string;
