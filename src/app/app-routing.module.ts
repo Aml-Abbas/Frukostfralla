@@ -28,6 +28,7 @@ import {SellerOrderHistoryComponent} from './components/seller-order-history/sel
 import {SellerDaysSelectionComponent} from './components/seller-days-selection/seller-days-selection.component';
 import {SellerSendToBakeryComponent} from './components/seller-send-to-bakery/seller-send-to-bakery.component';
 import {BuyerProductsComponent} from './components/buyer-products/buyer-products.component';
+import {SellersComponent} from './components/sellers/sellers.component';
 
 const routes: Routes = [
   {path: 'buyer-login', component: BuyerLoginComponent},
@@ -56,6 +57,7 @@ const routes: Routes = [
   {path: 'seller-order-history', component: SellerOrderHistoryComponent},
   {path: 'seller-days-selection', component: SellerDaysSelectionComponent},
   {path: 'seller-send-to-bakery', component: SellerSendToBakeryComponent},
+  {path: 'sellers', component: SellersComponent},
   {path: 'buyer-products', component: BuyerProductsComponent},
   {path:  'order-login-or-not', component: OrderLoginOrNotComponent},
 
