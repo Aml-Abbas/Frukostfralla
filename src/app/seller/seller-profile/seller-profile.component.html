@@ -8,25 +8,27 @@
   </button>
 </mat-toolbar>
 <div class="container">
-  <div class="profile-photo-container">
-    <img class="profile-photo" src="../../../assets/img/profile-photo-placeholder.png">
-    <h1 style="margin-top: 1em">Fredrik</h1>
-  </div>
+
+  <label class="image-chooser">
+    <input id="image-input" type="file" accept="image/*" (change)="chooseImage($event)">
+    <img class="profile-photo" alt="profile photo" src="{{this.imageSrc}}">
+  </label>
+  <h1 style="margin-top: 1em">Fredrik</h1>
 
   <mat-list role="list">
     <mat-list-item mat-ripple role="listitem">fredrik.p@domain.se</mat-list-item>
     <mat-divider></mat-divider>
-    <mat-list-item mat-ripple role="listitem" routerLink="/seller-my-products">
+    <mat-list-item mat-ripple role="listitem" routerLink="../seller-my-products">
       Mina frallor
     </mat-list-item>
     <mat-divider></mat-divider>
 
-    <mat-list-item mat-ripple role="listitem" routerLink="/seller-week-orders">
+    <mat-list-item mat-ripple role="listitem" routerLink="../seller-week-orders">
       Beställningar
     </mat-list-item>
 
     <mat-divider></mat-divider>
-    <mat-list-item mat-ripple role="listitem" routerLink="/seller-days-selection">
+    <mat-list-item mat-ripple role="listitem" routerLink="../seller-days-selection">
       Mina dagar
     </mat-list-item>
     <mat-divider></mat-divider>
@@ -44,7 +46,7 @@
   </mat-list>
 
   <button mat-button class="text-button">ÄNDRA LÖSENORD</button>
-  <button routerLink="/seller-start" routerLinkActive="active"
+  <button (click)="logout()"
     mat-button color="warn" id="logout-button">
     LOGGA UT
   </button>

@@ -68,6 +68,6 @@ import {CalendarModule} from '@syncfusion/ej2-angular-calendars';
     MatSnackBarModule,
     MatDialogModule,
     CalendarModule
-  ]
+  ],
 })
 export class SellerModule { }

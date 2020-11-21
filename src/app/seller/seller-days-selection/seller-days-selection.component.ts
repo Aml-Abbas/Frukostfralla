@@ -46,12 +46,12 @@ export class SellerDaysSelectionComponent implements OnInit {
 
   onSave(): void {
     // TODO: Make a post call to the API to save the data
-    this.router.navigate(['/seller-profile'], {replaceUrl: true});
+    this.location.back();
 
   }
 
   onCancel(): void {
-    this.router.navigate(['/seller-profile'], {replaceUrl: true});
+    this.location.back();
   }
 
 }

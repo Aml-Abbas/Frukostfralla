@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {ChooseBakeryService} from '../../../services/choose-bakery.service';
 import {Bakery} from '../../model/Bakery';
 import {SellerProfileService} from '../../../services/seller-profile.service';
@@ -16,7 +16,12 @@ export class SellerProfileComponent implements OnInit {
 
   chosenBakery: Bakery;
 
+  imageSrc = '../../../assets/img/profile-photo-placeholder.png';
+
+  file = null;
+
   constructor(router: Router,
+              private aRoute: ActivatedRoute,
               private bakeryService: ChooseBakeryService,
               private sellerProfileService: SellerProfileService) {
     this.router = router;
@@ -28,12 +33,32 @@ export class SellerProfileComponent implements OnInit {
   }
 
   public navigateToProfileEditor(): void {
-    this.router.navigate(['/seller-profile-editor']);
+    this.router.navigate(['../seller-profile-editor'], {relativeTo: this.aRoute});
   }
 
   onChooseBakery() {
     this.bakeryService.setFrom('./seller-profile');
-    this.router.navigate(['./choose-bakery']);
+    this.router.navigate(['../choose-bakery'], {relativeTo: this.aRoute});
   }
 
+  chooseImage(event) {
+    const reader = new FileReader();
+
+    if (event.target.files && event.target.files.length) {
+      [this.file] = event.target.files;
+      reader.readAsDataURL(this.file);
+
+      reader.onload = () => {
+        this.imageSrc = reader.result as string;
+
+        console.log(this.imageSrc);
+        console.log(this.file.valueOf());
+      }
+    }
+
+  }
+
+  logout() {
+    this.router.navigate(['../seller-start'], {relativeTo: this.aRoute, replaceUrl: true})
+  }
 }
