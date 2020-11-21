@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {Buyer} from '../../model/Buyer';
+import {BuyerInfoService} from '../../../services/buyer-info.service';
+import {Location} from '@angular/common';
 
 
 @Component({
@@ -10,17 +13,25 @@ import {Router} from '@angular/router';
 export class BuyerProfileComponent implements OnInit {
   title = 'Min profil';
   router: Router;
+  buyer: Buyer;
+  location: Location;
 
-  constructor(router: Router) {
+  constructor(router: Router, private BuyerInfoService: BuyerInfoService) {
     this.router = router;
+
   }
 
   ngOnInit(): void {
+    this.BuyerInfoService.currentBuyer$.subscribe(buyer =>this.buyer= buyer);
+
   }
 
   public navigateToProfileEditor(): void {
-    this.router.navigate(['/seller-profile-editor']);
+    this.router.navigate(['/buyer-profile-editor']);
   }
 
+  public navigateBack(): void {
+    this.location.back();
+  }
 
 }

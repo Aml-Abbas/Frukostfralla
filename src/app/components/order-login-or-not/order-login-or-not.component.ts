@@ -27,7 +27,7 @@ export class OrderLoginOrNotComponent implements OnInit {
   public login(): void {
     // log in if credentials are correct
     if (this.checkCred()) {
-      this.router.navigate(['/seller-my-products']);
+      this.router.navigate(['/confirmation-login']);
     }
   }
 

@@ -1,4 +1,4 @@
-<mat-toolbar class="toolbar">
+<mat-toolbar class="toolbar" color="primary">
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
     <mat-icon (click)="navigateBack()">arrow_back</mat-icon>
   </button>
@@ -9,45 +9,34 @@
   <div class="form-container">
     <mat-form-field appearance="fill">
       <mat-label>Epost</mat-label>
-      <input matInput placeholder="Placeholder">
+      <input  [(ngModel)]='enteredEmail' matInput placeholder="{{buyer.email}}">
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Namn</mat-label>
-      <input matInput placeholder="Placeholder">
+      <input  [(ngModel)]='enteredName' matInput placeholder="{{buyer.name}}">
     </mat-form-field>
-
     <mat-form-field appearance="fill">
       <mat-label>Mobilnummer</mat-label>
-      <input matInput placeholder="Placeholder">
+      <input  [(ngModel)]='enteredMobile' matInput placeholder=" {{buyer.mobile}}">
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Stad</mat-label>
-      <input matInput placeholder="Placeholder">
+      <input  [(ngModel)]='enteredCity' matInput placeholder="{{buyer.city}}">
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Ort</mat-label>
-      <input matInput placeholder="Placeholder">
+      <input  [(ngModel)]='enteredStreet' matInput placeholder="{{buyer.street}}">
     </mat-form-field>
-
-    <mat-form-field appearance="fill" style="margin-top: 16px">
-      <mat-label>Ditt befintliga lösenord</mat-label>
-      <input [(ngModel)]='enteredPassword' matInput [type]="hide ? 'password' : 'text'">
-      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-              [attr.aria-pressed]="hide">
-        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-      </button>
-    </mat-form-field>
-
 
     <div class="buttons-container">
 
-      <button routerLinkActive="active" mat-button class="text-button">
+      <button routerLink="/buyer-profile" routerLinkActive="active" mat-button class="text-button">
         AVBRYT
       </button>
-      <button mat-raised-button color="accent">
+      <button (click)="changeBuyerInfo();" routerLink="/buyer-profile"  mat-raised-button color="accent">
         BEKRÄFTA
       </button>
 

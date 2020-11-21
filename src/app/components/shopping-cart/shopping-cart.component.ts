@@ -78,12 +78,12 @@ export class ShoppingCartComponent implements OnInit {
   onConfirm(): void {
     if (this.loggedIn) {
     //  TODO: Place the order and navigate to the "Thanks for your order" screen
-      this.router.navigate(['/final-order-confirmation'], {replaceUrl: true});
+      this.router.navigate(['/confirmation-login'], {replaceUrl: true});
     } else {
     //  TODO: Give the user the option to login, signup or place the order without logging in
     //  If the user chooses the latter make the user enter their info
     //  a.k.a navigate to conformation-no-login
-      this.router.navigate(['/confirmation-no-login'], {replaceUrl: true});
+      this.router.navigate(['/order-login-or-not'], {replaceUrl: true});
 
     }
   }

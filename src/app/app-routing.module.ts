@@ -60,7 +60,6 @@ const routes: Routes = [
   {path: 'sellers', component: SellersComponent},
   {path: 'buyer-products', component: BuyerProductsComponent},
   {path:  'order-login-or-not', component: OrderLoginOrNotComponent},
-
   {path: '', component: LandingComponent}
 
 ];

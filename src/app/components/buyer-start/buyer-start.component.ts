@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {BuyerStartService} from '../../../services/buyer-start.service';
 
 @Component({
   selector: 'app-buyer-start',
@@ -13,9 +14,9 @@ router: Router;
   email = '';
   enteredPassword = '';
   hide = true;
-  city = '';
+  city: string;
 
-  constructor(router: Router) {
+  constructor(router: Router, private buyerStartService: BuyerStartService) {
     this.router = router;
 
   }
@@ -34,7 +35,10 @@ router: Router;
     return true;
   }
 
-  public findCity(): boolean {
-    return false;
+  findCity() {
+    this.buyerStartService.setCity(this.city);
+    this.router.navigate(['/sellers']).then(result => {
+      console.log(result.valueOf());
+    })
   }
 }

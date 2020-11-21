@@ -1,5 +1,8 @@
 <mat-toolbar class="toolbar" color="primary">
   <span class="spacer"></span>
+  <mat-icon mat-ripple class="back-icon" (click)="navigateBack()">
+    arrow_back
+  </mat-icon>
   <span>{{ title }}</span>
 </mat-toolbar>
 <div class="container">
@@ -8,7 +11,7 @@
       <mat-card class="product-card" *ngFor="let product of products">
         <mat-card-header>
           <div mat-card-avatar class="header-image" mat-ripple>
-            <mat-icon class="cart">add_shopping_cart</mat-icon>
+            <mat-icon (click)="addToCart(product.id);" class="cart">add_shopping_cart</mat-icon>
           </div>
           <mat-card-title>{{product.name}}</mat-card-title>
           <mat-card-subtitle>{{product.price}}:-</mat-card-subtitle>

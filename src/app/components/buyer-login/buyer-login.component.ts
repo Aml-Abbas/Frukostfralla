@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 
 
 @Component({
   selector: 'app-buyer-login',
   templateUrl: './buyer-login.component.html',
-  styleUrls: ['./buyer-login.component.scss']
+  styleUrls: ['./buyer-login.component.scss'],
+  providers: [Location, {provide: LocationStrategy, useClass: PathLocationStrategy}]
+
 })
 export class BuyerLoginComponent implements OnInit {
 
@@ -15,9 +18,11 @@ export class BuyerLoginComponent implements OnInit {
   email = '';
   enteredPassword = '';
   hide = true;
+  location: Location;
 
-  constructor(router: Router) {
+  constructor(router: Router, location: Location) {
     this.router = router;
+    this.location = location;
 
   }
 
@@ -34,5 +39,7 @@ export class BuyerLoginComponent implements OnInit {
   public checkCred(): boolean {
     return true;
   }
-
+  public navigateBack(): void {
+    this.location.back();
+  }
 }

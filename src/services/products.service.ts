@@ -15,16 +15,16 @@ export class ProductsService {
 
   getProductsBySeller(sellerId: string): Product[] {
     return [
-      new Product("", "Baguette", 10),
-      new Product("", "Baguette", 10),
-      new Product("", "Baguette", 10),
-      new Product("", "Baguette", 10),
-      new Product("", "Baguette", 10),
-      new Product("", "Baguette", 10),
-      new Product("", "Baguette", 10),
-      new Product("", "Baguette", 10),
-      new Product("", "Baguette", 10),
-      new Product("", "Baguette", 10)
+      new Product("","", "Baguette", 10),
+      new Product("", "","Baguette", 10),
+      new Product("","", "Baguette", 10),
+      new Product("","", "Baguette", 10),
+      new Product("","", "Baguette", 10),
+      new Product("","", "Baguette", 10),
+      new Product("","", "Baguette", 10),
+      new Product("","", "Baguette", 10),
+      new Product("","" ,"Baguette", 10),
+      new Product("","", "Baguette", 10)
     ];
   }
 

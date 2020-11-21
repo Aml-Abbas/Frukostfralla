@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
+import {Router} from '@angular/router';
+import {Buyer} from '../../model/Buyer';
+import {BuyerInfoService} from '../../../services/buyer-info.service';
 
 @Component({
   selector: 'app-buyer-profil-editor',
@@ -12,18 +15,30 @@ export class BuyerProfilEditorComponent implements OnInit {
 
   title = 'Redigera profil';
   location: Location;
-  enteredPassword = '';
   hide = true;
+  router: Router;
+  buyer: Buyer;
+  enteredEmail:string;
+  enteredName:string;
+  enteredMobile:string;
+  enteredCity:string;
+  enteredStreet:string;
 
-  constructor(location: Location) {
+  constructor(location: Location, router: Router, private BuyerInfoService: BuyerInfoService) {
     this.location = location;
+    this.router = router;
   }
 
   ngOnInit(): void {
+    this.BuyerInfoService.currentBuyer$.subscribe(buyer =>this.buyer= buyer);
+
   }
 
   public navigateBack(): void {
     this.location.back();
   }
 
+  changeBuyerInfo(){
+
+  }
 }
