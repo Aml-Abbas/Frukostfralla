@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {ChooseBakeryService} from '../../../services/choose-bakery.service';
 import {Bakery} from '../../model/Bakery';
 import {MatSnackBar} from '@angular/material/snack-bar';
@@ -16,6 +16,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 export class SellerCreateProfileComponent implements OnInit {
   title = 'Skapa profil';
   router: Router;
+  location: Location;
   hide = true;
 
   email = '';
@@ -26,10 +27,12 @@ export class SellerCreateProfileComponent implements OnInit {
 
   chosenBakery: Bakery;
 
-  constructor(router: Router,
+  constructor(router: Router, location: Location,
               private bakeryService: ChooseBakeryService,
-              private _snackBar: MatSnackBar) {
+              private _snackBar: MatSnackBar,
+              private aRoute: ActivatedRoute) {
     this.router = router;
+    this.location = location;
   }
 
   ngOnInit(): void {
@@ -38,9 +41,9 @@ export class SellerCreateProfileComponent implements OnInit {
     );
   }
 
-  public navigateToStart(): void {
+  public navigateBack(): void {
     // Navigate back to to seller start page without pushing this page to history
-    this.router.navigate(['/seller-start'], {replaceUrl: true});
+    this.location.back();
   }
 
   onCreate(): void {
@@ -50,8 +53,13 @@ export class SellerCreateProfileComponent implements OnInit {
       this._snackBar.open('Rätta felen.', 'Ok', {
         duration: 2000
       });
+      this.router.navigate(
+        ['../seller-profile'],
+        {replaceUrl: true, relativeTo: this.aRoute});
     } else {
-      this.router.navigate(['/seller-profile'], {replaceUrl: true});
+      this.router.navigate(
+        ['../seller-profile'],
+        {replaceUrl: true, relativeTo: this.aRoute});
     }
   }
 

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-seller-start',
@@ -14,7 +14,7 @@ export class SellerStartComponent implements OnInit {
   enteredPassword = '';
   hide = true;
 
-  constructor(router: Router) {
+  constructor(router: Router, private aRoute: ActivatedRoute) {
     this.router = router;
 
   }
@@ -25,7 +25,7 @@ export class SellerStartComponent implements OnInit {
   public login(): void {
     // log in if credentials are correct
     if (this.checkCred()) {
-      this.router.navigate(['/seller-my-products']);
+      this.router.navigate(['../seller-my-products'], {relativeTo: this.aRoute});
     }
   }
 
