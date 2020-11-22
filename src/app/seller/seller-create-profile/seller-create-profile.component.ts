@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import {ActivatedRoute, Router} from '@angular/router';
-import {ChooseBakeryService} from '../../../services/choose-bakery.service';
+import {BakeriesService} from '../../../services/bakeries.service';
 import {Bakery} from '../../model/Bakery';
 import {MatSnackBar} from '@angular/material/snack-bar';
 
@@ -28,7 +28,7 @@ export class SellerCreateProfileComponent implements OnInit {
   chosenBakery: Bakery;
 
   constructor(router: Router, location: Location,
-              private bakeryService: ChooseBakeryService,
+              private bakeryService: BakeriesService,
               private _snackBar: MatSnackBar,
               private aRoute: ActivatedRoute) {
     this.router = router;

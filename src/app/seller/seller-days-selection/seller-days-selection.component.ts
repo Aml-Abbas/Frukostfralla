@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import {Router} from '@angular/router';
 import {MatListOption} from '@angular/material/list';
+import {SellerProfileService} from '../../../services/seller-profile.service';
 
 @Component({
   selector: 'app-seller-days-selection',
@@ -18,10 +19,10 @@ export class SellerDaysSelectionComponent implements OnInit {
   weekDays: string[] = ['Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lördag', 'Söndag']
   selectedWeekDays: string[];
 
-  public dateValues: Date[] = [];
+  public dateValues: Date[] = [new Date('2020-11-23')];
   public multiSelect: Boolean = true;
 
-  constructor(location: Location, router: Router) {
+  constructor(location: Location, router: Router, private profileService: SellerProfileService) {
     this.location = location;
     this.router = router;
 
@@ -29,10 +30,7 @@ export class SellerDaysSelectionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    /**
-     *  TODO: Make a get call to the API to get the user's week days and save them in the array weekDays
-     *  this.weekDays = days from the backend
-     */
+    this.dateValues = this.profileService.getDates();
   }
 
   public navigateBack(): void {
@@ -46,6 +44,7 @@ export class SellerDaysSelectionComponent implements OnInit {
 
   onSave(): void {
     // TODO: Make a post call to the API to save the data
+    this.profileService.saveDates(this.dateValues);
     this.location.back();
 
   }

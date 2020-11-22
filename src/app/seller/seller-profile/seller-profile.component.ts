@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {ChooseBakeryService} from '../../../services/choose-bakery.service';
+import {BakeriesService} from '../../../services/bakeries.service';
 import {Bakery} from '../../model/Bakery';
 import {SellerProfileService} from '../../../services/seller-profile.service';
 
@@ -14,22 +14,27 @@ export class SellerProfileComponent implements OnInit {
   title = 'Min profil';
   router: Router;
 
-  chosenBakery: Bakery;
-
-  imageSrc = '../../../assets/img/profile-photo-placeholder.png';
-
   file = null;
+
+  imageSrc: string;
+  name: string;
+  email: string;
+  bakery: Bakery;
+  mobile: string;
 
   constructor(router: Router,
               private aRoute: ActivatedRoute,
-              private bakeryService: ChooseBakeryService,
+              private bakeryService: BakeriesService,
               private sellerProfileService: SellerProfileService) {
     this.router = router;
   }
 
   ngOnInit(): void {
-    this.bakeryService.currentBakery$
-      .subscribe(bakery => this.chosenBakery = bakery);
+    this.imageSrc = this.sellerProfileService.getProfilePhoto('');
+    this.name = this.sellerProfileService.getNameById('');
+    this.email = this.sellerProfileService.getEmailById('');
+    this.bakery = this.sellerProfileService.getSellerBakery('');
+    this.mobile = this.sellerProfileService.getMobileById('');
   }
 
   public navigateToProfileEditor(): void {

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {SellerWeekOrdersItem} from '../../model/SellerWeekOrdersItem';
 import {OrderDetailsService} from '../../../services/order-details.service';
 
@@ -19,7 +19,10 @@ export class SellerWeekOrdersComponent implements OnInit {
 
   orderId: string;
 
-  constructor(location: Location, router: Router, private orderDetails: OrderDetailsService) {
+  constructor(location: Location,
+              router: Router,
+              private orderDetails: OrderDetailsService,
+              private aRoute: ActivatedRoute) {
     this.location = location;
     this.router = router;
     this.orders = [];
@@ -48,7 +51,7 @@ export class SellerWeekOrdersComponent implements OnInit {
 
   navigateToDetails(orderId: string): void {
     this.orderDetails.setOrderId(orderId);
-    this.router.navigate(['/seller-order-details'])
+    this.router.navigate(['../seller-order-details'], {relativeTo: this.aRoute})
   }
 
 }

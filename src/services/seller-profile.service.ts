@@ -16,7 +16,7 @@ export class SellerProfileService {
   constructor() {
   }
 
-  getSellerBakery(): Bakery {
+  getSellerBakery(userid: string): Bakery {
     return new Bakery('Odens Bageri', 'Oden', 'Bruksgatan', '7A', 'Höganäs', 'Skåne');
   }
 
@@ -24,4 +24,47 @@ export class SellerProfileService {
   setSellerId(id: string) {
     this.sellerId.next(id);
   }
+
+  getDates(): Date[] {
+    return [];
+  }
+
+  saveDates(dates: Date[]) {
+
+  }
+
+  getNameById(userid: string): string {
+    return 'Marcus'
+  }
+
+  getEmailById(userid: string): string {
+    return 'marcus@domain.se'
+  }
+
+  getMobileById(userid: string): string {
+    return '0720002384'
+  }
+
+  getProfilePhoto(userid: string): string {
+    return '../../../assets/img/profile-photo-placeholder.png';
+  }
+
+  getHashedPassword(userid: string): string {
+    return '1234'
+  }
+
+
+  saveName(name: string) {
+
+  }
+
+  saveMobile(mobile: string) {
+
+  }
+
+  saveEmail(email: string) {
+
+  }
+
+
 }
