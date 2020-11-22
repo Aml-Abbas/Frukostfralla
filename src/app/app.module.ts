@@ -27,11 +27,13 @@ import {CalendarModule} from "@syncfusion/ej2-angular-calendars";
 // Feature Modules
 import {BuyerModule} from './buyer/buyer.module';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { UpdatePasswordComponent } from './components/update-password/update-password.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingComponent
+    LandingComponent,
+    UpdatePasswordComponent
   ],
   imports: [
     BrowserModule,

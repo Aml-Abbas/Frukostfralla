@@ -45,7 +45,10 @@
     <mat-divider></mat-divider>
   </mat-list>
 
-  <button mat-button class="text-button">ÄNDRA LÖSENORD</button>
+  <button mat-button class="text-button" routerLink="/update-password">
+    ÄNDRA LÖSENORD
+  </button>
+
   <button (click)="logout()"
     mat-button color="warn" id="logout-button">
     LOGGA UT
