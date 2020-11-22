@@ -6,7 +6,7 @@ import {Bakery} from '../app/model/Bakery';
   providedIn: 'root'
 })
 
-export class ChooseBakeryService {
+export class BakeriesService {
 
   // Observable sources
 

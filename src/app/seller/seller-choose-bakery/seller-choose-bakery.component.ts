@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit, ViewChild} from '@angular/core';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import {Router} from '@angular/router';
-import {ChooseBakeryService} from '../../../services/choose-bakery.service';
+import {BakeriesService} from '../../../services/bakeries.service';
 import {Bakery} from '../../model/Bakery';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {FormControl} from '@angular/forms';
@@ -44,7 +44,7 @@ export class SellerChooseBakeryComponent implements OnInit {
   counties: string[];
 
   constructor(location: Location, router: Router,
-              private bakeryService: ChooseBakeryService,
+              private bakeryService: BakeriesService,
               private citiesService: CitiesService) {
     this.location = location;
     this.router = router;

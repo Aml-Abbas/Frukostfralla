@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {ChooseBakeryService} from '../../../services/choose-bakery.service';
+import {BakeriesService} from '../../../services/bakeries.service';
 import {Bakery} from '../../model/Bakery';
 import {SellerProfileService} from '../../../services/seller-profile.service';
 
@@ -24,7 +24,7 @@ export class SellerProfileComponent implements OnInit {
 
   constructor(router: Router,
               private aRoute: ActivatedRoute,
-              private bakeryService: ChooseBakeryService,
+              private bakeryService: BakeriesService,
               private sellerProfileService: SellerProfileService) {
     this.router = router;
   }
