@@ -24,7 +24,7 @@ export class SellerProfileEditorComponent implements OnInit {
   mobile: string;
 
   emailControl = new FormControl('', [Validators.email]);
-  mobileControl = new FormControl('', [
+  mobileControl = new FormControl(0, [
     Validators.minLength(10),
     Validators.maxLength(13)
   ]);
@@ -45,57 +45,53 @@ export class SellerProfileEditorComponent implements OnInit {
     this.location.back();
   }
 
-  getEmailError() {
-    return this.emailControl.hasError('email') ? 'Ogiltig mejladdress' : '';
-  }
-
   onSave() {
     if (this.emailControl.hasError('email')
-      || this.mobileControl.hasError('min')
-      || this.mobileControl.hasError('max')) {
+      || this.mobile.length < 10 || this.mobile.length > 13) {
       this.snackBar.open('Rätta felen.', 'Ok', {
         duration: 2000
       });
     } else if (isNaN(Number(this.mobile))) {
-      this.snackBar.open('Mobilnummer kan bara innehålla siffror.', 'Ok', {
+      this.snackBar.open('Mobilnummret kan bara innehålla siffror.', 'Ok', {
         duration: 2000
       });
     } else {
-      if (this.changeName()) {
+      if (this.isNameChanged()) {
         this.profileService.saveName(name);
       }
-      if (this.changeEmail()) {
+      if (this.isEmailChanged()) {
         this.profileService.saveEmail(this.email.toLowerCase());
       }
-      if (this.changeMobile()) {
+      if (this.isMobileChanged()) {
         this.profileService.saveMobile(this.mobile);
       }
-      if (this.changeMobile() || this.changeName() || this.changeEmail()) {
-        this.snackBar.open('Ändringar sparades', 'ok', {
+      if (this.isMobileChanged() || this.isNameChanged() || this.isEmailChanged()) {
+        this.snackBar.open('Ändringarna sparades', 'ok', {
           duration: 2000
         });
+        this.location.back();
       } else {
         this.snackBar.open('Inga ändringar', 'ok', {
           duration: 2000
         });
+        this.location.back();
       }
-      this.location.back();
+      console.log('isEmailChanged: ' + this.isEmailChanged());
+      console.log('isNameChanged: ' + this.isNameChanged());
+      console.log('isMobileChanged: ' + this.isMobileChanged());
     }
   }
 
-  private changeEmail() {
-    return this.email.toLowerCase() !== this.profileService.getEmailById('').toLowerCase()
-      || this.email !== '';
+  private isEmailChanged() {
+    return this.email.toLowerCase() !== this.profileService.getEmailById('').toLowerCase();
   }
 
-  private changeName() {
-    return this.name.toLowerCase() !== this.profileService.getNameById('').toLowerCase()
-      || this.name !== '';
+  private isNameChanged() {
+    return this.name.toLowerCase() !== this.profileService.getNameById('').toLowerCase();
   }
 
-  private changeMobile() {
-    return this.mobile !== this.profileService.getEmailById('')
-      || this.mobile !== '';
+  private isMobileChanged() {
+    return Number(this.mobile) !== Number(this.profileService.getMobileById(''));
   }
 
   onCancel() {
