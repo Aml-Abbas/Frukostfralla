@@ -5,6 +5,7 @@ import {AppRoutingModule} from './app-routing.module';
 // Components
 import {AppComponent} from './app.component';
 import {LandingComponent} from './components/landing/landing.component';
+import { UpdatePasswordComponent } from './components/update-password/update-password.component';
 
 // Modules
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -24,10 +25,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDialogModule} from '@angular/material/dialog';
 import {CalendarModule} from "@syncfusion/ej2-angular-calendars";
 
-// Feature Modules
-import {BuyerModule} from './buyer/buyer.module';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
-import { UpdatePasswordComponent } from './components/update-password/update-password.component';
+
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -54,7 +54,8 @@ import { UpdatePasswordComponent } from './components/update-password/update-pas
     MatSnackBarModule,
     MatDialogModule,
     CalendarModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
