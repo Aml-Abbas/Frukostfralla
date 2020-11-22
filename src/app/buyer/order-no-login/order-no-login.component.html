@@ -1,5 +1,8 @@
 <mat-toolbar class="toolbar" color="primary">
   <span class="spacer"></span>
+  <mat-icon mat-ripple class="back-icon" (click)="navigateBack()">
+    arrow_back
+  </mat-icon>
   <span>{{ title }}</span>
 </mat-toolbar>
 
@@ -26,7 +29,7 @@
       <input matInput placeholder="Placeholder" value="{{number}}">
     </mat-form-field>
 
-    <button  routerLink="/confirmation-no-login" mat-raised-button color="accent">
+    <button  routerLink="../confirmation-no-login" mat-raised-button color="accent">
       BEKRÄFTA
     </button>
   </div>

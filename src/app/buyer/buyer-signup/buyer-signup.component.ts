@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-buyer-signup',
@@ -20,9 +20,12 @@ export class BuyerSignupComponent implements OnInit {
   mobile = '';
   enteredPassword = '';
   enteredPassword2 = '';
+  location: Location;
 
-  constructor(router: Router) {
+  constructor(router: Router, location: Location,private aRoute: ActivatedRoute) {
     this.router = router;
+    this.location = location;
+
   }
 
   ngOnInit(): void {
@@ -30,7 +33,8 @@ export class BuyerSignupComponent implements OnInit {
 
   public navigateToStart(): void {
     // Navigate back to to seller start page without pushing this page to history
-    this.router.navigate(['/seller-start'], {replaceUrl: true});
+    this.router.navigate(['../buyer-start'],
+      {replaceUrl: true, relativeTo: this.aRoute});
   }
 
 

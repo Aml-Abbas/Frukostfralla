@@ -1,14 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
+import {ActivatedRoute, Router} from '@angular/router';
 import {BuyerStartService} from '../../../services/buyer-start.service';
 
 @Component({
   selector: 'app-buyer-start',
   templateUrl: './buyer-start.component.html',
-  styleUrls: ['./buyer-start.component.scss']
+  styleUrls: ['./buyer-start.component.scss'],
+  providers: [Location, {provide: LocationStrategy, useClass: PathLocationStrategy}]
+
 })
 export class BuyerStartComponent implements OnInit {
 router: Router;
+  location: Location;
 
   title = 'Välkommen - Välj stad';
   email = '';
@@ -16,8 +20,10 @@ router: Router;
   hide = true;
   city: string;
 
-  constructor(router: Router, private buyerStartService: BuyerStartService) {
+  constructor(router: Router, location: Location, private aRoute: ActivatedRoute, private buyerStartService: BuyerStartService) {
     this.router = router;
+    this.location = location;
+
 
   }
 
@@ -27,7 +33,10 @@ router: Router;
   public login(): void {
     // log in if credentials are correct
     if (this.checkCred()) {
-      this.router.navigate(['/buyer-profile']);
+      this.router.navigate(
+        ['../buyer-profile'],
+        {replaceUrl: true, relativeTo: this.aRoute});
+
     }
   }
 
@@ -37,8 +46,13 @@ router: Router;
 
   findCity() {
     this.buyerStartService.setCity(this.city);
-    this.router.navigate(['/sellers']).then(result => {
-      console.log(result.valueOf());
-    })
+    this.router.navigate(
+      ['../sellers'],
+      {replaceUrl: true, relativeTo: this.aRoute});
   }
+  public navigateBack(): void {
+    // Navigate back to to seller start page without pushing this page to history
+    this.location.back();
+  }
+
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Buyer} from '../../model/Buyer';
 import {BuyerInfoService} from '../../../services/buyer-info.service';
 
@@ -24,7 +24,7 @@ export class BuyerProfilEditorComponent implements OnInit {
   enteredCity:string;
   enteredStreet:string;
 
-  constructor(location: Location, router: Router, private BuyerInfoService: BuyerInfoService) {
+  constructor(location: Location, router: Router,   private aRoute: ActivatedRoute, private BuyerInfoService: BuyerInfoService) {
     this.location = location;
     this.router = router;
   }
@@ -39,6 +39,9 @@ export class BuyerProfilEditorComponent implements OnInit {
   }
 
   changeBuyerInfo(){
+    this.router.navigate(
+      ['../buyer-profile'],
+      {replaceUrl: true, relativeTo: this.aRoute});
 
   }
 }
