@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { SellerRoutingModule } from './seller-routing.module';
+import {SellerRoutingModule} from './seller-routing.module';
 import {SellerMyProductsComponent} from './seller-my-products/seller-my-products.component';
 import {ProductEditorComponent} from './product-editor/product-editor.component';
 import {SellerWeekOrdersComponent} from './seller-week-orders/seller-week-orders.component';
@@ -15,7 +15,7 @@ import {SellerProfileEditorComponent} from './seller-profile-editor/seller-profi
 import {SellerOrderHistoryComponent} from './seller-order-history/seller-order-history.component';
 import {SellerDaysSelectionComponent} from './seller-days-selection/seller-days-selection.component';
 import {SellerSendToBakeryComponent} from './seller-send-to-bakery/seller-send-to-bakery.component';
-import { SellerRootComponent } from './seller-root/seller-root.component';
+import {SellerRootComponent} from './seller-root/seller-root.component';
 
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
@@ -25,12 +25,14 @@ import {MatOptionModule, MatRippleModule} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDialogModule} from '@angular/material/dialog';
 import {CalendarModule} from '@syncfusion/ej2-angular-calendars';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 @NgModule({
@@ -48,7 +50,7 @@ import {CalendarModule} from '@syncfusion/ej2-angular-calendars';
     SellerOrderHistoryComponent,
     SellerDaysSelectionComponent,
     SellerSendToBakeryComponent,
-    SellerRootComponent
+    SellerRootComponent,
   ],
   imports: [
     CommonModule,
@@ -67,7 +69,11 @@ import {CalendarModule} from '@syncfusion/ej2-angular-calendars';
     MatGridListModule,
     MatSnackBarModule,
     MatDialogModule,
-    CalendarModule
+    CalendarModule,
+    ReactiveFormsModule,
+    MatAutocompleteModule,
+    MatExpansionModule
   ],
 })
-export class SellerModule { }
+export class SellerModule {
+}

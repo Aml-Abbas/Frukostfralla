@@ -37,6 +37,7 @@ mat-list-item {
 
 .back-icon {
   margin-right: 16px;
+  align-self: center;
 }
 
 mat-icon {
@@ -73,6 +74,11 @@ mat-icon {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
+}
+
+.mat-expansion-panel-header-description {
+  display: grid;
+  justify-content: end;
 }
 
 

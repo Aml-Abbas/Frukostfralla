@@ -13,10 +13,10 @@
     <input id="image-input" type="file" accept="image/*" (change)="chooseImage($event)">
     <img class="profile-photo" alt="profile photo" src="{{this.imageSrc}}">
   </label>
-  <h1 style="margin-top: 1em">Fredrik</h1>
+  <h1 style="margin-top: 1em">{{name}}</h1>
 
   <mat-list role="list">
-    <mat-list-item mat-ripple role="listitem">fredrik.p@domain.se</mat-list-item>
+    <mat-list-item mat-ripple role="listitem">{{email}}</mat-list-item>
     <mat-divider></mat-divider>
     <mat-list-item mat-ripple role="listitem" routerLink="../seller-my-products">
       Mina frallor
@@ -37,11 +37,11 @@
     <mat-divider></mat-divider>
 
     <mat-list-item mat-ripple role="listitem" (click)="onChooseBakery()">
-      Mitt bageri - {{chosenBakery.name}}
+      Mitt bageri - {{bakery.name}}
     </mat-list-item>
 
     <mat-divider></mat-divider>
-    <mat-list-item mat-ripple role="listitem">07293785</mat-list-item>
+    <mat-list-item mat-ripple role="listitem">{{mobile}}</mat-list-item>
     <mat-divider></mat-divider>
   </mat-list>
 

@@ -26,6 +26,7 @@ import {CalendarModule} from "@syncfusion/ej2-angular-calendars";
 
 // Feature Modules
 import {BuyerModule} from './buyer/buyer.module';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import {BuyerModule} from './buyer/buyer.module';
     MatGridListModule,
     MatSnackBarModule,
     MatDialogModule,
-    CalendarModule
+    CalendarModule,
+    MatAutocompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent]

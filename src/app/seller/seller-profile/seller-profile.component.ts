@@ -14,11 +14,13 @@ export class SellerProfileComponent implements OnInit {
   title = 'Min profil';
   router: Router;
 
-  chosenBakery: Bakery;
-
-  imageSrc = '../../../assets/img/profile-photo-placeholder.png';
-
   file = null;
+
+  imageSrc: string;
+  name: string;
+  email: string;
+  bakery: Bakery;
+  mobile: string;
 
   constructor(router: Router,
               private aRoute: ActivatedRoute,
@@ -28,8 +30,11 @@ export class SellerProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.bakeryService.currentBakery$
-      .subscribe(bakery => this.chosenBakery = bakery);
+    this.imageSrc = this.sellerProfileService.getProfilePhoto('');
+    this.name = this.sellerProfileService.getNameById('');
+    this.email = this.sellerProfileService.getEmailById('');
+    this.bakery = this.sellerProfileService.getSellerBakery('');
+    this.mobile = this.sellerProfileService.getMobileById('');
   }
 
   public navigateToProfileEditor(): void {
