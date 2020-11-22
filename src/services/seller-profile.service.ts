@@ -17,7 +17,7 @@ export class SellerProfileService {
   }
 
   getSellerBakery(userid: string): Bakery {
-    return new Bakery('Odens Bageri', 'Oden', 'Bruksgatan', '7A', 'Höganäs', 'Skåne');
+    return new Bakery('Odens Bageri',  'Bruksgatan', '7A', 'Höganäs', 'Skåne');
   }
 
   // This should be called when a seller logs in
