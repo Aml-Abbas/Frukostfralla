@@ -1,24 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Buyer} from '../../model/Buyer';
 import {BuyerInfoService} from '../../../services/buyer-info.service';
-import {Location} from '@angular/common';
 
 
 @Component({
   selector: 'app-buyer-profile',
   templateUrl: './buyer-profile.component.html',
-  styleUrls: ['./buyer-profile.component.scss']
+  styleUrls: ['./buyer-profile.component.scss'],
+
 })
 export class BuyerProfileComponent implements OnInit {
   title = 'Min profil';
   router: Router;
   buyer: Buyer;
-  location: Location;
 
-  constructor(router: Router, private BuyerInfoService: BuyerInfoService) {
+  constructor(router: Router,private aRoute: ActivatedRoute, private BuyerInfoService: BuyerInfoService) {
     this.router = router;
-
   }
 
   ngOnInit(): void {
@@ -27,11 +25,9 @@ export class BuyerProfileComponent implements OnInit {
   }
 
   public navigateToProfileEditor(): void {
-    this.router.navigate(['/buyer-profile-editor']);
-  }
-
-  public navigateBack(): void {
-    this.location.back();
+    this.router.navigate(
+      ['../buyer-profile-editor'],
+      {replaceUrl: true, relativeTo: this.aRoute});
   }
 
 }

@@ -17,7 +17,7 @@
     <mat-list-item mat-ripple role="listitem">{{buyer.email}}</mat-list-item>
     <mat-divider></mat-divider>
 
-    <button routerLink="/buyer-signup"
+    <button routerLink="../buyer-signup"
             mat-raised-button color="accent">
       Mina beställningar
     </button>
@@ -28,15 +28,15 @@
     <mat-divider></mat-divider>
     <mat-list-item mat-ripple role="listitem">{{buyer.mobile}}</mat-list-item>
     <mat-divider></mat-divider>
-    <button routerLink="/buyer-signup"
+    <button routerLink="../sellers"
             mat-raised-button color="accent">
       ändra min säljare
     </button>
     <mat-divider></mat-divider>
   </mat-list>
 
-  <button mat-button class="text-button">ÄNDRA LÖSENORD</button>
-  <button routerLink="/landing" routerLinkActive="active"
+  <button mat-button routerLink="../sellers" class="text-button">ÄNDRA LÖSENORD</button>
+  <button routerLink="/" routerLinkActive="active"
           mat-button color="warn" id="logout-button">
     LOGGA UT
   </button>

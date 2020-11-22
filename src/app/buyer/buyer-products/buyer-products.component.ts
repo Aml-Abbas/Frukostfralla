@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Product} from '../../model/Product';
 import {ProductsService} from '../../../services/products.service';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
+import {ActivatedRoute, Router} from '@angular/router';
 
 
 @Component({
@@ -16,12 +17,16 @@ export class BuyerProductsComponent implements OnInit {
   title: string = 'Säljarens frallor';
 
   products: Product[] = [];
+  router: Router;
 
   sellerId: string;
   location: Location;
 
 
-  constructor(location: Location, private productsService: ProductsService) { }
+  constructor(router: Router,location: Location, private aRoute: ActivatedRoute, private productsService: ProductsService) {
+    this.router = router;
+    this.location = location;
+  }
 
   ngOnInit(): void {
     this.productsService.currentSellerId$.subscribe(id => this.sellerId = id);

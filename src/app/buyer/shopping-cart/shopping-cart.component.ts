@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import {ShoppingCartItem} from '../../model/ShoppingCartItem';
 
@@ -22,7 +22,7 @@ export class ShoppingCartComponent implements OnInit {
 
   amount = 1;
 
-  constructor(location: Location, router: Router, public dialog: MatDialog) {
+  constructor(location: Location, private aRoute: ActivatedRoute, router: Router, public dialog: MatDialog) {
     this.router = router;
     this.location = location;
     this.shoppingCartItems = [];
@@ -78,13 +78,17 @@ export class ShoppingCartComponent implements OnInit {
   onConfirm(): void {
     if (this.loggedIn) {
     //  TODO: Place the order and navigate to the "Thanks for your order" screen
-      this.router.navigate(['/confirmation-login'], {replaceUrl: true});
+      this.router.navigate(
+        ['../confirmation-login'],
+        {replaceUrl: true, relativeTo: this.aRoute});
+
     } else {
     //  TODO: Give the user the option to login, signup or place the order without logging in
     //  If the user chooses the latter make the user enter their info
     //  a.k.a navigate to conformation-no-login
-      this.router.navigate(['/order-login-or-not'], {replaceUrl: true});
-
+      this.router.navigate(
+        ['../order-login-or-not'],
+        {replaceUrl: true, relativeTo: this.aRoute});
     }
   }
 
