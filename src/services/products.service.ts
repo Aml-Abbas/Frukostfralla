@@ -18,16 +18,16 @@ export class ProductsService {
 
   getProductsBySeller(sellerId: string): Product[] {
     return [
-      new Product('', 'assets/img/product-placeholder.png', 'Baguette', 10),
-      new Product('', 'assets/img/product-placeholder.png', 'Baguette', 10),
-      new Product('', 'assets/img/product-placeholder.png', 'Baguette', 10),
-      new Product('', 'assets/img/product-placeholder.png', 'Baguette', 10),
-      new Product('', 'assets/img/product-placeholder.png', 'Baguette', 10),
-      new Product('', 'assets/img/product-placeholder.png', 'Baguette', 10),
-      new Product('', 'assets/img/product-placeholder.png', 'Baguette', 10),
-      new Product('', 'assets/img/product-placeholder.png', 'Baguette', 10),
-      new Product('', 'assets/img/product-placeholder.png', 'Baguette', 10),
-      new Product('', 'assets/img/product-placeholder.png', 'Baguette', 10)
+      new Product('', 'assets/img/fralla1.jpg', 'Baguette', 10),
+      new Product('', 'assets/img/fralla1.jpg', 'Baguette', 10),
+      new Product('', 'assets/img/fralla1.jpg', 'Baguette', 10),
+      new Product('', 'assets/img/fralla1.jpg', 'Baguette', 10),
+      new Product('', 'assets/img/fralla1.jpg', 'Baguette', 10),
+      new Product('', 'assets/img/fralla1.jpg', 'Baguette', 10),
+      new Product('', 'assets/img/fralla1.jpg', 'Baguette', 10),
+      new Product('', 'assets/img/fralla1.jpg', 'Baguette', 10),
+      new Product('', 'assets/img/fralla1.jpg', 'Baguette', 10),
+      new Product('', 'assets/img/fralla1.jpg', 'Baguette', 10)
     ];
   }
 

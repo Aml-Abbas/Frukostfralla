@@ -4,6 +4,7 @@ import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common'
 import {ProductsService} from '../../../services/products.service';
 import {Product} from '../../model/Product';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {ProductEditorService} from '../../../services/product-editor.service';
 
 class ImageSnippet {
   constructor(public src: string, public file: File) {
@@ -16,6 +17,7 @@ class ImageSnippet {
   styleUrls: ['./product-editor.component.scss'],
   providers: [Location, {provide: LocationStrategy, useClass: PathLocationStrategy}]
 })
+
 export class ProductEditorComponent implements OnInit {
   title = 'Lägg en ny fralla';
   router: Router;
@@ -30,16 +32,30 @@ export class ProductEditorComponent implements OnInit {
 
   file = null;
 
+  editing: boolean = false;
+  productId: string;
+
   constructor(router: Router, location: Location,
               private productsService: ProductsService,
-              private _snackBar: MatSnackBar) {
+              private _snackBar: MatSnackBar,
+              private productEditorService: ProductEditorService,) {
     this.router = router;
     this.location = location;
+    console.log('4 editing: ' + this.editing);
   }
 
   ngOnInit(): void {
     this.products = this.productsService.getProductsBySeller('');
-    console.log(this.imageSrc);
+    this.productEditorService.isEditing$.subscribe(v => {
+      console.log('1 v: ' + v);
+      this.editing = v;
+      console.log('2 subscribed editing: ' + this.editing);
+      this.name = this.productEditorService.getName();
+      this.price = this.productEditorService.getPrice();
+      this.imageSrc = this.productEditorService.getImageUrl();
+      this.title = 'Redigera';
+      console.log('3 imageurl: ' + this.imageSrc);
+    });
   }
 
   chooseImage(event) {
@@ -54,13 +70,12 @@ export class ProductEditorComponent implements OnInit {
 
         console.log(this.imageSrc);
         console.log(this.file.valueOf());
-      }
+      };
     }
   }
 
   public saveProduct(): void {
 
-    // replaceUrl: true, to prevent the browser to navigate here when
     // the back button is pressed in the products page after saving
     // a product
     if (this.productsService.saveProduct('', this.name, this.price, this.file)) {
