@@ -6,7 +6,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {LandingComponent} from './components/landing/landing.component';
 import {UpdatePasswordComponent} from './components/update-password/update-password.component';
-import {PasswordResetComponent} from './src/app/components/password-reset/password-reset.component';
+import {PasswordResetComponent} from './components/password-reset/password-reset.component';
 
 // Modules
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
