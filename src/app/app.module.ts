@@ -5,7 +5,8 @@ import {AppRoutingModule} from './app-routing.module';
 // Components
 import {AppComponent} from './app.component';
 import {LandingComponent} from './components/landing/landing.component';
-import { UpdatePasswordComponent } from './components/update-password/update-password.component';
+import {UpdatePasswordComponent} from './components/update-password/update-password.component';
+import {PasswordResetComponent} from './src/app/components/password-reset/password-reset.component';
 
 // Modules
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -23,7 +24,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDialogModule} from '@angular/material/dialog';
-import {CalendarModule} from "@syncfusion/ej2-angular-calendars";
+import {CalendarModule} from '@syncfusion/ej2-angular-calendars';
 
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
@@ -33,7 +34,8 @@ import {HttpClientModule} from '@angular/common/http';
   declarations: [
     AppComponent,
     LandingComponent,
-    UpdatePasswordComponent
+    UpdatePasswordComponent,
+    PasswordResetComponent
   ],
   imports: [
     BrowserModule,

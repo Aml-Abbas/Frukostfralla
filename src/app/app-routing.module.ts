@@ -3,6 +3,7 @@ import {Routes, RouterModule} from '@angular/router';
 
 import {LandingComponent} from './components/landing/landing.component';
 import {UpdatePasswordComponent} from './components/update-password/update-password.component';
+import {PasswordResetComponent} from './src/app/components/password-reset/password-reset.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: 'update-password',
     component: UpdatePasswordComponent
+  },
+  {
+    path: 'password-reset',
+    component: PasswordResetComponent
   }
 
 ];
