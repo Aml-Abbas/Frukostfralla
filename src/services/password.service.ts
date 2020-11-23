@@ -15,4 +15,8 @@ export class PasswordService {
   saveNewPassword(password: string) {
 
   }
+
+  requestNewPassword() {
+
+  }
 }

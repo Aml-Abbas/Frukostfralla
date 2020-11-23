@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Location} from '@angular/common';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {PasswordService} from '../../../services/password.service';
 
 @Component({
   selector: 'app-password-reset',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PasswordResetComponent implements OnInit {
 
-  constructor() { }
+  title = 'Lösenord återställning';
+
+  email = '';
+
+  constructor(public location: Location,
+              private snackBar: MatSnackBar,
+              private passwordService: PasswordService) { }
 
   ngOnInit(): void {
+  }
+
+  sendResetRequest() {
+    this.snackBar.open('Tack för din begäran', 'Stäng', {
+      duration: 2000
+    });
+    this.passwordService.requestNewPassword();
   }
 
 }
