@@ -33,6 +33,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDialogModule} from '@angular/material/dialog';
 import {CalendarModule} from '@syncfusion/ej2-angular-calendars';
+import { BuyerRootComponent } from './buyer-root/buyer-root.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import {CalendarModule} from '@syncfusion/ej2-angular-calendars';
     OrderLoginOrNotComponent,
     BuyerProductsComponent,
     SellersComponent,
+    BuyerRootComponent,
   ],
   imports: [
     CommonModule,

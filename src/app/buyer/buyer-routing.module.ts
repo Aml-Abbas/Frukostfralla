@@ -15,24 +15,29 @@ import {OrderLoginOrNotComponent} from './order-login-or-not/order-login-or-not.
 import {OrderNoLoginComponent} from './order-no-login/order-no-login.component';
 import {SellersComponent} from './sellers/sellers.component';
 import {BuyerProductsComponent} from './buyer-products/buyer-products.component';
+import {BuyerRootComponent} from './buyer-root/buyer-root.component';
 
 const routes: Routes = [
-  {path: 'buyer-login', component: BuyerLoginComponent},
-  {path: 'buyer-profile-editor', component: BuyerProfilEditorComponent},
+  {
+  path: '',
+  component: BuyerRootComponent,
+  children: [
   {path: 'buyer-profile', component: BuyerProfileComponent},
-  {path: 'buyer-signup', component: BuyerSignupComponent},
-  {path: 'buyer-start', component: BuyerStartComponent},
   {path: 'confirmation-login', component: ConfirmationLoginComponent},
-  {path: 'confirmation-no-login', component: ConfirmationNoLoginComponent},
   {path: 'seller-details', component: SellerDetailsComponent},
   {path: 'seller-products', component: SellerProductsComponent},
   {path: 'shopping-cart', component: ShoppingCartComponent},
-  {path: 'order-login-or-not', component: OrderLoginOrNotComponent},
   {path: 'order-no-login', component: OrderNoLoginComponent},
   {path: 'sellers', component: SellersComponent},
-  {path: 'order-login-or-not', component: OrderLoginOrNotComponent},
   {path: 'buyer-products', component: BuyerProductsComponent},
   {path: '', component: BuyerProductsComponent}
+  ]},
+  {path: 'buyer-login', component: BuyerLoginComponent},
+  {path: 'buyer-profile-editor', component: BuyerProfilEditorComponent},
+  {path: 'buyer-signup', component: BuyerSignupComponent},
+  {path: 'buyer-start', component: BuyerStartComponent},
+  {path: 'order-login-or-not', component: OrderLoginOrNotComponent},
+  {path: 'confirmation-no-login', component: ConfirmationNoLoginComponent},
 
 ];
 
