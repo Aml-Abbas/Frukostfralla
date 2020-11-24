@@ -23,9 +23,10 @@ export class PasswordResetComponent implements OnInit {
 
   sendResetRequest() {
     this.snackBar.open('Tack för din begäran', 'Stäng', {
-      duration: 2000
+      duration: 3000
     });
     this.passwordService.requestNewPassword();
+    this.location.back();
   }
 
 }
