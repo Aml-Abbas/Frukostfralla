@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 // Components
 import {BuyerLoginComponent} from './buyer-login/buyer-login.component';
 import {BuyerProfilEditorComponent} from './buyer-profil-editor/buyer-profil-editor.component';
@@ -16,22 +16,26 @@ import {OrderNoLoginComponent} from './order-no-login/order-no-login.component';
 import {SellersComponent} from './sellers/sellers.component';
 import {BuyerProductsComponent} from './buyer-products/buyer-products.component';
 import {BuyerRootComponent} from './buyer-root/buyer-root.component';
+import {BuyerOrderHistoryComponent} from './buyer-order-history/buyer-order-history.component';
 
 const routes: Routes = [
   {
-  path: '',
-  component: BuyerRootComponent,
-  children: [
-  {path: 'buyer-profile', component: BuyerProfileComponent},
-  {path: 'confirmation-login', component: ConfirmationLoginComponent},
-  {path: 'seller-details', component: SellerDetailsComponent},
-  {path: 'seller-products', component: SellerProductsComponent},
-  {path: 'shopping-cart', component: ShoppingCartComponent},
-  {path: 'order-no-login', component: OrderNoLoginComponent},
-  {path: 'sellers', component: SellersComponent},
-  {path: 'buyer-products', component: BuyerProductsComponent},
-  {path: '', component: BuyerProductsComponent}
-  ]},
+    path: '',
+    component: BuyerRootComponent,
+    children: [
+      {path: 'buyer-profile', component: BuyerProfileComponent},
+      {path: 'confirmation-login', component: ConfirmationLoginComponent},
+      {path: 'seller-details', component: SellerDetailsComponent},
+      {path: 'seller-products', component: SellerProductsComponent},
+      {path: 'shopping-cart', component: ShoppingCartComponent},
+      {path: 'order-no-login', component: OrderNoLoginComponent},
+      {path: 'sellers', component: SellersComponent},
+      {path: '', component: BuyerProductsComponent},
+      {path: 'buyer-products', component: BuyerProductsComponent},
+      {path: 'buyer-order-history', component: BuyerOrderHistoryComponent}
+    ]
+  },
+  {path: '', component: BuyerStartComponent},
   {path: 'buyer-login', component: BuyerLoginComponent},
   {path: 'buyer-profile-editor', component: BuyerProfilEditorComponent},
   {path: 'buyer-signup', component: BuyerSignupComponent},
@@ -45,4 +49,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class BuyerRoutingModule { }
+export class BuyerRoutingModule {
+}

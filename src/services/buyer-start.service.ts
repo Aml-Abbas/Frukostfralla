@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
 
 @Injectable({
@@ -6,13 +6,14 @@ import {BehaviorSubject} from 'rxjs';
 })
 export class BuyerStartService {
 
-  private city= new BehaviorSubject<string>('');
-  currentCity$= this.city.asObservable();
+  private city = new BehaviorSubject<string>('');
+  currentCity$ = this.city.asObservable();
 
-  constructor() { }
+  constructor() {
+  }
 
-  setCity(city:string){
-  this.city.next(city);
+  setCity(city: string) {
+    this.city.next(city);
   }
 
   getCity(): string {

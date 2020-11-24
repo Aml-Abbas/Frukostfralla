@@ -15,14 +15,17 @@
     </mat-form-field>
 
     <div class="buttons-container">
-      <button class="text-button" mat-button>HITTA AUTUMATISK</button>
-      <button mat-raised-button color="accent" (click)="findCity();">
+      <button class="text-button" mat-button (click)="findSellersByLocation()">
+        HITTA AUTUMATISK
+      </button>
+
+      <button mat-raised-button color="accent" (click)="findSellersByCity();">
         SÖK
       </button>
     </div>
 
     <button mat-raised-button color="accent"
-            routerLink="../buyer-login" routerLinkActive="active">
+            routerLink="../buyer-login">
       TILL INLOGGNING
     </button>
   </div>

@@ -16,11 +16,8 @@
   <mat-list role="list">
     <mat-list-item mat-ripple role="listitem">{{buyer.email}}</mat-list-item>
     <mat-divider></mat-divider>
+    <mat-list-item  routerLink="../buyer-order-history"  mat-ripple role="listitem">Mina beställningar</mat-list-item>
 
-    <button routerLink="../buyer-signup"
-            mat-raised-button color="accent">
-      Mina beställningar
-    </button>
     <mat-divider></mat-divider>
     <mat-list-item mat-ripple role="listitem">{{buyer.street}}</mat-list-item>
     <mat-divider></mat-divider>
@@ -28,10 +25,7 @@
     <mat-divider></mat-divider>
     <mat-list-item mat-ripple role="listitem">{{buyer.mobile}}</mat-list-item>
     <mat-divider></mat-divider>
-    <button routerLink="../sellers"
-            mat-raised-button color="accent">
-      ändra min säljare
-    </button>
+    <mat-list-item  routerLink="/map"  mat-ripple role="listitem">ändra min säljare</mat-list-item>
     <mat-divider></mat-divider>
   </mat-list>
 

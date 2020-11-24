@@ -29,13 +29,15 @@ import {CalendarModule} from '@syncfusion/ej2-angular-calendars';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 import {HttpClientModule} from '@angular/common/http';
+import { MapComponent } from './components/map/map.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
     UpdatePasswordComponent,
-    PasswordResetComponent
+    PasswordResetComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,

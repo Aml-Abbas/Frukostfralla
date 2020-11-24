@@ -22,6 +22,8 @@ export class ShoppingCartComponent implements OnInit {
 
   amount = 1;
 
+  total = 0;
+
   constructor(location: Location, private aRoute: ActivatedRoute, router: Router, public dialog: MatDialog) {
     this.router = router;
     this.location = location;
@@ -44,6 +46,7 @@ export class ShoppingCartComponent implements OnInit {
         )
       );
     }
+    this.countTotal()
   }
 
   incrementAmount(itemId: string): void {
@@ -51,6 +54,7 @@ export class ShoppingCartComponent implements OnInit {
       return e.itemId == itemId;
     });
     filter[0].incrementAmount();
+    this.countTotal();
   }
 
   decrementAmount(itemId: string): void {
@@ -58,6 +62,7 @@ export class ShoppingCartComponent implements OnInit {
       return e.itemId == itemId;
     });
     filter[0].decrementAmount();
+    this.countTotal();
   }
 
   navigateBack(): void {
@@ -73,6 +78,7 @@ export class ShoppingCartComponent implements OnInit {
     if (index > -1) {
       this.shoppingCartItems.splice(index, 1);
     }
+    this.countTotal();
   }
 
   onConfirm(): void {
@@ -91,5 +97,10 @@ export class ShoppingCartComponent implements OnInit {
         {replaceUrl: true, relativeTo: this.aRoute});
     }
   }
-
+  countTotal(){
+    this.total = 0;
+    for (let item of this.shoppingCartItems) {
+      this.total += item.price * item.amount;
+    }
+  }
 }

@@ -10,7 +10,7 @@
     <mat-list-item *ngFor="let item of shoppingCartItems">
       <img mat-list-avatar src="../../../assets/img/profile-photo-placeholder.png" alt="product-photo"/>
       <h3 matLine>{{item.name}}</h3>
-      <p matLine> {{item.price}}:- </p>
+      <p matLine> {{item.price * item.amount}}:- </p>
       <p matLine class="amount-line">
         <mat-icon mat-ripple (click)="decrementAmount(item.itemId)">remove</mat-icon>
         {{item.amount}}
@@ -18,6 +18,10 @@
       </p>
       <mat-icon mat-ripple (click)="onDelete(item.itemId)">delete</mat-icon>
       <mat-divider></mat-divider>
+    </mat-list-item>
+    <mat-list-item>
+      <h3 mat-line>ATT BETALA </h3>
+      <span>{{total}}</span>
     </mat-list-item>
   </mat-list>
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import {ActivatedRoute, Router} from '@angular/router';
 import {BuyerStartService} from '../../../services/buyer-start.service';
+import {SellersService} from '../../../services/sellers.service';
 
 @Component({
   selector: 'app-buyer-start',
@@ -20,7 +21,11 @@ router: Router;
   hide = true;
   city: string;
 
-  constructor(router: Router, location: Location, private aRoute: ActivatedRoute, private buyerStartService: BuyerStartService) {
+  constructor(router: Router,
+              location: Location,
+              private aRoute: ActivatedRoute,
+              private buyerStartService: BuyerStartService,
+              private sellersService: SellersService) {
     this.router = router;
     this.location = location;
 
@@ -44,15 +49,20 @@ router: Router;
     return true;
   }
 
-  findCity() {
+  findSellersByCity() {
     this.buyerStartService.setCity(this.city);
     this.router.navigate(
-      ['../sellers'],
-      {replaceUrl: true, relativeTo: this.aRoute});
+      ['/buyer/sellers']);
   }
   public navigateBack(): void {
     // Navigate back to to seller start page without pushing this page to history
     this.location.back();
+  }
+
+  findSellersByLocation() {
+  //  TODO: Find the user's location and extrapolate the city
+    let city = '';
+    this.sellersService.getSellers(city);
   }
 
 }

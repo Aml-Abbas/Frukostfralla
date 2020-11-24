@@ -34,6 +34,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDialogModule} from '@angular/material/dialog';
 import {CalendarModule} from '@syncfusion/ej2-angular-calendars';
 import { BuyerRootComponent } from './buyer-root/buyer-root.component';
+import { BuyerOrderHistoryComponent } from './buyer-order-history/buyer-order-history.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { BuyerRootComponent } from './buyer-root/buyer-root.component';
     BuyerProductsComponent,
     SellersComponent,
     BuyerRootComponent,
+    BuyerOrderHistoryComponent,
   ],
   imports: [
     CommonModule,

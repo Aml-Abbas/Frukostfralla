@@ -33,7 +33,7 @@ export class BuyerLoginComponent implements OnInit {
     // log in if credentials are correct
     if (this.checkCred()) {
       this.router.navigate(
-        ['../seller-my-products'],
+        ['../buyer-products'],
         {replaceUrl: true, relativeTo: this.aRoute});
     }
   }
