@@ -45,8 +45,7 @@ mat-icon {
   cursor: pointer;
 }
 .container {
-  padding: 16px 16px 0 16px;
-  margin-bottom: 20%;
+  padding: 16px 16px 20% 16px;
   display: grid;
 }
 
@@ -86,8 +85,7 @@ mat-icon {
 @media (min-width: 1150px) {
 
   .container {
-    padding: 16px 25% 0 25%;
-    margin-bottom: 20%;
+    padding: 16px 25% 20% 25%;
   }
 
   .mat-toolbar-row, .mat-toolbar-single-row {
