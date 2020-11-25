@@ -27,7 +27,7 @@ export class SellerMyProductsComponent implements OnInit {
   onItemClick(id: string) {
     this.productEditorService.setEditing(true);
     this.productEditorService.setProductId(id);
-    this.router.navigate(['../product-editor'], {relativeTo: this.aRouter}).then(result => {
+    this.router.navigate(['./product-editor'], {relativeTo: this.aRouter}).then(result => {
 
     })
   }
