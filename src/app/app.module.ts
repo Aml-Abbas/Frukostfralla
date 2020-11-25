@@ -30,6 +30,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 import {HttpClientModule} from '@angular/common/http';
 import { MapComponent } from './components/map/map.component';
+import {AgmCoreModule} from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,10 @@ import { MapComponent } from './components/map/map.component';
     MatDialogModule,
     CalendarModule,
     MatAutocompleteModule,
-    HttpClientModule
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyA5uM21fX0xEYTcqRKgvjwVFqBs1Ve9hAc'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
