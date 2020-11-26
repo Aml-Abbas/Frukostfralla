@@ -4,7 +4,6 @@ import {Routes, RouterModule} from '@angular/router';
 import {LandingComponent} from './components/landing/landing.component';
 import {UpdatePasswordComponent} from './components/update-password/update-password.component';
 import {PasswordResetComponent} from './components/password-reset/password-reset.component';
-import {MapComponent} from './seller/seller-map/map.component';
 
 const routes: Routes = [
   {
@@ -26,10 +25,6 @@ const routes: Routes = [
   {
     path: 'password-reset',
     component: PasswordResetComponent
-  },
-  {
-    path: 'map',
-    component: MapComponent
   }
 
 ];

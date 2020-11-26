@@ -16,6 +16,7 @@ import {SellerOrderHistoryComponent} from './seller-order-history/seller-order-h
 import {SellerDaysSelectionComponent} from './seller-days-selection/seller-days-selection.component';
 import {SellerSendToBakeryComponent} from './seller-send-to-bakery/seller-send-to-bakery.component';
 import {SellerRootComponent} from './seller-root/seller-root.component';
+import {SellerMapComponent} from './seller-map/seller-map.component';
 
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
@@ -33,6 +34,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {CalendarModule} from '@syncfusion/ej2-angular-calendars';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {HttpClientModule} from '@angular/common/http';
+import {AgmCoreModule} from '@agm/core';
 
 
 @NgModule({
@@ -51,6 +54,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     SellerDaysSelectionComponent,
     SellerSendToBakeryComponent,
     SellerRootComponent,
+    SellerMapComponent,
   ],
   imports: [
     CommonModule,
@@ -72,7 +76,12 @@ import {MatExpansionModule} from '@angular/material/expansion';
     CalendarModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
-    MatExpansionModule
+    MatExpansionModule,
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyA5uM21fX0xEYTcqRKgvjwVFqBs1Ve9hAc',
+      libraries: ['places', 'drawing', 'geometry']
+    })
   ],
 })
 export class SellerModule {

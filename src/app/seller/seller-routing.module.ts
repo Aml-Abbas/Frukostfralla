@@ -16,6 +16,7 @@ import {SellerDaysSelectionComponent} from './seller-days-selection/seller-days-
 import {SellerSendToBakeryComponent} from './seller-send-to-bakery/seller-send-to-bakery.component';
 import {BuyerProductsComponent} from '../buyer/buyer-products/buyer-products.component';
 import {SellerRootComponent} from './seller-root/seller-root.component';
+import {SellerMapComponent} from './seller-map/seller-map.component';
 
 const routes: Routes = [
   {
@@ -38,7 +39,7 @@ const routes: Routes = [
   {path: 'seller-create-profile', component: SellerCreateProfileComponent},
   {path: 'choose-bakery', component: SellerChooseBakeryComponent},
   {path: 'seller-start', component: SellerStartComponent},
-  {path: 'buyer-products', component: BuyerProductsComponent}
+  {path: 'seller-map', component: SellerMapComponent}
 ];
 
 @NgModule({
