@@ -8,7 +8,9 @@
 <div class="container">
 
   <router-outlet class="content"></router-outlet>
-  <agm-map [latitude]="lat" [longitude]="lng">
+  <agm-map [zoom]="15" [latitude]="lat"
+           [longitude]="lng"
+           (mapReady)="onMapReady($event)">
 
     <agm-marker [latitude]="lat" [longitude]="lng">
 
