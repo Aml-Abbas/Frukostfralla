@@ -72,7 +72,7 @@ import { BuyerOrderHistoryComponent } from './buyer-order-history/buyer-order-hi
     MatGridListModule,
     MatSnackBarModule,
     MatDialogModule,
-    CalendarModule
+    CalendarModule,
   ],
   bootstrap: [SellerProductsComponent],
   exports: [

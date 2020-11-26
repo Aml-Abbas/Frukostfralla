@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 
-import { BuyerAuthGuard } from './buyer-auth-guard.service';
+import { BuyerAuthGuard } from './buyer-auth.guard';
 
-describe('AuthGuard', () => {
+describe('BuyerAuthGuard', () => {
   let guard: BuyerAuthGuard;
 
   beforeEach(() => {

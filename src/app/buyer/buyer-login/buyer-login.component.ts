@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import {ActivatedRoute, Router} from '@angular/router';
+import {BuyerAuthService} from '../services/buyer-auth.service';
 
 
 @Component({
@@ -20,7 +21,9 @@ export class BuyerLoginComponent implements OnInit {
   hide = true;
   location: Location;
 
-  constructor(router: Router, location: Location,  private aRoute: ActivatedRoute) {
+  constructor(router: Router, location: Location,
+              private aRoute: ActivatedRoute,
+              private authService: BuyerAuthService) {
     this.router = router;
     this.location = location;
 
@@ -32,6 +35,7 @@ export class BuyerLoginComponent implements OnInit {
   public login(): void {
     // log in if credentials are correct
     if (this.checkCred()) {
+      this.authService.signIn(this.email, this.enteredPassword);
       this.router.navigate(
         ['../buyer-products'],
         {replaceUrl: true, relativeTo: this.aRoute});

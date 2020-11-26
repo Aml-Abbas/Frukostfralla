@@ -2,7 +2,7 @@
   <span class="spacer"></span>
   <span>{{ title }}</span>
   <span class="toolbar-spacer"></span>
-  <button (click)="navigateToProfileEditor()" mat-icon-button >
+  <button routerLink="../buyer-profile-editor" mat-icon-button >
     <mat-icon>edit</mat-icon>
   </button>
 </mat-toolbar>
@@ -31,7 +31,7 @@
 
   <button mat-button routerLink="/update-password" class="text-button">ÄNDRA LÖSENORD</button>
 
-  <button routerLink="/" routerLinkActive="active"
+  <button (click)="signOut()"
           mat-button color="warn" id="logout-button">
     LOGGA UT
   </button>
