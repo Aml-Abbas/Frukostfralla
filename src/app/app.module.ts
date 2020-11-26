@@ -29,7 +29,7 @@ import {CalendarModule} from '@syncfusion/ej2-angular-calendars';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 import {HttpClientModule} from '@angular/common/http';
-import {MapComponent } from './components/map/map.component';
+import {MapComponent } from './seller/seller-map/map.component';
 import {AgmCoreModule} from '@agm/core';
 
 @NgModule({
