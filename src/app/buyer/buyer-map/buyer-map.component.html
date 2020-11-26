@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+  <span class="spacer"></span>
+  <mat-icon mat-ripple class="back-icon" (click)="navigateBack()">
+    arrow_back
+  </mat-icon>  <span>{{ title }}</span>
+</mat-toolbar>
+
+<div class="container">
+
+  <router-outlet class="content"></router-outlet>
+  <agm-map [zoom]="15" [latitude]="lat"
+           [longitude]="lng">
+
+    <agm-marker [latitude]="lat" [longitude]="lng">
+
+    </agm-marker>
+  </agm-map>
+
+
+
+</div>

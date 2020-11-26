@@ -17,6 +17,7 @@ import {OrderNoLoginComponent} from './order-no-login/order-no-login.component';
 import {OrderLoginOrNotComponent} from './order-login-or-not/order-login-or-not.component';
 import {BuyerProductsComponent} from './buyer-products/buyer-products.component';
 import {SellersComponent} from './sellers/sellers.component';
+import {BuyerMapComponent} from './buyer-map/buyer-map.component';
 
 // Angular Material Modules
 import {MatIconModule} from '@angular/material/icon';
@@ -35,6 +36,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {CalendarModule} from '@syncfusion/ej2-angular-calendars';
 import { BuyerRootComponent } from './buyer-root/buyer-root.component';
 import { BuyerOrderHistoryComponent } from './buyer-order-history/buyer-order-history.component';
+import {HttpClientModule} from '@angular/common/http';
+import {AgmCoreModule} from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -54,6 +57,7 @@ import { BuyerOrderHistoryComponent } from './buyer-order-history/buyer-order-hi
     SellersComponent,
     BuyerRootComponent,
     BuyerOrderHistoryComponent,
+    BuyerMapComponent
   ],
   imports: [
     CommonModule,
@@ -73,6 +77,11 @@ import { BuyerOrderHistoryComponent } from './buyer-order-history/buyer-order-hi
     MatSnackBarModule,
     MatDialogModule,
     CalendarModule,
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyA5uM21fX0xEYTcqRKgvjwVFqBs1Ve9hAc',
+      libraries: ['places', 'drawing', 'geometry']
+    })
   ],
   bootstrap: [SellerProductsComponent],
   exports: [

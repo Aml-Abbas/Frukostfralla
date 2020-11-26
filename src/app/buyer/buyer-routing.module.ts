@@ -18,6 +18,7 @@ import {BuyerProductsComponent} from './buyer-products/buyer-products.component'
 import {BuyerRootComponent} from './buyer-root/buyer-root.component';
 import {BuyerOrderHistoryComponent} from './buyer-order-history/buyer-order-history.component';
 import {BuyerAuthGuard} from './guards/buyer-auth.guard';
+import {BuyerMapComponent} from './buyer-map/buyer-map.component';
 
 const routes: Routes = [
   {
@@ -43,7 +44,7 @@ const routes: Routes = [
   {path: 'buyer-login', component: BuyerLoginComponent},
   {path: 'buyer-signup', component: BuyerSignupComponent},
   {path: 'buyer-start', component: BuyerStartComponent},
-
+  {path: 'buyer-map', component: BuyerMapComponent}
 ];
 
 @NgModule({
