@@ -17,6 +17,7 @@ import {SellersComponent} from './sellers/sellers.component';
 import {BuyerProductsComponent} from './buyer-products/buyer-products.component';
 import {BuyerRootComponent} from './buyer-root/buyer-root.component';
 import {BuyerOrderHistoryComponent} from './buyer-order-history/buyer-order-history.component';
+import {BuyerAuthGuard} from './buyer-auth-guard.service';
 
 const routes: Routes = [
   {
@@ -30,8 +31,8 @@ const routes: Routes = [
       {path: 'shopping-cart', component: ShoppingCartComponent},
       {path: 'order-no-login', component: OrderNoLoginComponent},
       {path: 'sellers', component: SellersComponent},
-      {path: '', component: BuyerProductsComponent},
-      {path: 'buyer-products', component: BuyerProductsComponent},
+      {path: '', component: BuyerProductsComponent, canActivate: [BuyerAuthGuard]},
+      {path: 'buyer-products', component: BuyerProductsComponent, canActivate: [BuyerAuthGuard]},
       {path: 'buyer-order-history', component: BuyerOrderHistoryComponent}
     ]
   },
