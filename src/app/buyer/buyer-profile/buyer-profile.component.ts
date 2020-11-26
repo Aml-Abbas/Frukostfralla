@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Buyer} from '../../model/Buyer';
 import {BuyerInfoService} from '../../../services/buyer-info.service';
+import {BuyerAuthService} from '../services/buyer-auth.service';
 
 
 @Component({
@@ -15,7 +16,10 @@ export class BuyerProfileComponent implements OnInit {
   router: Router;
   buyer: Buyer;
 
-  constructor(router: Router,private aRoute: ActivatedRoute, private BuyerInfoService: BuyerInfoService) {
+  constructor(router: Router,
+              private aRoute: ActivatedRoute,
+              private BuyerInfoService: BuyerInfoService,
+              private authService: BuyerAuthService) {
     this.router = router;
   }
 
@@ -28,6 +32,11 @@ export class BuyerProfileComponent implements OnInit {
     this.router.navigate(
       ['../buyer-profile-editor'],
       {replaceUrl: true, relativeTo: this.aRoute});
+  }
+
+  signOut() {
+    this.authService.signOut();
+    this.router.navigate(['/landing'])
   }
 
 }

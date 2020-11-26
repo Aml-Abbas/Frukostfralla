@@ -17,32 +17,32 @@ import {SellersComponent} from './sellers/sellers.component';
 import {BuyerProductsComponent} from './buyer-products/buyer-products.component';
 import {BuyerRootComponent} from './buyer-root/buyer-root.component';
 import {BuyerOrderHistoryComponent} from './buyer-order-history/buyer-order-history.component';
-import {BuyerAuthGuard} from './buyer-auth-guard.service';
+import {BuyerAuthGuard} from './guards/buyer-auth.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: BuyerRootComponent,
     children: [
-      {path: 'buyer-profile', component: BuyerProfileComponent},
-      {path: 'confirmation-login', component: ConfirmationLoginComponent},
+      {path: 'buyer-profile', component: BuyerProfileComponent, canActivate: [BuyerAuthGuard]},
+      {path: 'buyer-profile-editor', component: BuyerProfilEditorComponent, canActivate: [BuyerAuthGuard]},
+      {path: 'confirmation-login', component: ConfirmationLoginComponent, canActivate: [BuyerAuthGuard]},
       {path: 'seller-details', component: SellerDetailsComponent},
       {path: 'seller-products', component: SellerProductsComponent},
       {path: 'shopping-cart', component: ShoppingCartComponent},
       {path: 'order-no-login', component: OrderNoLoginComponent},
       {path: 'sellers', component: SellersComponent},
       {path: '', component: BuyerProductsComponent, canActivate: [BuyerAuthGuard]},
-      {path: 'buyer-products', component: BuyerProductsComponent, canActivate: [BuyerAuthGuard]},
-      {path: 'buyer-order-history', component: BuyerOrderHistoryComponent}
+      {path: 'buyer-products', component: BuyerProductsComponent},
+      {path: 'order-login-or-not', component: OrderLoginOrNotComponent},
+      {path: 'confirmation-no-login', component: ConfirmationNoLoginComponent},
+      {path: 'buyer-order-history', component: BuyerOrderHistoryComponent, canActivate: [BuyerAuthGuard]}
     ]
   },
   {path: '', component: BuyerStartComponent},
   {path: 'buyer-login', component: BuyerLoginComponent},
-  {path: 'buyer-profile-editor', component: BuyerProfilEditorComponent},
   {path: 'buyer-signup', component: BuyerSignupComponent},
   {path: 'buyer-start', component: BuyerStartComponent},
-  {path: 'order-login-or-not', component: OrderLoginOrNotComponent},
-  {path: 'confirmation-no-login', component: ConfirmationNoLoginComponent},
 
 ];
 

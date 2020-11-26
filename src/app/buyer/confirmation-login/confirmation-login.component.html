@@ -1,8 +1,4 @@
 <mat-toolbar class="toolbar" color="primary">
-  <span class="spacer"></span>
-  <mat-icon mat-ripple class="back-icon" (click)="navigateBack()">
-    arrow_back
-  </mat-icon>
   <span>{{ title }}</span>
 </mat-toolbar>
 
@@ -11,13 +7,13 @@
 
   <div class="form-container">
 
-      <button  routerLink="../sellers" mat-raised-button color="accent">
-        KÖP MER
-      </button>
+    <button routerLink="../sellers" mat-raised-button color="accent">
+      KÖP MER
+    </button>
 
-      <button routerLink="../buyer-start" routerLinkActive="active"
-              mat-button class="text-button">
-        STÄNG
-      </button>
+    <button routerLink="../buyer-start" routerLinkActive="active"
+            mat-button class="text-button">
+      STÄNG
+    </button>
   </div>
-  </div>
+</div>

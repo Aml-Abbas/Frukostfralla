@@ -16,7 +16,6 @@ export class ShoppingCartComponent implements OnInit {
   location: Location;
 
   title = 'Din varukorg';
-  loggedIn = true;
 
   shoppingCartItems: ShoppingCartItem[];
 
@@ -46,7 +45,7 @@ export class ShoppingCartComponent implements OnInit {
         )
       );
     }
-    this.countTotal()
+    this.countTotal();
   }
 
   incrementAmount(itemId: string): void {
@@ -73,7 +72,7 @@ export class ShoppingCartComponent implements OnInit {
     //  TODO: Remove the item from the database
     let filter = this.shoppingCartItems.filter(e => {
       return e.itemId == itemId;
-    })
+    });
     const index = this.shoppingCartItems.indexOf(filter[0], 0);
     if (index > -1) {
       this.shoppingCartItems.splice(index, 1);
@@ -82,22 +81,22 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   onConfirm(): void {
-    if (this.loggedIn) {
     //  TODO: Place the order and navigate to the "Thanks for your order" screen
-      this.router.navigate(
-        ['../confirmation-login'],
-        {replaceUrl: true, relativeTo: this.aRoute});
+    this.router.navigate(
+      ['../confirmation-login'],
+      {replaceUrl: true, relativeTo: this.aRoute});
 
-    } else {
-    //  TODO: Give the user the option to login, signup or place the order without logging in
-    //  If the user chooses the latter make the user enter their info
-    //  a.k.a navigate to conformation-no-login
-      this.router.navigate(
-        ['../order-login-or-not'],
-        {replaceUrl: true, relativeTo: this.aRoute});
-    }
+    /* } else {
+     //  TODO: Give the user the option to login, signup or place the order without logging in
+     //  If the user chooses the latter make the user enter their info
+     //  a.k.a navigate to conformation-no-login
+       this.router.navigate(
+         ['../order-login-or-not'],
+         {replaceUrl: true, relativeTo: this.aRoute});
+     }*/
   }
-  countTotal(){
+
+  countTotal() {
     this.total = 0;
     for (let item of this.shoppingCartItems) {
       this.total += item.price * item.amount;

@@ -11,6 +11,10 @@ const routes: Routes = [
     component: LandingComponent
   },
   {
+    path: 'landing',
+    component: LandingComponent
+  },
+  {
     path: 'buyer',
     loadChildren: () => import('./buyer/buyer.module').then(m => m.BuyerModule)
   },

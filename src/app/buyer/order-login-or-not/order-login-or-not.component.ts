@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import {ActivatedRoute, Router} from '@angular/router';
+import {BuyerAuthService} from '../services/buyer-auth.service';
 
 @Component({
   selector: 'app-order-login-or-not',
@@ -20,7 +21,9 @@ export class OrderLoginOrNotComponent implements OnInit {
   enteredPassword = '';
   hide = true;
 
-  constructor(router: Router, location: Location, private aRoute: ActivatedRoute) {
+  constructor(router: Router, location: Location,
+              private aRoute: ActivatedRoute,
+              private authService: BuyerAuthService) {
     this.router = router;
     this.location = location;
 
@@ -33,6 +36,7 @@ export class OrderLoginOrNotComponent implements OnInit {
   public login(): void {
     // log in if credentials are correct
     if (this.checkCred()) {
+      this.authService.signIn(this.email, this.enteredPassword);
       this.router.navigate(
         ['../confirmation-login'],
         {replaceUrl: true, relativeTo: this.aRoute});
