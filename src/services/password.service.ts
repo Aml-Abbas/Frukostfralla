@@ -12,11 +12,11 @@ export class PasswordService {
     return '';
   }
 
-  saveNewPassword(password: string) {
+  saveNewPassword(password: string): void {
 
   }
 
-  requestNewPassword() {
+  requestNewPassword(): void {
 
   }
 }

@@ -21,7 +21,7 @@ export class PasswordResetComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  sendResetRequest() {
+  sendResetRequest(): void {
     this.snackBar.open('Tack för din begäran', 'Stäng', {
       duration: 3000
     });
