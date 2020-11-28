@@ -27,6 +27,22 @@
 
 
   <div class="form-container">
+
+    <mat-form-field appearance="fill">
+      <mat-label>Leveransdag</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let date of deliveryDates"
+                    value="{{date}}"></mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Leveranstid</mat-label>
+      <mat-select>
+        <mat-option value="7">Klockan 07:00</mat-option>
+        <mat-option value="8">Klockan 08:00</mat-option>
+      </mat-select>
+    </mat-form-field>
+
     <button mat-raised-button color="accent" (click)="onConfirm()">
       BEKRÄFTA BESTÄLLNINGEN
     </button>

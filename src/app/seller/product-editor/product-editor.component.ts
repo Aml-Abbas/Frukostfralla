@@ -5,6 +5,7 @@ import {ProductsService} from '../../../services/products.service';
 import {Product} from '../../model/Product';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {ProductEditorService} from '../../../services/product-editor.service';
+import {FormControl} from "@angular/forms";
 
 class ImageSnippet {
   constructor(public src: string, public file: File) {
@@ -27,6 +28,9 @@ export class ProductEditorComponent implements OnInit {
 
   name = '';
   price = 0;
+
+  nameControl = new FormControl();
+  priceControl = new FormControl();
 
   imageSrc = 'assets/img/product-placeholder.png';
 
@@ -76,8 +80,7 @@ export class ProductEditorComponent implements OnInit {
 
   public saveProduct(): void {
 
-    // the back button is pressed in the products page after saving
-    // a product
+
     if (this.productsService.saveProduct('', this.name, this.price, this.file)) {
       this.location.back();
       this._snackBar.open('Produkten sparad', 'Ok', {

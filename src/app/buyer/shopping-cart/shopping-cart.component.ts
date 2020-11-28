@@ -23,7 +23,11 @@ export class ShoppingCartComponent implements OnInit {
 
   total = 0;
 
-  constructor(location: Location, private aRoute: ActivatedRoute, router: Router, public dialog: MatDialog) {
+  deliveryDates = [];
+
+  constructor(location: Location,
+              private aRoute: ActivatedRoute,
+              router: Router, public dialog: MatDialog) {
     this.router = router;
     this.location = location;
     this.shoppingCartItems = [];

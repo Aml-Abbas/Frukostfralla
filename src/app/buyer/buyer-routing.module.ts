@@ -43,7 +43,7 @@ const routes: Routes = [
   {path: '', component: BuyerStartComponent},
   {path: 'buyer-login', component: BuyerLoginComponent},
   {path: 'buyer-signup', component: BuyerSignupComponent},
-  {path: 'buyer-start', component: BuyerStartComponent},
+  {path: 'buyer-start', component: BuyerMapComponent},
   {path: 'buyer-map', component: BuyerMapComponent}
 ];
 

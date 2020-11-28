@@ -1,9 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, NgZone, OnInit, ViewChild} from '@angular/core';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
+import {MapsAPILoader} from "@agm/core";
+import {google} from "@agm/core/services/google-maps-types";
 
-declare const google: any;
+// declare const google: any;
 
 
 @Component({
@@ -14,9 +16,11 @@ declare const google: any;
 
 })
 export class BuyerMapComponent implements OnInit {
+  @ViewChild('search')
+  public searchElementRef: ElementRef;
+
   router: Router;
 
-  title = 'Säljare i ditt område';
   location: Location;
   username = 'User';
   lat = 0;
@@ -25,23 +29,71 @@ export class BuyerMapComponent implements OnInit {
   selectedPointLatitude: any;
   selectedPointLongitude: any;
 
-  constructor(router: Router, location: Location, private http: HttpClient) {
+  zoom: number;
+  address: string;
+  private geoCoder;
+
+  constructor(router: Router, location: Location,
+              private mapsLoader: MapsAPILoader,
+              private ngZone: NgZone) {
     this.router = router;
     this.location = location;
   }
+
   ngOnInit(): void {
-    this.get();
+    this.getLocation();
+
+    /*this.mapsLoader.load().then(() => {
+      this.getLocation();
+      this.geoCoder = new google.maps.Geocoder;
+      let autocomplete = google.maps.Address.Autocomplete(this.searchElementRef.nativeElement);
+      autocomplete.addListener("place_changed", () => {
+        this.ngZone.run(() => {
+          let place = autocomplete.getPlace();
+
+          //verify result
+          if (place.geometry === undefined || place.geometry === null) {
+            return;
+          }
+
+          //set latitude, longitude and zoom
+          this.lat = place.geometry.location.lat();
+          this.lng = place.geometry.location.lng();
+          this.zoom = 12;
+        })
+      })
+    });*/
   }
 
-  get(): void{
+  getLocation(): void {
     if ('geolocation' in navigator) {
       navigator.geolocation.watchPosition((position => {
         console.log('lat: ' + position.coords.latitude);
         console.log('lng: ' + position.coords.longitude);
         this.lat = position.coords.latitude;
         this.lng = position.coords.longitude;
+        this.zoom = 8;
+        this.getAddress(this.lat, this.lng);
       }));
     }
+  }
+
+  getAddress(latitude, longitude) {
+    this.geoCoder.geocode({ 'location': { lat: latitude, lng: longitude } }, (results, status) => {
+      console.log(results);
+      console.log(status);
+      if (status === 'OK') {
+        if (results[0]) {
+          this.zoom = 12;
+          this.address = results[0].formatted_address;
+        } else {
+          window.alert('No results found');
+        }
+      } else {
+        window.alert('Geocoder failed due to: ' + status);
+      }
+
+    });
   }
 
   public navigateBack(): void {
