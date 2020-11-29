@@ -1,9 +1,7 @@
 import {Component, ElementRef, NgZone, OnInit, ViewChild} from '@angular/core';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import {Router} from '@angular/router';
-import {HttpClient} from '@angular/common/http';
 import {MapsAPILoader} from "@agm/core";
-import {google} from "@agm/core/services/google-maps-types";
 
 // declare const google: any;
 
@@ -41,12 +39,11 @@ export class BuyerMapComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getLocation();
 
-    /*this.mapsLoader.load().then(() => {
+    this.mapsLoader.load().then(() => {
       this.getLocation();
       this.geoCoder = new google.maps.Geocoder;
-      let autocomplete = google.maps.Address.Autocomplete(this.searchElementRef.nativeElement);
+      let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement);
       autocomplete.addListener("place_changed", () => {
         this.ngZone.run(() => {
           let place = autocomplete.getPlace();
@@ -62,7 +59,7 @@ export class BuyerMapComponent implements OnInit {
           this.zoom = 12;
         })
       })
-    });*/
+    });
   }
 
   getLocation(): void {
