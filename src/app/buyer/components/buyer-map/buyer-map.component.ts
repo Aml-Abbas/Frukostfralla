@@ -1,9 +1,30 @@
 import {Component, ElementRef, NgZone, OnInit, ViewChild} from '@angular/core';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import {Router} from '@angular/router';
-import {MapsAPILoader} from "@agm/core";
+import {LatLngLiteral, MapsAPILoader} from '@agm/core';
+import {LocationService} from '../../../../services/location.service';
 
 // declare const google: any;
+export class Point {
+  latitude: number;
+  longitude: number;
+
+  constructor(latitude: number, longitude: number) {
+    this.latitude = latitude;
+    this.longitude = longitude;
+  }
+}
+
+export class Polygon {
+  sellerId: string;
+  paths: Point[];
+
+  constructor(sellerId: string, paths: Point[]) {
+    this.sellerId = sellerId;
+    this.paths = paths;
+  }
+}
+
 @Component({
   selector: 'app-map',
   templateUrl: './buyer-map.component.html',
@@ -15,9 +36,6 @@ export class BuyerMapComponent implements OnInit {
   @ViewChild('search')
   public searchElementRef: ElementRef;
 
-  router: Router;
-
-  location: Location;
   username = 'User';
   lat = 0;
   lng = 0;
@@ -29,57 +47,65 @@ export class BuyerMapComponent implements OnInit {
   address: string;
   private geoCoder;
 
-  polygons = [];
-  sellerPolygons: {sellerid: string, paths: {lat: number, lng: number}[]}[]
-  = []
-  paths: {lat: number, lng: number}[] = []
+  polygon: LatLngLiteral[] = [
+    /*{lat: 55.8703477, lng: 12.8300802},
+    {lat: 55.8703477, lng: 12.8310802},
+    {lat: 55.8723579, lng: 12.8300802},
+    {lat: 55.8703477, lng: 12.8300802},*/
+  ];
 
-  constructor(router: Router, location: Location,
+  polygons: Polygon[] = [
+    new Polygon('2', [new Point(2, 2), new Point(3, 3)])
+  ];
+  paths: { lat: number, lng: number }[] = [];
+
+  constructor(private router: Router,
+              private location: Location,
               private mapsLoader: MapsAPILoader,
-              private ngZone: NgZone) {
-    this.router = router;
-    this.location = location;
+              private ngZone: NgZone,
+              private locationService: LocationService) {
   }
 
   ngOnInit(): void {
 
+    this.locationService.getCurrentLocation();
+    this.locationService.currentLat$.subscribe(lat => {
+      this.lat = lat;
+    });
+    this.locationService.currentLng$.subscribe(lng => {
+      this.lng = lng;
+    });
+    this.locationService.currentLatLng$.subscribe(latLng => {
+      this.polygon = [];
+      this.polygon.push({lat: latLng.lat + 0.002, lng: latLng.lng + 0.002});
+      this.polygon.push({lat: latLng.lat + 0.002, lng: latLng.lng + 0.004});
+      this.polygon.push({lat: latLng.lat + 0.005, lng: latLng.lng + 0.002});
+      this.polygon.push({lat: latLng.lat + 0.002, lng: latLng.lng + 0.002});
+    })
+
+
     this.mapsLoader.load().then(() => {
-      this.getLocation();
       this.geoCoder = new google.maps.Geocoder;
       let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement);
-      autocomplete.addListener("place_changed", () => {
+      autocomplete.addListener('place_changed', () => {
         this.ngZone.run(() => {
           let place = autocomplete.getPlace();
-
           //verify result
           if (place.geometry === undefined || place.geometry === null) {
             return;
           }
-
           //set latitude, longitude and zoom
           this.lat = place.geometry.location.lat();
           this.lng = place.geometry.location.lng();
           this.zoom = 12;
-        })
-      })
+        });
+      });
     });
   }
 
-  getLocation(): void {
-    if ('geolocation' in navigator) {
-      navigator.geolocation.watchPosition((position => {
-        console.log('lat: ' + position.coords.latitude);
-        console.log('lng: ' + position.coords.longitude);
-        this.lat = position.coords.latitude;
-        this.lng = position.coords.longitude;
-        this.zoom = 8;
-        this.getAddress(this.lat, this.lng);
-      }));
-    }
-  }
 
   getAddress(latitude, longitude) {
-    this.geoCoder.geocode({ 'location': { lat: latitude, lng: longitude } }, (results, status) => {
+    this.geoCoder.geocode({'location': {lat: latitude, lng: longitude}}, (results, status) => {
       console.log(results);
       console.log(status);
       if (status === 'OK') {

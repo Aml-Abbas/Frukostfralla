@@ -15,7 +15,7 @@
     <agm-marker [latitude]="lat" [longitude]="lng">
 
     </agm-marker>
-    <agm-polygon *ngFor="let polygon of polygons" [paths]="polygon.paths">
+    <agm-polygon [paths]="polygon">
 
     </agm-polygon>
   </agm-map>
