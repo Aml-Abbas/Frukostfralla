@@ -36,6 +36,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {HttpClientModule} from '@angular/common/http';
 import {AgmCoreModule} from '@agm/core';
+import {MatStepperModule} from '@angular/material/stepper';
 
 
 @NgModule({
@@ -81,7 +82,8 @@ import {AgmCoreModule} from '@agm/core';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyA5uM21fX0xEYTcqRKgvjwVFqBs1Ve9hAc',
       libraries: ['places', 'drawing', 'geometry']
-    })
+    }),
+    MatStepperModule
   ],
 })
 export class SellerModule {

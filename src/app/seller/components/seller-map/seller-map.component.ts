@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
+import {LocationService} from '../../../../services/location.service';
 
 declare const google: any;
 
@@ -14,10 +15,10 @@ declare const google: any;
 
 })
 export class SellerMapComponent implements OnInit {
-  router: Router;
+
 
   title = 'Säljare i ditt område';
-  location: Location;
+
   username = 'User';
   lat = 0;
   lng = 0;
@@ -25,28 +26,22 @@ export class SellerMapComponent implements OnInit {
   drawingManager: any;
   selectedShape: any;
   selectedArea = 0;
-  constructor(router: Router, location: Location) {
-    this.router = router;
-    this.location = location;
-  }
-  ngOnInit(): void {
-    this.get();
+
+  constructor(private router: Router,
+              private location: Location,
+              private locationService: LocationService) {
   }
 
-  get(): void{
-    if ('geolocation' in navigator) {
-      navigator.geolocation.watchPosition((position => {
-        console.log('lat: ' + position.coords.latitude);
-        console.log('lng: ' + position.coords.longitude);
-        this.lat = position.coords.latitude;
-        this.lng = position.coords.longitude;
-      }));
-    }
+  ngOnInit(): void {
+    this.locationService = new LocationService();
+    this.locationService.currentLat$.subscribe(v => {this.lat = v;});
+    this.locationService.currentLng$.subscribe(v => {this.lng = v;});
   }
 
   public navigateBack(): void {
     this.location.back();
   }
+
   onMapReady(map): void {
     this.initDrawingManager(map);
   }
@@ -111,7 +106,7 @@ export class SellerMapComponent implements OnInit {
         }
       }
     );
-  }
+  };
 
   deleteSelectedShape(): void {
     if (this.selectedShape) {

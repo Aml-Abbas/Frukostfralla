@@ -2,12 +2,12 @@
   <span class="spacer"></span>
   <mat-icon mat-ripple class="back-icon" (click)="navigateBack()">
     arrow_back
-  </mat-icon>  <span>{{ title }}</span>
+  </mat-icon>
+  <span>{{ title }}</span>
 </mat-toolbar>
 
 <div class="container">
 
-  <router-outlet class="content"></router-outlet>
   <agm-map [zoom]="15" [latitude]="lat"
            [longitude]="lng"
            (mapReady)="onMapReady($event)">
@@ -18,20 +18,19 @@
   </agm-map>
 
 
-
-  <br />
+  <br/>
   <div *ngIf="pointList.length>0" class="display-flex">
     <button mat-stroked-button color="warn" (click)="deleteSelectedShape()">Clear</button>
   </div>
 
   <mat-list role="list">
     <mat-list-item role="listitem" *ngFor="let point of pointList">
-      {{ point.lat.toPrecision(5) }},
-      {{ point.lng.toPrecision(5) }}</mat-list-item
-    >
+      {{ point.lat.toPrecision(15) }},
+      {{ point.lng.toPrecision(15) }}
+    </mat-list-item>
   </mat-list>
   <mat-card *ngIf="selectedArea > 0">
-    <span> Selected Area: {{ selectedArea.toPrecision(5) }}m<sup>2</sup> </span>
+    <span> Selected Area: {{ selectedArea.toPrecision(5) / 1000000 }}km<sup>2</sup> </span>
   </mat-card>
 
 

@@ -30,6 +30,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 import {HttpClientModule} from '@angular/common/http';
 import {AgmCoreModule} from '@agm/core';
+import {MatStepperModule} from '@angular/material/stepper';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import {AgmCoreModule} from '@agm/core';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyA5uM21fX0xEYTcqRKgvjwVFqBs1Ve9hAc',
       libraries: ['places', 'drawing', 'geometry']
-    })
+    }),
+    MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent]
