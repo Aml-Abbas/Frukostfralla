@@ -9,7 +9,7 @@ import {ShoppingCartComponent} from './components/shopping-cart/shopping-cart.co
 import {ConfirmationLoginComponent} from './components/confirmation-login/confirmation-login.component';
 import {ConfirmationNoLoginComponent} from './components/confirmation-no-login/confirmation-no-login.component';
 import {BuyerSignupComponent} from './components/buyer-signup/buyer-signup.component';
-import {SellerDetailsComponent} from '../seller/components/seller-details/seller-details.component';
+import {SellerDetailsComponent} from './components/seller-details/seller-details.component';
 import {SellerProductsComponent} from '../seller/components/seller-products/seller-products.component';
 import {BuyerProfileComponent} from './components/buyer-profile/buyer-profile.component';
 import {BuyerProfilEditorComponent} from './components/buyer-profil-editor/buyer-profil-editor.component';

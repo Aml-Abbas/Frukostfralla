@@ -14,7 +14,6 @@ import {SellerProfileEditorComponent} from './components/seller-profile-editor/s
 import {SellerOrderHistoryComponent} from './components/seller-order-history/seller-order-history.component';
 import {SellerDaysSelectionComponent} from './components/seller-days-selection/seller-days-selection.component';
 import {SellerSendToBakeryComponent} from './components/seller-send-to-bakery/seller-send-to-bakery.component';
-import {BuyerProductsComponent} from '../buyer/components/buyer-products/buyer-products.component';
 import {SellerRootComponent} from './components/seller-root/seller-root.component';
 import {SellerMapComponent} from './components/seller-map/seller-map.component';
 import {SellerAuthGuard} from './guards/seller-auth.guard';

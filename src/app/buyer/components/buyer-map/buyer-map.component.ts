@@ -1,7 +1,7 @@
 import {Component, ElementRef, NgZone, OnInit, ViewChild} from '@angular/core';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
-import {Router} from '@angular/router';
-import {LatLngLiteral, MapsAPILoader} from '@agm/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {LatLngLiteral, MapsAPILoader, PolyMouseEvent} from '@agm/core';
 import {LocationService} from '../../../../services/location.service';
 
 // declare const google: any;
@@ -63,7 +63,8 @@ export class BuyerMapComponent implements OnInit {
               private location: Location,
               private mapsLoader: MapsAPILoader,
               private ngZone: NgZone,
-              private locationService: LocationService) {
+              private locationService: LocationService,
+              private aRoute: ActivatedRoute) {
   }
 
   ngOnInit(): void {
@@ -77,10 +78,10 @@ export class BuyerMapComponent implements OnInit {
     });
     this.locationService.currentLatLng$.subscribe(latLng => {
       this.polygon = [];
-      this.polygon.push({lat: latLng.lat + 0.002, lng: latLng.lng + 0.002});
-      this.polygon.push({lat: latLng.lat + 0.002, lng: latLng.lng + 0.004});
-      this.polygon.push({lat: latLng.lat + 0.005, lng: latLng.lng + 0.002});
-      this.polygon.push({lat: latLng.lat + 0.002, lng: latLng.lng + 0.002});
+      this.polygon.push({lat: latLng.lat -0.001, lng: latLng.lng -0.001});
+      this.polygon.push({lat: latLng.lat + 0.004, lng: latLng.lng -0.001});
+      this.polygon.push({lat: latLng.lat + 0.004, lng: latLng.lng + 0.004});
+      this.polygon.push({lat: latLng.lat -0.001, lng: latLng.lng + 0.004});
     })
 
 
@@ -126,4 +127,10 @@ export class BuyerMapComponent implements OnInit {
     this.location.back();
   }
 
+
+  click($event: PolyMouseEvent) {
+    this.router.navigate(
+      ['../seller-details'],
+      {replaceUrl: true, relativeTo: this.aRoute});
+  }
 }
