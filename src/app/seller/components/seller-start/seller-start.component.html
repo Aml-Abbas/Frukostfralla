@@ -1,0 +1,48 @@
+<mat-toolbar class="toolbar" color="primary">
+  <span class="spacer"></span>
+  <span>{{ title }}</span>
+</mat-toolbar>
+<div class="container">
+  <h1 class="header">Frukostfralla</h1>
+
+  <div class="form-container">
+
+    <mat-form-field appearance="fill">
+      <mat-label>E-post</mat-label>
+      <input matInput value="{{email}}">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Lösenord</mat-label>
+      <input [(ngModel)]='enteredPassword' matInput [type]="hide ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+
+
+    <div class="buttons-container">
+
+      <button routerLink="../seller-create-profile" routerLinkActive="active"
+              mat-button class="text-button">
+        SKAPA PROFIL
+      </button>
+      <button
+        (click)="signIn();"
+        mat-raised-button color="accent">
+        LOGGA IN
+      </button>
+    </div>
+
+    <button mat-button
+            style="color: #707070; position: fixed; bottom: 16px; right: 16px;"
+            routerLink="/password-reset">
+      Glömde lösenord?
+    </button>
+
+  </div>
+
+</div>
+
+

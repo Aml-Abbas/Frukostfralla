@@ -19,9 +19,13 @@ export class BuyerAuthGuard implements CanActivate {
     } else {
       if (this.router.url == '/buyer/shopping-cart') {
         this.router.navigate(['/buyer/order-login-or-not']);
+      } else if (this.router.url == '/landing') {
+        this.router.navigate(['/buyer/buyer-map']);
+      } else if (this.router.url == '/buyer' || this.router.url == '/') {
+        this.router.navigate(['/buyer/buyer-map'])
       } else {
+        this.router.navigate(['/buyer/buyer-login']);
 
-        this.router.navigate(['/buyer/buyer-start']);
       }
 
     }

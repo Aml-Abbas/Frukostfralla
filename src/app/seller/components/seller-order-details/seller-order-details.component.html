@@ -1,0 +1,53 @@
+<mat-toolbar class="toolbar" color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon (click)="navigateBack()">arrow_back</mat-icon>
+  </button>
+  <span>{{title}}</span>
+</mat-toolbar>
+
+<div class="container">
+
+  <h1>{{itemDetails.buyer}}</h1>
+  <mat-list>
+    <h3 matSubheader>Frallor</h3>
+    <mat-list-item mat-ripple *ngFor="let product of itemDetails.products">
+      <img mat-list-avatar src="../../../../assets/img/product-placeholder.png">
+      <h3 matLine> {{product.name}} </h3>
+      <p matLine> {{product.price}} </p>
+      <p matLine> {{product.amount}} st</p>
+      <h3> {{product.total}}:- </h3>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
+
+  <mat-list>
+    <mat-list-item>
+      <h2>Total</h2>
+      <span class="toolbar-spacer"></span>
+      <h2>{{itemDetails.total}}:-</h2>
+    </mat-list-item>
+  </mat-list>
+
+  <mat-list>
+    <h3 matSubheader>Address</h3>
+    <mat-list-item>
+      <h2>{{itemDetails.address}}</h2>
+    </mat-list-item>
+  </mat-list>
+
+  <mat-list>
+    <h3 matSubheader>Mobilnummer</h3>
+    <mat-list-item>
+      <h2>{{itemDetails.mobileNumber}}</h2>
+    </mat-list-item>
+  </mat-list>
+
+  <div class="form-container">
+    <button mat-raised-button color="accent">
+      SKRIV UT KVITTO
+    </button>
+
+  </div>
+
+
+</div>
