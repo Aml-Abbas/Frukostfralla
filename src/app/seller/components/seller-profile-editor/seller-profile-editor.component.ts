@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
-import {SellerProfileService} from '../../../../services/seller-profile.service';
+import {SellerProfileService} from '../../services/seller-profile.service';
 import {FormControl, Validators} from '@angular/forms';
 import {max} from 'rxjs/operators';
 import {MatSnackBar} from '@angular/material/snack-bar';

@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {BakeriesService} from '../../../../services/bakeries.service';
 import {Bakery} from '../../../model/Bakery';
-import {SellerProfileService} from '../../../../services/seller-profile.service';
+import {SellerProfileService} from '../../services/seller-profile.service';
 import {SellerAuthService} from '../../services/seller-auth.service';
 
 @Component({

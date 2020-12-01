@@ -3,7 +3,7 @@ import {ProductsService} from '../../../../services/products.service';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Seller} from '../../../model/Seller';
-import {BuyerStartService} from '../../../../services/buyer-start.service';
+import {BuyerStartService} from '../../services/buyer-start.service';
 
 @Component({
   selector: 'app-sellers',

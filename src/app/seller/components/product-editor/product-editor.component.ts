@@ -4,7 +4,7 @@ import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common'
 import {ProductsService} from '../../../../services/products.service';
 import {Product} from '../../../model/Product';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import {ProductEditorService} from '../../../../services/product-editor.service';
+import {ProductEditorService} from '../../services/product-editor.service';
 import {FormControl} from "@angular/forms";
 
 class ImageSnippet {

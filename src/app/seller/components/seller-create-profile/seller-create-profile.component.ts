@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {BakeriesService} from '../../../../services/bakeries.service';
 import {Bakery} from '../../../model/Bakery';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {SellerSignupService} from '../../services/seller-signup.service';
 
 
 @Component({
@@ -15,8 +16,6 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 
 export class SellerCreateProfileComponent implements OnInit {
   title = 'Skapa profil';
-  router: Router;
-  location: Location;
   hide = true;
 
   email = '';
@@ -27,12 +26,12 @@ export class SellerCreateProfileComponent implements OnInit {
 
   chosenBakery: Bakery;
 
-  constructor(router: Router, location: Location,
+  constructor(private router: Router,
+              private location: Location,
               private bakeryService: BakeriesService,
-              private _snackBar: MatSnackBar,
-              private aRoute: ActivatedRoute) {
-    this.router = router;
-    this.location = location;
+              private snackBar: MatSnackBar,
+              private aRoute: ActivatedRoute,
+              private signupService: SellerSignupService) {
   }
 
   ngOnInit(): void {
@@ -50,7 +49,7 @@ export class SellerCreateProfileComponent implements OnInit {
     if (this.enteredPassword != this.enteredPassword2
       || this.email == '' || this.name == '' || this.mobile == ''
       || this.chosenBakery == null) {
-      this._snackBar.open('Rätta felen.', 'Ok', {
+      this.snackBar.open('Rätta felen.', 'Ok', {
         duration: 2000
       });
       this.router.navigate(

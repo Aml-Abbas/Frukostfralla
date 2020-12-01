@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import {Router} from '@angular/router';
 import {MatListOption} from '@angular/material/list';
-import {SellerProfileService} from '../../../../services/seller-profile.service';
+import {SellerProfileService} from '../../services/seller-profile.service';
 
 @Component({
   selector: 'app-seller-days-selection',

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import {ActivatedRoute, Router} from '@angular/router';
-import {BuyerStartService} from '../../../../services/buyer-start.service';
+import {BuyerStartService} from '../../services/buyer-start.service';
 import {SellersService} from '../../../../services/sellers.service';
 
 @Component({

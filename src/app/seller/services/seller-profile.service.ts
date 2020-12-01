@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
-import {Bakery} from '../app/model/Bakery';
+import {Bakery} from '../../model/Bakery';
 
 @Injectable({
   providedIn: 'root'

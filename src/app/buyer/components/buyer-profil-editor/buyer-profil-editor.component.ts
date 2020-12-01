@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Buyer} from '../../../model/Buyer';
-import {BuyerInfoService} from '../../../../services/buyer-info.service';
+import {BuyerInfoService} from '../../services/buyer-info.service';
 
 @Component({
   selector: 'app-buyer-profil-editor',
