@@ -1,13 +1,42 @@
 <mat-toolbar class="toolbar" color="primary">
   <span class="spacer"></span>
   <span>{{ title }}</span>
+  <span class="toolbar-spacer"></span>
 </mat-toolbar>
-
 <div class="container">
-  <p class="seller-pic"> HELLO</p>
-  <p class="seller-name"> </p>
-  <p class="seller-frallor"> </p>
-  <p class="seller-dagar"> </p>
-  <p class="seller-area"> </p>
+
+  <label class="image-chooser">
+    <img class="profile-photo" alt="profile photo" src="{{this.imageSrc}}">
+  </label>
+  <h1 style="margin-top: 1em" routerLink="../seller-profile-editor" matRipple>{{name}}</h1>
+
+  <mat-list role="list">
+    <mat-list-item mat-ripple role="listitem"
+                   routerLink="../seller-profile-editor"
+                   matRipple>
+      {{email}}
+    </mat-list-item>
+
+    <mat-divider></mat-divider>
+    <mat-list-item mat-ripple role="listitem" routerLink="../buyer-products">
+      Frallor
+    </mat-list-item>
+    <mat-divider></mat-divider>
+
+    <mat-divider></mat-divider>
+    <mat-list-item mat-ripple role="listitem" routerLink="../seller-days">
+      Dagar säljaren kan leverera under
+    </mat-list-item>
+    <mat-divider></mat-divider>
+
+    <mat-divider></mat-divider>
+    <mat-list-item mat-ripple role="listitem"
+                   routerLink="../seller-profile-editor"
+                   matRipple>
+      {{mobile}}
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-list>
+
 
 </div>

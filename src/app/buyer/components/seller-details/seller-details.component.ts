@@ -12,6 +12,10 @@ import {Router} from '@angular/router';
 export class SellerDetailsComponent implements OnInit {
   title = 'Säljarens namn';
 
+  email = '';
+  name = '';
+  imageSrc = '';
+
   constructor() { }
 
   ngOnInit(): void {

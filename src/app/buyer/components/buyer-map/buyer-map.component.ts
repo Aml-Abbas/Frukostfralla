@@ -131,6 +131,6 @@ export class BuyerMapComponent implements OnInit {
   click($event: PolyMouseEvent) {
     this.router.navigate(
       ['../seller-details'],
-      {replaceUrl: true, relativeTo: this.aRoute});
+      {relativeTo: this.aRoute});
   }
 }

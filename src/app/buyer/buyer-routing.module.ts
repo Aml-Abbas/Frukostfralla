@@ -39,7 +39,6 @@ const routes: Routes = [
       {path: 'confirmation-no-login', component: ConfirmationNoLoginComponent},
       {path: 'buyer-order-history', component: BuyerOrderHistoryComponent, canActivate: [BuyerAuthGuard]}
     ],
-    canActivate: [BuyerAuthGuard]
   },
   {path: '', component: BuyerStartComponent},
   {path: 'buyer-login', component: BuyerLoginComponent},
