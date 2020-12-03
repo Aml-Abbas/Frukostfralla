@@ -14,19 +14,19 @@
       <mat-form-field>
         <mat-label>Namn</mat-label>
         <input matInput required
-               [ngModel]="name">
+               [(ngModel)]="name">
       </mat-form-field>
       <br>
       <mat-form-field>
         <mat-label>E-postadress</mat-label>
         <input matInput required [formControl]="emailControl"
-               [ngModel]="email">
+               [(ngModel)]="email">
       </mat-form-field>
       <br>
       <mat-form-field>
         <mat-label>Mobilnummer</mat-label>
         <input matInput required  [formControl]="mobileControl"
-               [ngModel]="mobile">
+               [(ngModel)]="mobile">
         <mat-hint>Mobilnummer måste vara 10 siffror</mat-hint>
       </mat-form-field>
       <div>

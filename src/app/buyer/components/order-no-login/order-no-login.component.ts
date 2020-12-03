@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 
@@ -22,7 +22,7 @@ export class OrderNoLoginComponent implements OnInit {
   hide = true;
   location: Location;
 
-  constructor(router: Router, location: Location,private aRoute: ActivatedRoute) {
+  constructor(router: Router, location: Location, private aRoute: ActivatedRoute) {
     this.router = router;
     this.location = location;
 
@@ -30,8 +30,14 @@ export class OrderNoLoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   public navigateBack(): void {
     // Navigate back to to seller start page without pushing this page to history
     this.location.back();
+  }
+
+  confirm() {
+    this.router.navigate(['../confirmation-no-login'],
+      {replaceUrl: true, relativeTo: this.aRoute});
   }
 }

@@ -15,6 +15,7 @@ export class SellerDetailsComponent implements OnInit {
   email = '';
   name = '';
   imageSrc = '';
+  mobile = '';
 
   constructor() { }
 

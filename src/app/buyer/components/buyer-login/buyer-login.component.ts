@@ -52,6 +52,10 @@ export class BuyerLoginComponent implements OnInit {
         },
         err => console.log(err)
       );
+    this.router.navigate(
+      ['../buyer-products'],
+      {replaceUrl: true, relativeTo: this.aRoute});
+
   }
 
   public checkCred(): boolean {

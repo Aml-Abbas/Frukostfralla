@@ -51,7 +51,7 @@
 
     <mat-error>{{enteredPassword === enteredPassword2 ? '' : 'Passwords do not match'}}</mat-error>
 
-    <button mat-raised-button routerLinkActive="active" routerLink="../buyer-profile"  color="accent" >
+    <button mat-raised-button color="accent" (click)="signUp()">
       SKAPA OCH LOGGA IN
     </button>
 

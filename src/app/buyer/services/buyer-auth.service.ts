@@ -21,7 +21,7 @@ export class BuyerAuthService {
     console.log('email: ' + email);
     console.log('password: ' + password);
 
-    // this.signedIn = true;
+    this.signedIn = true;
     const headers = new HttpHeaders({'authorization': 'Bearer xxx.yyy.zzz', 'Content-Type': 'text/html'});
     return this.http.post<Response>(this.loginUrl, {email, password});
   }
@@ -32,5 +32,9 @@ export class BuyerAuthService {
 
   isSignedIn() {
     return this.signedIn;
+  }
+
+  signUp() {
+    this.signedIn = true;
   }
 }

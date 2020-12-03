@@ -14,6 +14,9 @@ export class SellerAuthService {
     console.log('password: ' + password);
     this.signedIn = true;
   }
+  signUp() {
+    this.signedIn = true;
+  }
 
   signOut() {
     this.signedIn = false;

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import {ActivatedRoute, Router} from '@angular/router';
+import {BuyerAuthService} from '../../services/buyer-auth.service';
 
 @Component({
   selector: 'app-buyer-signup',
@@ -12,7 +13,6 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class BuyerSignupComponent implements OnInit {
 
   title = 'Skapa profil';
-  router: Router;
   hide = true;
 
   email = '';
@@ -20,12 +20,11 @@ export class BuyerSignupComponent implements OnInit {
   mobile = '';
   enteredPassword = '';
   enteredPassword2 = '';
-  location: Location;
 
-  constructor(router: Router, location: Location,private aRoute: ActivatedRoute) {
-    this.router = router;
-    this.location = location;
-
+  constructor(private router: Router,
+              private location: Location,
+              private aRoute: ActivatedRoute,
+              private authService: BuyerAuthService) {
   }
 
   ngOnInit(): void {
@@ -38,4 +37,9 @@ export class BuyerSignupComponent implements OnInit {
   }
 
 
+  signUp() {
+    this.authService.signUp();
+    this.router.navigate(['../buyer-products'],
+      {relativeTo: this.aRoute, replaceUrl: true})
+  }
 }

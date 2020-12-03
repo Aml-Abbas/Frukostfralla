@@ -7,7 +7,8 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 import {SellerSignupService} from '../../services/seller-signup.service';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {LocationService} from '../../../../services/location.service';
-import {MapsAPILoader} from "@agm/core";
+import {MapsAPILoader} from '@agm/core';
+import {SellerAuthService} from '../../services/seller-auth.service';
 
 declare const google: any;
 
@@ -61,7 +62,7 @@ export class SellerCreateProfileComponent implements OnInit {
               private snackBar: MatSnackBar,
               private aRoute: ActivatedRoute,
               private formBuilder: FormBuilder,
-              private signupService: SellerSignupService,
+              private authService: SellerAuthService,
               private locationService: LocationService,
               private mapsLoader: MapsAPILoader,
               private ngZone: NgZone) {
@@ -70,13 +71,17 @@ export class SellerCreateProfileComponent implements OnInit {
   ngOnInit(): void {
     this.bakeryService.currentBakery$.subscribe(bakery => this.chosenBakery = bakery);
     this.locationService = new LocationService();
-    this.locationService.currentLat$.subscribe(lat => {this.lat = lat;});
-    this.locationService.currentLng$.subscribe(lng => {this.lng = lng;});
+    this.locationService.currentLat$.subscribe(lat => {
+      this.lat = lat;
+    });
+    this.locationService.currentLng$.subscribe(lng => {
+      this.lng = lng;
+    });
     this.mapsLoader.load().then(() => {
       this.geoCoder = new google.maps.Geocoder;
       this.getAddress(this.lat, this.lng);
       let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement);
-      autocomplete.addListener("place_changed", () => {
+      autocomplete.addListener('place_changed', () => {
         this.ngZone.run(() => {
           let place = autocomplete.getPlace();
 
@@ -89,13 +94,13 @@ export class SellerCreateProfileComponent implements OnInit {
           this.lat = place.geometry.location.lat();
           this.lng = place.geometry.location.lng();
           this.zoom = 12;
-        })
-      })
+        });
+      });
     });
   }
 
   getAddress(latitude, longitude) {
-    this.geoCoder.geocode({ 'location': { lat: latitude, lng: longitude } }, (results, status) => {
+    this.geoCoder.geocode({'location': {lat: latitude, lng: longitude}}, (results, status) => {
       console.log(results);
       console.log(status);
       if (status === 'OK') {
@@ -118,9 +123,13 @@ export class SellerCreateProfileComponent implements OnInit {
   }
 
   onCreate(): void {
+    console.log('Email: ' + this.email);
+    console.log('Name: ' + this.name);
+    console.log('Mobile: ' + this.mobile);
+    console.log('Pass: ' + this.enteredPassword);
+    console.log('Pass2: ' + this.enteredPassword2);
     if (this.enteredPassword != this.enteredPassword2
-      || this.email == '' || this.name == '' || this.mobile == ''
-      || this.chosenBakery == null) {
+      || this.email == '' || this.name == '' || this.mobile == '') {
       this.snackBar.open('Rätta felen.', 'Ok', {
         duration: 2000
       });
@@ -128,6 +137,7 @@ export class SellerCreateProfileComponent implements OnInit {
       this.router.navigate(
         ['../seller-profile'],
         {replaceUrl: true, relativeTo: this.aRoute});
+      this.authService.signUp();
     }
   }
 
