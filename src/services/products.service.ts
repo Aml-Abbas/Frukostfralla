@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Product} from '../app/model/Product';
 import {BehaviorSubject, Subject} from 'rxjs';
+import {Item} from '../app/model/item.model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,18 +17,16 @@ export class ProductsService {
   constructor() {
   }
 
-  getProductsBySeller(sellerId: string): Product[] {
+  getProductsBySeller(sellerId: string): Item[] {
     return [
-      new Product('', 'assets/img/fralla1.jpg', 'Baguette', 10),
-      new Product('', 'assets/img/fralla1.jpg', 'Baguette', 10),
-      new Product('', 'assets/img/fralla1.jpg', 'Baguette', 10),
-      new Product('', 'assets/img/fralla1.jpg', 'Baguette', 10),
-      new Product('', 'assets/img/fralla1.jpg', 'Baguette', 10),
-      new Product('', 'assets/img/fralla1.jpg', 'Baguette', 10),
-      new Product('', 'assets/img/fralla1.jpg', 'Baguette', 10),
-      new Product('', 'assets/img/fralla1.jpg', 'Baguette', 10),
-      new Product('', 'assets/img/fralla1.jpg', 'Baguette', 10),
-      new Product('', 'assets/img/fralla1.jpg', 'Baguette', 10)
+      new Item(1, 'assets/img/fralla1.jpg', 2, 10, 'Bulle 1'),
+      new Item(2, 'assets/img/fralla1.jpg', 2, 10, 'Bulle 2'),
+      new Item(3, 'assets/img/fralla1.jpg', 2, 10, 'Bulle 3'),
+      new Item(4, 'assets/img/fralla1.jpg', 2, 10, 'Bulle 4'),
+      new Item(5, 'assets/img/fralla1.jpg', 2, 10, 'Bulle 5'),
+      new Item(6, 'assets/img/fralla1.jpg', 2, 10, 'Bulle 6'),
+      new Item(7, 'assets/img/fralla1.jpg', 2, 10, 'Bulle 7'),
+
     ];
   }
 

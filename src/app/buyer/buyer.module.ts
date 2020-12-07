@@ -38,6 +38,7 @@ import { BuyerRootComponent } from './components/buyer-root/buyer-root.component
 import { BuyerOrderHistoryComponent } from './components/buyer-order-history/buyer-order-history.component';
 import {HttpClientModule} from '@angular/common/http';
 import {AgmCoreModule} from '@agm/core';
+import {MatBadgeModule} from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -81,7 +82,8 @@ import {AgmCoreModule} from '@agm/core';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyA5uM21fX0xEYTcqRKgvjwVFqBs1Ve9hAc',
       libraries: ['places', 'drawing', 'geometry']
-    })
+    }),
+    MatBadgeModule
   ],
   bootstrap: [SellerProductsComponent],
   exports: [

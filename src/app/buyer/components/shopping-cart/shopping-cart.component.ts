@@ -3,6 +3,7 @@ import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common'
 import {ActivatedRoute, Router} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import {ShoppingCartItem} from '../../../model/ShoppingCartItem';
+import {Item} from '../../../model/item.model';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -17,7 +18,7 @@ export class ShoppingCartComponent implements OnInit {
 
   title = 'Din varukorg';
 
-  shoppingCartItems: ShoppingCartItem[];
+  cartItems: Item[] = [];
 
   amount = 1;
 
@@ -30,41 +31,37 @@ export class ShoppingCartComponent implements OnInit {
               router: Router, public dialog: MatDialog) {
     this.router = router;
     this.location = location;
-    this.shoppingCartItems = [];
-    this.getShoppingCartItems('dummy_userid');
   }
 
   ngOnInit(): void {
+    this.cartItems = JSON.parse(localStorage.getItem('cart'));
+    this.countTotal();
+    console.log(this.cartItems);
   }
 
-  getShoppingCartItems(userid: string): void {
-    //  Dummy data
-    for (let i = 0; i < 4; i++) {
-      this.shoppingCartItems.push(
-        new ShoppingCartItem(
-          'a' + (i * 3),
-          'Fralla ' + (i + 1),
-          10,
-          1
-        )
-      );
+  incrementAmount(item: Item): void {
+    this.cartItems.filter(e => {
+      if (e.itemId == item.itemId) {
+        e.count++;
+      }
+    })
+    localStorage.setItem('cart', JSON.stringify(this.cartItems));
+    this.countTotal();
+  }
+
+  decrementAmount(itemId: number): void {
+    let count = 0;
+    let filter = this.cartItems.filter(e => {
+      if (e.itemId == itemId) {
+        e.count--;
+        count = e.count;
+      }
+      return e.itemId == itemId;
+    });
+    if (count < 1) {
+      this.cartItems.splice(this.cartItems.indexOf(filter[0]), 1);
     }
-    this.countTotal();
-  }
-
-  incrementAmount(itemId: string): void {
-    let filter = this.shoppingCartItems.filter(e => {
-      return e.itemId == itemId;
-    });
-    filter[0].incrementAmount();
-    this.countTotal();
-  }
-
-  decrementAmount(itemId: string): void {
-    let filter = this.shoppingCartItems.filter(e => {
-      return e.itemId == itemId;
-    });
-    filter[0].decrementAmount();
+    localStorage.setItem('cart', JSON.stringify(this.cartItems));
     this.countTotal();
   }
 
@@ -72,16 +69,17 @@ export class ShoppingCartComponent implements OnInit {
     this.location.back();
   }
 
-  onDelete(itemId: string): void {
+  onDelete(itemId: number): void {
     //  TODO: Remove the item from the database
-    let filter = this.shoppingCartItems.filter(e => {
+    let filter = this.cartItems.filter(e => {
       return e.itemId == itemId;
     });
-    const index = this.shoppingCartItems.indexOf(filter[0], 0);
+    const index = this.cartItems.indexOf(filter[0], 0);
     if (index > -1) {
-      this.shoppingCartItems.splice(index, 1);
+      this.cartItems.splice(index, 1);
     }
     this.countTotal();
+    localStorage.setItem('cart', JSON.stringify(this.cartItems));
   }
 
   onConfirm(): void {
@@ -102,8 +100,8 @@ export class ShoppingCartComponent implements OnInit {
 
   countTotal() {
     this.total = 0;
-    for (let item of this.shoppingCartItems) {
-      this.total += item.price * item.amount;
+    for (let item of this.cartItems) {
+      this.total += item.price * item.count;
     }
   }
 }

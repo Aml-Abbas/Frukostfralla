@@ -5,22 +5,27 @@
   </mat-icon>
   <span>{{ title }}</span>
   <span class="toolbar-spacer"></span>
-  <mat-icon style="clip-path: circle()" routerLink="../shopping-cart">shopping_cart</mat-icon>
+  <mat-icon
+    routerLink="../shopping-cart"
+    matBadge="{{cartItems.length}}" matBadgeColor="primary"
+    matBadgePosition="above"
+    matBadgeSize="small">shopping_cart
+  </mat-icon>
 </mat-toolbar>
 <div class="container">
   <div>
     <div class="grid-container">
-      <mat-card class="product-card" *ngFor="let product of products">
+      <mat-card class="product-card" *ngFor="let item of items">
         <mat-card-header>
           <div mat-card-avatar class="header-image" mat-ripple>
-            <mat-icon (click)="addToCart(product.id);" class="cart">add_shopping_cart</mat-icon>
+            <mat-icon (click)="addToCart(item);" class="cart">add_shopping_cart</mat-icon>
           </div>
-          <mat-card-title>{{product.name}}</mat-card-title>
-          <mat-card-subtitle>{{product.price}}:-</mat-card-subtitle>
+          <mat-card-title>{{item.itemName}}</mat-card-title>
+          <mat-card-subtitle>{{item.price}}:-</mat-card-subtitle>
         </mat-card-header>
 
         <img mat-card-image class="grid-img"
-             src='{{product.imgUrl}}'
+             src='{{item.imageUrl}}'
              alt="Product Image">
 
       </mat-card>

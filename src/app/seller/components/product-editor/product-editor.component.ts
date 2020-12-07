@@ -5,7 +5,8 @@ import {ProductsService} from '../../../../services/products.service';
 import {Product} from '../../../model/Product';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {ProductEditorService} from '../../services/product-editor.service';
-import {FormControl} from "@angular/forms";
+import {FormControl} from '@angular/forms';
+import {Item} from '../../../model/item.model';
 
 class ImageSnippet {
   constructor(public src: string, public file: File) {
@@ -24,7 +25,7 @@ export class ProductEditorComponent implements OnInit {
   router: Router;
   location: Location;
 
-  products: Product[];
+  items: Item[];
 
   name = '';
   price = 0;
@@ -49,7 +50,7 @@ export class ProductEditorComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.products = this.productsService.getProductsBySeller('');
+    this.items = this.productsService.getProductsBySeller('');
     this.productEditorService.isEditing$.subscribe(v => {
       console.log('1 v: ' + v);
       this.editing = v;
@@ -79,14 +80,14 @@ export class ProductEditorComponent implements OnInit {
   }
 
   public saveProduct(): void {
-
-
     if (this.productsService.saveProduct('', this.name, this.price, this.file)) {
       this.location.back();
       this._snackBar.open('Produkten sparad', 'Ok', {
         duration: 2000
       });
-      this.products.push(new Product('', 'assets/img/product-placeholder.png', this.name, this.price));
+      this.items.push(
+        new Item(678, 'assets/img/product-placeholder.png', 48, this.price, this.name)
+      );
     } else {
       this._snackBar.open('Fel. Försök igen senare!', 'Ok', {
         duration: 2000

@@ -7,14 +7,14 @@
 <div class="container">
 
   <mat-list>
-    <mat-list-item *ngFor="let item of shoppingCartItems">
+    <mat-list-item *ngFor="let item of cartItems">
       <img mat-list-avatar src="../../../../assets/img/profile-photo-placeholder.png" alt="product-photo"/>
-      <h3 matLine>{{item.name}}</h3>
-      <p matLine> {{item.price * item.amount}}:- </p>
+      <h3 matLine>{{item.itemName}}</h3>
+      <p matLine> {{item.price * item.count}}:- </p>
       <p matLine class="amount-line">
         <mat-icon mat-ripple (click)="decrementAmount(item.itemId)">remove</mat-icon>
-        {{item.amount}}
-        <mat-icon mat-ripple (click)="incrementAmount(item.itemId)">add</mat-icon>
+        {{item.count}}
+        <mat-icon mat-ripple (click)="incrementAmount(item)">add</mat-icon>
       </p>
       <mat-icon mat-ripple (click)="onDelete(item.itemId)">delete</mat-icon>
       <mat-divider></mat-divider>

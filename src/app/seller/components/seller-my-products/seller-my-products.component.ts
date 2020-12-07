@@ -3,6 +3,7 @@ import {ProductsService} from '../../../../services/products.service';
 import {Product} from '../../../model/Product';
 import {ProductEditorService} from '../../services/product-editor.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {Item} from '../../../model/item.model';
 
 @Component({
   selector: 'app-seller-my-products',
@@ -13,7 +14,7 @@ export class SellerMyProductsComponent implements OnInit {
 
   title = 'Mina frallor';
 
-  products: Product[] = [];
+  items: Item[] = [];
 
   constructor(private productsService: ProductsService,
               private productEditorService: ProductEditorService,
@@ -21,7 +22,7 @@ export class SellerMyProductsComponent implements OnInit {
               private aRouter: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.products = this.productsService.getProductsBySeller('');
+    this.items = this.productsService.getProductsBySeller('');
   }
 
   onItemClick(id: string) {
