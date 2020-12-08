@@ -13,9 +13,6 @@ import {Item} from '../../../model/item.model';
 })
 export class ShoppingCartComponent implements OnInit {
 
-  router: Router;
-  location: Location;
-
   title = 'Din varukorg';
 
   cartItems: Item[] = [];
@@ -24,18 +21,23 @@ export class ShoppingCartComponent implements OnInit {
 
   total = 0;
 
-  deliveryDates = [];
+  public selectedDate: Date;
 
-  constructor(location: Location,
+  public sellerDates: Date[] = [new Date('2020-12-23'),
+    new Date('2020-12-24')];
+  public multiSelect: Boolean = true;
+
+
+  constructor(private location: Location,
               private aRoute: ActivatedRoute,
-              router: Router, public dialog: MatDialog) {
-    this.router = router;
-    this.location = location;
+              private router: Router,
+              public dialog: MatDialog) {
   }
 
   ngOnInit(): void {
     this.cartItems = JSON.parse(localStorage.getItem('cart'));
     this.countTotal();
+    this.selectedDate = this.sellerDates[0];
     console.log(this.cartItems);
   }
 
@@ -44,7 +46,7 @@ export class ShoppingCartComponent implements OnInit {
       if (e.itemId == item.itemId) {
         e.count++;
       }
-    })
+    });
     localStorage.setItem('cart', JSON.stringify(this.cartItems));
     this.countTotal();
   }
@@ -103,5 +105,24 @@ export class ShoppingCartComponent implements OnInit {
     for (let item of this.cartItems) {
       this.total += item.price * item.count;
     }
+  }
+
+  disableDate(args) {
+    console.log(`Contains?: ${this.contains(args.date)}`);
+    if (!this.contains(args.date)) {
+      args.isDisabled = true;
+    }
+  }
+
+  private contains(date: Date): boolean {
+    date.setHours(1);
+    for (let i = 0; i < this.sellerDates.length; i++) {
+      console.log(`calendar date: ${date}`);
+      console.log(`my date: ${new Date('2020-12-24')}`);
+      if (date.getTime() === this.sellerDates[i].getTime()) {
+        return true;
+      }
+    }
+    return false;
   }
 }
